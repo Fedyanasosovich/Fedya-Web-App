@@ -23,7 +23,7 @@ const Hero = () => {
           <Image
             src="/images/hero-1.jpeg"
             width={400}
-            className="rounded-xl w-full lg:!w-[400]   shadow-2xl"
+            className="rounded-xl w-full lg:w-[400px]   shadow-2xl"
             height={400}
             alt="Pfizer Genotropin"
           />
