@@ -32,7 +32,7 @@ export default function Home() {
         const tl = gsap.timeline({
           scrollTrigger: {
             trigger: section,
-            start: "center center", // Trigger when the current section starts to scroll into view
+            start: "top top", // Trigger when the current section starts to scroll into view
             end: "bottom top", // End when the section leaves the screen
             scrub: true,
             pin: true, // Pin the section in place while it's fading out
@@ -69,7 +69,7 @@ export default function Home() {
         </div>
 
         {/* Second Section */}
-        <div className="scroll-section ">
+        <div className="scroll-section pt-28">
           <div className="pb-10">
             <h2 className="text-3xl lg:text-5xl font-taviraj">
               LATEST PACKAGING
@@ -90,9 +90,9 @@ export default function Home() {
             navigation={true}
             className="mySwiper px-20"
             breakpoints={{
-              480: { slidesPerView: 1 },
-              768: { slidesPerView: 1},
-              1024: { slidesPerView: 3 },
+              300: { slidesPerView: 1 },
+              768: { slidesPerView: 3},
+             
             }}
           >
             {sliderItems.map((items, i) => (
@@ -110,7 +110,7 @@ export default function Home() {
         </div>
 
         {/* Third Section */}
-        <div className="scroll-section pt-12">
+        <div className="scroll-section pt-24">
           <div className="pb-10">
             <h2 className="text-3xl lg:text-5xl text-center font-taviraj">
               Why You Should Trust Me
@@ -129,7 +129,7 @@ export default function Home() {
           </div>
         </div>
         {/* Third Section */}
-        <div className="scroll-section pt-12">
+        <div className="scroll-section pt-24">
           <div className="pb-10">
             <h2 className="text-3xl lg:text-5xl text-center font-taviraj">
               Why You Should Trust Me
@@ -148,7 +148,7 @@ export default function Home() {
           </div>
         </div>
         {/* Third Section */}
-        <div className="scroll-section pt-12">
+        <div className="scroll-section pt-24">
           <div className="pb-10">
             <h2 className="text-3xl lg:text-5xl text-center font-taviraj">
               Why You Should Trust Me
@@ -167,7 +167,7 @@ export default function Home() {
           </div>
         </div>
         {/* Third Section */}
-        <div className="scroll-section pt-12">
+        <div className="scroll-section pt-24">
           <div className="pb-10">
             <h2 className="text-3xl lg:text-5xl text-center font-taviraj">
               Why You Should Trust Me
