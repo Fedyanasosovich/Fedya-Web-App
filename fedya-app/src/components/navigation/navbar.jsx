@@ -133,8 +133,8 @@ const NavBar = () => {
             title="Contact"
             containerClass="md:flex text-foreground px-10 border-purple   font-bold border-2 py-2 hidden items-center justify-center gap-1"
           />
-          <div onClick={toggleMenu} className="text-2xl cursor-pointer">
-            <div className="md:hidden flex flex-col gap-1.5">
+          <div onClick={toggleMenu} className="text-2xl md:hidden block cursor-pointer">
+            <div className=" flex flex-col gap-1.5">
               <span
                 ref={topBar}
                 className="w-8 h-0.5 block rounded bg-foreground transition-all"
