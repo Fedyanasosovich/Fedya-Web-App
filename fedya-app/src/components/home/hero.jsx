@@ -5,7 +5,7 @@ const Hero = () => {
   return (
     <div className=" bg-grid-lines  ">
       <div className="flex items-center  min-h-svh container   ">
-        <div className="flex lg:flex-row flex-col     justify-between items-center w-full gap-12">
+        <div className="flex lg:flex-row flex-col  lg:my-0 my-32   justify-between items-center w-full gap-12">
           <div className="max-w-2xl lg:text-start text-center flex flex-col gap-6">
             <h1 className="text-5xl  lg:text-8xl font-taviraj">
               PFIZER <br /> GENOTROPIN
