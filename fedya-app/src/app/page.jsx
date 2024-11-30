@@ -57,7 +57,7 @@ export default function Home() {
 
       <div className="container">
         {/* First Section */}
-        <div className="scroll-section pt-48 text-md lg:text-2xl font-tavirajItalic text-center">
+        <div className="scroll-section  pt-28 lg:pt-48 text-md lg:text-2xl font-tavirajItalic text-center">
           <p>
             Personally having used Genotropin it is a Very High quality HGH.
             People ask me the general difference between the pharmaceutical
