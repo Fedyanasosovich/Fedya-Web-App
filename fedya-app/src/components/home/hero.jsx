@@ -11,8 +11,8 @@ const Hero = () => {
               PFIZER <br /> GENOTROPIN
             </h1>
             <p className="italic">
-              "Each order is handled by me personally purchased through the
-              pharmacy with a valid prescription via doctors supervision."
+            &quot;Each order is handled by me personally purchased through the
+              pharmacy with a valid prescription via doctors supervision.&quot;
             </p>
             <p>
               Human Growth Hormone – Somatropin is the wonder substance of the
