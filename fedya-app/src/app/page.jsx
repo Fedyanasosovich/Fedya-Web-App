@@ -32,7 +32,7 @@ export default function Home() {
         const tl = gsap.timeline({
           scrollTrigger: {
             trigger: section,
-            start: "top top", // Trigger when the current section starts to scroll into view
+            start: "center center", // Trigger when the current section starts to scroll into view
             end: "bottom top", // End when the section leaves the screen
             scrub: true,
             pin: true, // Pin the section in place while it's fading out
@@ -69,7 +69,7 @@ export default function Home() {
         </div>
 
         {/* Second Section */}
-        <div className="scroll-section pt-36">
+        <div className="scroll-section ">
           <div className="pb-10">
             <h2 className="text-3xl lg:text-5xl font-taviraj">
               LATEST PACKAGING
