@@ -69,7 +69,7 @@ export default function Home() {
         </div>
 
         {/* Second Section */}
-        <div className="scroll-section pt-28">
+        <div className="scroll-section  pt-28">
           <div className="pb-10">
             <h2 className="text-3xl lg:text-5xl font-taviraj">
               LATEST PACKAGING
@@ -110,7 +110,7 @@ export default function Home() {
         </div>
 
         {/* Third Section */}
-        <div className="scroll-section pt-24">
+        <div className="scroll-section  pt-28 lg:pt-24">
           <div className="pb-10">
             <h2 className="text-3xl lg:text-5xl text-center font-taviraj">
               Why You Should Trust Me
@@ -129,7 +129,7 @@ export default function Home() {
           </div>
         </div>
         {/* Third Section */}
-        <div className="scroll-section pt-24">
+        <div className="scroll-section pt-28 lg:pt-24">
           <div className="pb-10">
             <h2 className="text-3xl lg:text-5xl text-center font-taviraj">
               Why You Should Trust Me
@@ -148,7 +148,7 @@ export default function Home() {
           </div>
         </div>
         {/* Third Section */}
-        <div className="scroll-section pt-24">
+        <div className="scroll-section pt-28 lg:pt-24">
           <div className="pb-10">
             <h2 className="text-3xl lg:text-5xl text-center font-taviraj">
               Why You Should Trust Me
@@ -167,7 +167,7 @@ export default function Home() {
           </div>
         </div>
         {/* Third Section */}
-        <div className="scroll-section pt-24">
+        <div className="scroll-section pt-28 lg:pt-24">
           <div className="pb-10">
             <h2 className="text-3xl lg:text-5xl text-center font-taviraj">
               Why You Should Trust Me

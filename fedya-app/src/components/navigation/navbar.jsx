@@ -5,7 +5,8 @@ import gsap from "gsap";
 import { useWindowScroll } from "react-use";
 import { useEffect, useRef, useState } from "react";
 import { TiLocationArrow } from "react-icons/ti";
-
+import { HiOutlineMenuAlt4 } from "react-icons/hi";
+import { RxCross2 } from "react-icons/rx";
 const Button = ({ id, title, rightIcon, leftIcon, containerClass }) => {
   return (
     <button
@@ -37,6 +38,28 @@ const NavBar = () => {
   // State for toggling audio and visual indicator
   const [isAudioPlaying, setIsAudioPlaying] = useState(false);
   const [isIndicatorActive, setIsIndicatorActive] = useState(false);
+
+  const [hamburgerClick, setHamburgerClick] = useState(false);
+  const topBar = useRef(null);
+  const bottomBar = useRef(null);
+
+  const toggleMenu = () => {
+    setHamburgerClick((prev) => !prev);
+
+    if (!hamburgerClick) {
+      // Animate to cross
+      gsap.to(topBar.current, { rotate: 45, y: 6, duration: 0.3,
+        ease: "power3.out", });
+      gsap.to(bottomBar.current, { rotate: -45, y: -2, duration: 0.3,
+        ease: "power3.out",});
+    } else {
+      // Animate back to hamburger
+      gsap.to(topBar.current, { rotate: 0, y: 0, duration: 0.3,
+        ease: "power3.out",});
+      gsap.to(bottomBar.current, { rotate: 0, y: 0, duration: 0.3,
+        ease: "power3.out",});
+    }
+  };
 
   // Refs for audio and navigation container
 
@@ -81,7 +104,7 @@ const NavBar = () => {
   return (
     <div
       ref={navContainerRef}
-      className="fixed inset-x-0 top-4 z-50 h-16 border-none transition-all duration-700 sm:inset-x-6"
+      className="fixed  top-4 z-50 h-16 border-none transition-all duration-700 inset-x-6"
     >
       <header className="absolute top-1/2 w-full -translate-y-1/2">
         <nav className="flex size-full items-center justify-between p-4">
@@ -110,6 +133,18 @@ const NavBar = () => {
             title="Contact"
             containerClass="md:flex text-foreground px-10 border-purple   font-bold border-2 py-2 hidden items-center justify-center gap-1"
           />
+          <div onClick={toggleMenu} className="text-2xl cursor-pointer">
+            <div className="md:hidden flex flex-col gap-1.5">
+              <span
+                ref={topBar}
+                className="w-8 h-0.5 block rounded bg-foreground transition-all"
+              ></span>
+              <span
+                ref={bottomBar}
+                className="w-8 h-0.5 block rounded bg-foreground transition-all"
+              ></span>
+            </div>
+          </div>
         </nav>
       </header>
     </div>
