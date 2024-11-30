@@ -16,6 +16,16 @@ body {
 .swiper-button-prev, .swiper-button-next{
    color: #5d3fd3 !important
 }
+.scroll-section {
+  position: relative;
+  opacity: 0;
+  transform: translateY(100%);
+}
+
+.scroll-section:first-child {
+  opacity: 1;
+  transform: translateY(0);
+}
 
 @layer utilities {
   .border-hsla {

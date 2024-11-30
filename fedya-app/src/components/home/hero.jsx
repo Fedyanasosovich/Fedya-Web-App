@@ -4,10 +4,10 @@ import Image from "next/image";
 const Hero = () => {
   return (
     <div className=" bg-grid-lines  ">
-      <div className="flex items-center   min-h-svh container   ">
-        <div className="flex justify-between items-center w-full gap-6">
-          <div className="max-w-2xl flex flex-col gap-6">
-            <h1 className="text-8xl font-taviraj">
+      <div className="flex items-center  min-h-svh container   ">
+        <div className="flex lg:flex-row flex-col     justify-between items-center w-full gap-12">
+          <div className="max-w-2xl lg:text-start text-center flex flex-col gap-6">
+            <h1 className="text-5xl  lg:text-8xl font-taviraj">
               PFIZER <br /> GENOTROPIN
             </h1>
             <p className="italic">
@@ -23,7 +23,7 @@ const Hero = () => {
           <Image
             src="/images/hero-1.jpeg"
             width={400}
-            className="rounded-xl shadow-2xl"
+            className="rounded-xl w-full lg:w-[400]   shadow-2xl"
             height={400}
             alt="Pfizer Genotropin"
           />
