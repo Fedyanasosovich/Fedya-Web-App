@@ -48,16 +48,32 @@ const NavBar = () => {
 
     if (!hamburgerClick) {
       // Animate to cross
-      gsap.to(topBar.current, { rotate: 45, y: 6, duration: 0.3,
-        ease: "power3.out", });
-      gsap.to(bottomBar.current, { rotate: -45, y: -2, duration: 0.3,
-        ease: "power3.out",});
+      gsap.to(topBar.current, {
+        rotate: 45,
+        y: 6,
+        duration: 0.3,
+        ease: "power3.out",
+      });
+      gsap.to(bottomBar.current, {
+        rotate: -45,
+        y: -2,
+        duration: 0.3,
+        ease: "power3.out",
+      });
     } else {
       // Animate back to hamburger
-      gsap.to(topBar.current, { rotate: 0, y: 0, duration: 0.3,
-        ease: "power3.out",});
-      gsap.to(bottomBar.current, { rotate: 0, y: 0, duration: 0.3,
-        ease: "power3.out",});
+      gsap.to(topBar.current, {
+        rotate: 0,
+        y: 0,
+        duration: 0.3,
+        ease: "power3.out",
+      });
+      gsap.to(bottomBar.current, {
+        rotate: 0,
+        y: 0,
+        duration: 0.3,
+        ease: "power3.out",
+      });
     }
   };
 
@@ -101,52 +117,113 @@ const NavBar = () => {
     });
   }, [isNavVisible]);
 
+  const navRef = useRef(null);
+
+  useEffect(() => {
+    if (navRef.current) {
+      if (hamburgerClick) {
+        // Animate the height of the nav element to expand
+        gsap.to(navRef.current, {
+          height: "auto", // Animate to auto height
+          duration: 0.5,
+          ease: "power2.out",
+        });
+      } else {
+        // Animate the height of the nav element to collapse
+        gsap.to(navRef.current, {
+          height: 0, // Collapse nav to 0 height
+          duration: 0.5,
+          ease: "power2.in",
+        });
+      }
+    }
+  }, [hamburgerClick]);
+
   return (
-    <div
-      ref={navContainerRef}
-      className="fixed  top-4 z-50 h-16 border-none transition-all duration-700 inset-x-6"
-    >
-      <header className="absolute top-1/2 w-full -translate-y-1/2">
-        <nav className="flex size-full items-center justify-between p-4">
-          {/* Logo and Product button */}
-          <div className="flex items-center gap-7">
-            <img src="/images/F.png" alt="logo" className="w-10" />
-          </div>
+    <div className="">
+      <div
+        ref={navContainerRef}
+        className={clsx(
+          "fixed  top-4 z-50 h-16 border-none transition-all duration-700 inset-x-6"
+        )}
+      >
+        <header className="">
+          <div className="absolute top-1/2 w-full -translate-y-1/2">
+            <nav className="flex size-full items-center justify-between p-4">
+              {/* Logo and Product button */}
+              <div className="flex items-center gap-7">
+                <img src="/images/F.png" alt="logo" className="w-10" />
+              </div>
 
-          {/* Navigation Links and Audio Button */}
-          <div className="flex h-full items-center l">
-            <div className="hidden md:block">
-              {navItems.map((item, index) => (
-                <a
-                  key={index}
-                  href={`#${item.toLowerCase()}`}
-                  className="nav-hover-btn py-"
-                >
-                  {item}
-                </a>
-              ))}
-            </div>
-          </div>
+              {/* Navigation Links and Audio Button */}
+              <div className="flex h-full items-center l">
+                <div className="hidden md:block">
+                  {navItems.map((item, index) => (
+                    <a
+                      key={index}
+                      href={`#${item.toLowerCase()}`}
+                      className="nav-hover-btn py-"
+                    >
+                      {item}
+                    </a>
+                  ))}
+                </div>
+              </div>
 
+              <Button
+                id="product-button"
+                title="Contact"
+                containerClass="md:flex text-foreground px-10 border-purple   font-bold border-2 py-2 hidden items-center justify-center gap-1"
+              />
+              <div
+                onClick={toggleMenu}
+                className="text-2xl md:hidden block cursor-pointer"
+              >
+                <div className=" flex flex-col gap-1.5">
+                  <span
+                    ref={topBar}
+                    className="w-8 h-0.5 block rounded bg-foreground transition-all"
+                  ></span>
+                  <span
+                    ref={bottomBar}
+                    className="w-8 h-0.5 block rounded bg-foreground transition-all"
+                  ></span>
+                </div>
+              </div>
+            </nav>
+          </div>
+        </header>
+      </div>
+      <nav
+        ref={navRef}
+        className={clsx(
+          "mobile-nav bg-[#0a0521] z-30 absolute inset-0 overflow-hidden",
+          !hamburgerClick && "h-0"
+        )}
+      >
+        <div className="pt-20 pb-12 flex flex-col h-full items-center font-taviraj gap-4">
+          {navItems.map((item, index) => (
+            <a
+              key={index}
+              href={`#${item.toLowerCase()}`}
+              className="nav-hover-btn !mx-0 !text-2xl"
+            >
+              {item}
+            </a>
+          ))}
+          <a href="#" className="nav-hover-btn !mx-0 !text-2xl">
+            Text Test
+          </a>
+          <a href="#" className="nav-hover-btn !mx-0 !text-2xl">
+            Text Test
+          </a>
           <Button
             id="product-button"
             title="Contact"
-            containerClass="md:flex text-foreground px-10 border-purple   font-bold border-2 py-2 hidden items-center justify-center gap-1"
+            containerClass="flex text-foreground px-10 border-purple font-bold border-2 py-2 items-center justify-center gap-1 mt-auto"
           />
-          <div onClick={toggleMenu} className="text-2xl md:hidden block cursor-pointer">
-            <div className=" flex flex-col gap-1.5">
-              <span
-                ref={topBar}
-                className="w-8 h-0.5 block rounded bg-foreground transition-all"
-              ></span>
-              <span
-                ref={bottomBar}
-                className="w-8 h-0.5 block rounded bg-foreground transition-all"
-              ></span>
-            </div>
-          </div>
-        </nav>
-      </header>
+        </div>
+      </nav>
     </div>
   );
 };

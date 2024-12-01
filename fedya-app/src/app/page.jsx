@@ -89,6 +89,36 @@ export default function Home() {
       title: "Why You Should Trust Me",
       videoSrc: "https://www.youtube.com/embed/4UZrsTqkcW4",
     },
+    {
+      imageSrc: "/images/slider-img-1.webp",
+      title: "Why You Should Trust Me",
+      videoSrc: "https://www.youtube.com/embed/4UZrsTqkcW4",
+    },
+    {
+      imageSrc: "/images/slider-img-1.webp",
+      title: "Why You Should Trust Me",
+      videoSrc: "https://www.youtube.com/embed/4UZrsTqkcW4",
+    },
+    {
+      imageSrc: "/images/slider-img-1.webp",
+      title: "Why You Should Trust Me",
+      videoSrc: "https://www.youtube.com/embed/4UZrsTqkcW4",
+    },
+    {
+      imageSrc: "/images/slider-img-1.webp",
+      title: "Why You Should Trust Me",
+      videoSrc: "https://www.youtube.com/embed/4UZrsTqkcW4",
+    },
+    {
+      imageSrc: "/images/slider-img-1.webp",
+      title: "Why You Should Trust Me",
+      videoSrc: "https://www.youtube.com/embed/4UZrsTqkcW4",
+    },
+    {
+      imageSrc: "/images/slider-img-1.webp",
+      title: "Why You Should Trust Me",
+      videoSrc: "https://www.youtube.com/embed/4UZrsTqkcW4",
+    },
   ];
 
   return (
@@ -167,6 +197,7 @@ export default function Home() {
                     className="w-full max-w-[1500px] object-cover rounded-lg"
                     width={1500}
                     height={200}
+                    alt={item.title}
                   />
                   <h2 className="text-xl md:text-3xl absolute bottom-0 z-30 p-2 font-taviraj">
                     {item.title}
