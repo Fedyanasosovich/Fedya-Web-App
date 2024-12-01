@@ -1,6 +1,6 @@
 "use client";
 import Hero from "@/components/home/hero";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -9,7 +9,8 @@ import "swiper/css";
 import "swiper/css/navigation";
 import Image from "next/image";
 import Footer from "@/components/footer/Footer";
-
+import { IoCloseOutline } from "react-icons/io5";
+import { BiLoaderAlt } from "react-icons/bi";
 export default function Home() {
   const sliderItems = [
     { src: "/images/slider-img-1.webp", altText: "slider image 1" },
@@ -50,6 +51,45 @@ export default function Home() {
       }
     });
   }, []);
+  const [openModalIndex, setOpenModalIndex] = useState(null);
+  const [videoLoading, setVideoLoading] = useState(true);
+
+  const openModal = (index) => {
+    // Toggle modal visibility: If the same modal is clicked again, close it.
+    setOpenModalIndex(openModalIndex === index ? null : index);
+  };
+
+  const spinner = () => {
+    setVideoLoading(!videoLoading);
+  };
+
+  const gridItems = [
+    {
+      imageSrc: "/images/slider-img-1.webp",
+      title: "Why You Should Trust Me",
+      videoSrc: "https://www.youtube.com/embed/4UZrsTqkcW4",
+    },
+    {
+      imageSrc: "/images/slider-img-1.webp",
+      title: "Why You Should Trust Me",
+      videoSrc: "https://www.youtube.com/embed/4UZrsTqkcW4",
+    },
+    {
+      imageSrc: "/images/slider-img-1.webp",
+      title: "Why You Should Trust Me",
+      videoSrc: "https://www.youtube.com/embed/4UZrsTqkcW4",
+    },
+    {
+      imageSrc: "/images/slider-img-1.webp",
+      title: "Why You Should Trust Me",
+      videoSrc: "https://www.youtube.com/embed/4UZrsTqkcW4",
+    },
+    {
+      imageSrc: "/images/slider-img-1.webp",
+      title: "Why You Should Trust Me",
+      videoSrc: "https://www.youtube.com/embed/4UZrsTqkcW4",
+    },
+  ];
 
   return (
     <>
@@ -69,6 +109,7 @@ export default function Home() {
         </div>
 
         {/* Second Section */}
+
         <div className="scroll-section  pt-28">
           <div className="pb-10">
             <h2 className="text-3xl lg:text-5xl font-taviraj">
@@ -91,8 +132,7 @@ export default function Home() {
             className="mySwiper px-20"
             breakpoints={{
               300: { slidesPerView: 1 },
-              768: { slidesPerView: 3},
-             
+              768: { slidesPerView: 3 },
             }}
           >
             {sliderItems.map((items, i) => (
@@ -108,82 +148,127 @@ export default function Home() {
             ))}
           </Swiper>
         </div>
+        <div className="pt-0 md:pt-32">
+          <div className="  pt-28 lg:pt-24 pb-14">
+            <h2 className="text-3xl lg:text-5xl text-center font-taviraj">
+              Why You Should Trust Me
+            </h2>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
+            {gridItems.map((item, index) => (
+              <div
+                key={index}
+                onClick={() => openModal(index)} // Pass the index to open the correct modal
+                className="cursor-pointer  w-full"
+              >
+                <div className="relative  w-full before:absolute before:left-0 before:right-0 before:top-0 before:z-10 before:h-full before:w-full before:bg-black before:opacity-50">
+                  <Image
+                    src={item.imageSrc}
+                    className="w-full max-w-[1500px] object-cover rounded-lg"
+                    width={1500}
+                    height={200}
+                  />
+                  <h2 className="text-xl md:text-3xl absolute bottom-0 z-30 p-2 font-taviraj">
+                    {item.title}
+                  </h2>
+                </div>
 
-        {/* Third Section */}
-        <div className="scroll-section  pt-28 lg:pt-24">
-          <div className="pb-10">
-            <h2 className="text-3xl lg:text-5xl text-center font-taviraj">
-              Why You Should Trust Me
-            </h2>
+                {/* Conditionally render the modal if it matches the openModalIndex */}
+                {openModalIndex === index && (
+                  <section className="modal__bg">
+                    <div className="modal__align">
+                      <div className="modal__content">
+                        <IoCloseOutline
+                          className="modal__close"
+                          aria-label="Close modal"
+                          onClick={() => setOpenModalIndex(null)} // Close modal
+                        />
+                        <div className="modal__video-align">
+                          {videoLoading ? (
+                            <div className="modal__spinner">
+                              <BiLoaderAlt
+                                className="modal__spinner-style"
+                                fadeIn="none"
+                              />
+                            </div>
+                          ) : null}
+                          <iframe
+                            className="modal__video-style"
+                            onLoad={spinner}
+                            loading="lazy"
+                            width="800"
+                            height="500"
+                            src={item.videoSrc}
+                            title="YouTube video player"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowFullScreen
+                          ></iframe>
+                        </div>
+                      </div>
+                    </div>
+                  </section>
+                )}
+              </div>
+            ))}
           </div>
-          <div className="flex flex-col mx-auto gap-3 max-w-4xl text-center">
-            <iframe
-              className="video_frame max-w-[900px] w-full md:h-[500px] h-[200px]"
-              src="https://player.vimeo.com/video/361158553?autoplay=1"
-            ></iframe>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis
-              alias velit corporis facere in quaerat incidunt temporibus ducimus
-              esse, nostrum, magni quia.
-            </p>
+
+          {/*
+          <div className=" pt-28 lg:pt-24">
+            <div className="pb-10">
+              <h2 className="text-3xl lg:text-5xl text-center font-taviraj">
+                Why You Should Trust Me
+              </h2>
+            </div>
+            <div className="flex flex-col mx-auto gap-3 max-w-4xl text-center">
+              <iframe
+                className="video_frame max-w-[900px] w-full md:h-[500px] h-[200px]"
+                src="https://player.vimeo.com/video/361158553?autoplay=1"
+              ></iframe>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Veritatis alias velit corporis facere in quaerat incidunt
+                temporibus ducimus esse, nostrum, magni quia.
+              </p>
+            </div>
           </div>
-        </div>
-        {/* Third Section */}
-        <div className="scroll-section pt-28 lg:pt-24">
-          <div className="pb-10">
-            <h2 className="text-3xl lg:text-5xl text-center font-taviraj">
-              Why You Should Trust Me
-            </h2>
+         
+          <div className="pt-28 lg:pt-24">
+            <div className="pb-10">
+              <h2 className="text-3xl lg:text-5xl text-center font-taviraj">
+                Why You Should Trust Me
+              </h2>
+            </div>
+            <div className="flex flex-col mx-auto gap-3 max-w-4xl text-center">
+              <iframe
+                className="video_frame max-w-[900px] w-full md:h-[500px] h-[200px]"
+                src="https://player.vimeo.com/video/361158553?autoplay=1"
+              ></iframe>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Veritatis alias velit corporis facere in quaerat incidunt
+                temporibus ducimus esse, nostrum, magni quia.
+              </p>
+            </div>
           </div>
-          <div className="flex flex-col mx-auto gap-3 max-w-4xl text-center">
-            <iframe
-              className="video_frame max-w-[900px] w-full md:h-[500px] h-[200px]"
-              src="https://player.vimeo.com/video/361158553?autoplay=1"
-            ></iframe>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis
-              alias velit corporis facere in quaerat incidunt temporibus ducimus
-              esse, nostrum, magni quia.
-            </p>
-          </div>
-        </div>
-        {/* Third Section */}
-        <div className="scroll-section pt-28 lg:pt-24">
-          <div className="pb-10">
-            <h2 className="text-3xl lg:text-5xl text-center font-taviraj">
-              Why You Should Trust Me
-            </h2>
-          </div>
-          <div className="flex flex-col mx-auto gap-3 max-w-4xl text-center">
-            <iframe
-              className="video_frame max-w-[900px] w-full md:h-[500px] h-[200px]"
-              src="https://player.vimeo.com/video/361158553?autoplay=1"
-            ></iframe>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis
-              alias velit corporis facere in quaerat incidunt temporibus ducimus
-              esse, nostrum, magni quia.
-            </p>
-          </div>
-        </div>
-        {/* Third Section */}
-        <div className="scroll-section pt-28 lg:pt-24">
-          <div className="pb-10">
-            <h2 className="text-3xl lg:text-5xl text-center font-taviraj">
-              Why You Should Trust Me
-            </h2>
-          </div>
-          <div className="flex flex-col mx-auto gap-3 max-w-4xl text-center">
-            <iframe
-              className="video_frame max-w-[900px] w-full md:h-[500px] h-[200px]"
-              src="https://player.vimeo.com/video/361158553?autoplay=1"
-            ></iframe>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis
-              alias velit corporis facere in quaerat incidunt temporibus ducimus
-              esse, nostrum, magni quia.
-            </p>
-          </div>
+         
+          <div className=" pt-28 lg:pt-24">
+            <div className="pb-10">
+              <h2 className="text-3xl lg:text-5xl text-center font-taviraj">
+                Why You Should Trust Me
+              </h2>
+            </div>
+            <div className="flex flex-col mx-auto gap-3 max-w-4xl text-center">
+              <iframe
+                className="video_frame max-w-[900px] w-full md:h-[500px] h-[200px]"
+                src="https://player.vimeo.com/video/361158553?autoplay=1"
+              ></iframe>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Veritatis alias velit corporis facere in quaerat incidunt
+                temporibus ducimus esse, nostrum, magni quia.
+              </p>
+            </div>
+          </div> */}
         </div>
       </div>
 
