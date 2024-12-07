@@ -151,8 +151,12 @@ const NavBar = () => {
           <div className="absolute top-1/2 w-full -translate-y-1/2">
             <nav className="flex size-full items-center justify-between p-4">
               {/* Logo and Product button */}
-              <div className="flex items-center gap-7">
+              <div className="flex items-center gap-2">
                 <img src="/images/F.png" alt="logo" className="w-10" />
+                <div className="flex flex-col gap-0 font-medium leading-none text-lg ">
+                  <span className="text-golden">Fedya</span>
+                  <span>Nasosovich</span>
+                </div>
               </div>
 
               {/* Navigation Links and Audio Button */}
