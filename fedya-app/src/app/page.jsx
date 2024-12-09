@@ -13,6 +13,14 @@ import { IoCloseOutline } from "react-icons/io5";
 import { BiLoaderAlt } from "react-icons/bi";
 
 export default function Home() {
+  const sliderItems = [
+    { url: "/images/slider-img-1.webp", key: "slider image 1" },
+    { url: "/images/slider-img-2.webp", key: "slider image 2" },
+    { url: "/images/slider-img-3.webp", key: "slider image 3" },
+    { url: "/images/slider-img-4.webp", key: "slider image 4" },
+    { url: "/images/slider-img-5.webp", key: "slider image 5" },
+  ];
+
   // useEffect(() => {
   //   gsap.registerPlugin(ScrollTrigger);
 
@@ -69,14 +77,14 @@ export default function Home() {
     },
   ];
 
-  // function callingAfterAweekAutomatically(apiCall) {
-  //   apiCall();
+  function callingAfterAweekAutomatically(apiCall) {
+    apiCall();
 
-  //   // Set timeout for one week (604800 seconds)
-  //   setTimeout(() => {
-  //     callingAfterAweekAutomatically(apiCall); // Recursively call the function
-  //   }, 604800 * 1000); // Convert seconds to milliseconds
-  // }
+    // Set timeout for one week (604800 seconds)
+    setTimeout(() => {
+      callingAfterAweekAutomatically(apiCall); // Recursively call the function
+    }, 604800 * 1000); // Convert seconds to milliseconds
+  }
 
   async function fetchAllFileUrls(bucketName) {
     try {
@@ -104,7 +112,7 @@ export default function Home() {
   }
 
   useEffect(() => {
-    loadFiles();
+    callingAfterAweekAutomatically(loadFiles);
   }, []);
 
   const separateFiles = files.reduce(
@@ -169,18 +177,17 @@ export default function Home() {
               768: { slidesPerView: 3 },
             }}
           >
-            {images &&
-              images.map((items, i) => (
-                <SwiperSlide key={i} className="px-14">
-                  <Image
-                    src={items.url}
-                    width={300}
-                    height={300}
-                    className="h-64 w-full object-cover rounded"
-                    alt={items.key}
-                  />
-                </SwiperSlide>
-              ))}
+            {sliderItems.map((items, i) => (
+              <SwiperSlide key={i} className="px-14">
+                <Image
+                  src={items.url}
+                  width={300}
+                  height={300}
+                  className="h-64 w-full object-cover rounded"
+                  alt={items.key}
+                />
+              </SwiperSlide>
+            ))}
           </Swiper>
         </div>
         <div className="pt-32 lg:pt-48">
