@@ -11,6 +11,7 @@
   "dependencies": {
     "@gsap/react": "^2.1.1",
     "@studio-freight/lenis": "^1.0.42",
+    "aws-sdk": "^2.1692.0",
     "clsx": "^2.1.1",
     "gsap": "^3.12.5",
     "react": "19.0.0-rc-66855b96-20241106",

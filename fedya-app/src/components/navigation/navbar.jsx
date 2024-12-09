@@ -7,6 +7,7 @@ import { useEffect, useRef, useState } from "react";
 import { TiLocationArrow } from "react-icons/ti";
 import { HiOutlineMenuAlt4 } from "react-icons/hi";
 import { RxCross2 } from "react-icons/rx";
+import Lenis from "@studio-freight/lenis";
 const Button = ({ id, title, rightIcon, leftIcon, containerClass }) => {
   return (
     <button
@@ -90,6 +91,27 @@ const NavBar = () => {
     setIsAudioPlaying((prev) => !prev);
     setIsIndicatorActive((prev) => !prev);
   };
+
+  useEffect(() => {
+    // Initialize Lenis
+    const lenis = new Lenis({
+      duration: 1.2,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // Custom easing function
+      smooth: true,
+    });
+
+    // Animation function
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+
+    // Start the animation loop
+    requestAnimationFrame(raf);
+
+    // Cleanup on component unmount
+    return () => lenis.destroy();
+  }, []);
 
   useEffect(() => {
     if (currentScrollY === 0) {

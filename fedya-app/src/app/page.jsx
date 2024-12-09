@@ -11,6 +11,7 @@ import Image from "next/image";
 import Footer from "@/components/footer/Footer";
 import { IoCloseOutline } from "react-icons/io5";
 import { BiLoaderAlt } from "react-icons/bi";
+
 export default function Home() {
   const sliderItems = [
     { src: "/images/slider-img-1.webp", altText: "slider image 1" },
@@ -76,6 +77,63 @@ export default function Home() {
     },
   ];
 
+  function callingAfterAweekAutomatically(apiCall) {
+    apiCall();
+
+    // Set timeout for one week (604800 seconds)
+    setTimeout(() => {
+      callingAfterAweekAutomatically(apiCall); // Recursively call the function
+    }, 604800 * 1000); // Convert seconds to milliseconds
+  }
+
+  async function fetchAllFileUrls(bucketName) {
+    try {
+      const response = await fetch("/api/getPresignedUrl", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ bucketName }),
+      });
+
+      const data = await response.json();
+      return data.urls; // Array of objects with { key, url }
+    } catch (error) {
+      console.error("Error fetching file URLs:", error);
+      return [];
+    }
+  }
+
+  const [files, setFiles] = useState([]);
+
+  async function loadFiles() {
+    const fileUrls = await fetchAllFileUrls("buypfizergenotropinhgh.com");
+    setFiles(fileUrls);
+  }
+
+  useEffect(() => {
+    callingAfterAweekAutomatically(loadFiles);
+  }, []);
+
+  const separateFiles = files.reduce(
+    (acc, file) => {
+      const extension = file.key.split(".").pop().toLowerCase();
+      if (["jpg", "jpeg", "png"].includes(extension)) {
+        acc.images.push(file);
+      } else if (["mp4"].includes(extension)) {
+        acc.videos.push(file);
+      }
+      return acc;
+    },
+    { images: [], videos: [] }
+  );
+
+  // You now have separate arrays for images and videos
+  const { images, videos } = separateFiles;
+  useEffect(() => {
+    console.log(images);
+    console.log(videos);
+  }, [files]);
   return (
     <>
       <Hero />
@@ -119,14 +177,14 @@ export default function Home() {
               768: { slidesPerView: 3 },
             }}
           >
-            {sliderItems.map((items, i) => (
+            {images && images.map((items, i) => (
               <SwiperSlide key={i} className="px-14">
                 <Image
-                  src={items.src}
+                  src={items.url}
                   width={300}
                   height={300}
                   className="h-64 w-full object-cover rounded"
-                  alt={items.altText}
+                  alt={items.key}
                 />
               </SwiperSlide>
             ))}
@@ -206,10 +264,12 @@ export default function Home() {
             Payment by Credit card through PayPal Bank Wire or Western
             Union/Moneygram Worldwide shipping via discreet packaging. UK USA
             CANADA and EUROPE have 100% success rate over 22 years of shipping
-            !!!! No hidden costs all fees included. 
+            !!!! No hidden costs all fees included.
           </p>
-          <p className="mt-10">PLEASE NOTE THIS IS THE
-          LATEST PACKAGING STARTING FROM THE BEGINNING OF 2023</p>
+          <p className="mt-10">
+            PLEASE NOTE THIS IS THE LATEST PACKAGING STARTING FROM THE BEGINNING
+            OF 2023
+          </p>
         </div>
       </div>
 
