@@ -13,14 +13,6 @@ import { IoCloseOutline } from "react-icons/io5";
 import { BiLoaderAlt } from "react-icons/bi";
 
 export default function Home() {
-  const sliderItems = [
-    { url: "/images/slider-img-1.webp", key: "slider image 1" },
-    { url: "/images/slider-img-2.webp", key: "slider image 2" },
-    { url: "/images/slider-img-3.webp", key: "slider image 3" },
-    { url: "/images/slider-img-4.webp", key: "slider image 4" },
-    { url: "/images/slider-img-5.webp", key: "slider image 5" },
-  ];
-
   // useEffect(() => {
   //   gsap.registerPlugin(ScrollTrigger);
 
@@ -177,17 +169,18 @@ export default function Home() {
               768: { slidesPerView: 3 },
             }}
           >
-            {sliderItems.map((items, i) => (
-              <SwiperSlide key={i} className="px-14">
-                <Image
-                  src={items.url}
-                  width={300}
-                  height={300}
-                  className="h-64 w-full object-cover rounded"
-                  alt={items.key}
-                />
-              </SwiperSlide>
-            ))}
+            {images &&
+              images.map((items, i) => (
+                <SwiperSlide key={i} className="px-14">
+                  <Image
+                    src={items.url}
+                    width={300}
+                    height={300}
+                    className="h-64 w-full object-cover rounded"
+                    alt={items.key}
+                  />
+                </SwiperSlide>
+              ))}
           </Swiper>
         </div>
         <div className="pt-32 lg:pt-48">
