@@ -122,6 +122,7 @@ const NavBar = () => {
   useEffect(() => {
     if (navRef.current) {
       if (hamburgerClick) {
+        document.body.style.overflow = "hidden";
         // Animate the height of the nav element to expand
         gsap.to(navRef.current, {
           height: "auto", // Animate to auto height
@@ -130,6 +131,7 @@ const NavBar = () => {
         });
       } else {
         // Animate the height of the nav element to collapse
+        document.body.style.overflow = "";
         gsap.to(navRef.current, {
           height: 0, // Collapse nav to 0 height
           duration: 0.5,
@@ -140,11 +142,11 @@ const NavBar = () => {
   }, [hamburgerClick]);
 
   return (
-    <div className="">
+    <div>
       <div
         ref={navContainerRef}
         className={clsx(
-          "fixed  top-4 z-50 h-16 border-none transition-all duration-700 inset-x-6"
+          "fixed  top-4 z-50 h-16 border-none transition-all duration-700 inset-x-4 lg:inset-x-6"
         )}
       >
         <header className="">
@@ -201,11 +203,11 @@ const NavBar = () => {
       <nav
         ref={navRef}
         className={clsx(
-          "mobile-nav bg-[#0a0521] z-30 absolute inset-0 overflow-hidden",
+          "mobile-nav bg-[#0a0521] z-30 fixed inset-0   overflow-hidden",
           !hamburgerClick && "h-0"
         )}
       >
-        <div className="pt-20 pb-12 flex flex-col h-full items-center font-taviraj gap-4">
+        <div className="pt-28 pb-12 flex flex-col h-full items-center font-taviraj gap-4">
           {navItems.map((item, index) => (
             <a
               key={index}

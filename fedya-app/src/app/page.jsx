@@ -20,37 +20,37 @@ export default function Home() {
     { src: "/images/slider-img-5.webp", altText: "slider image 5" },
   ];
 
-  useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
+  // useEffect(() => {
+  //   gsap.registerPlugin(ScrollTrigger);
 
-    const sections = gsap.utils.toArray(".scroll-section");
+  //   const sections = gsap.utils.toArray(".");
 
-    sections.forEach((section, i) => {
-      const nextSection = sections[i + 1];
+  //   sections.forEach((section, i) => {
+  //     const nextSection = sections[i + 1];
 
-      if (nextSection) {
-        // Define timeline for fading out the current section and fading in the next section
-        const tl = gsap.timeline({
-          scrollTrigger: {
-            trigger: section,
-            start: "top top", // Trigger when the current section starts to scroll into view
-            end: "bottom top", // End when the section leaves the screen
-            scrub: true,
-            pin: true, // Pin the section in place while it's fading out
-            pinSpacing: false,
-          },
-        });
+  //     if (nextSection) {
+  //       // Define timeline for fading out the current section and fading in the next section
+  //       const tl = gsap.timeline({
+  //         scrollTrigger: {
+  //           trigger: section,
+  //           start: "top top", // Trigger when the current section starts to scroll into view
+  //           end: "bottom top", // End when the section leaves the screen
+  //           scrub: true,
+  //           pin: true, // Pin the section in place while it's fading out
+  //           pinSpacing: false,
+  //         },
+  //       });
 
-        tl.to(section, { opacity: 0, y: -50 }, 0) // Fade out the current section
-          .fromTo(
-            nextSection,
-            { opacity: 0, y: 50 },
-            { opacity: 1, y: 0 },
-            "<"
-          ); // Fade in the next section
-      }
-    });
-  }, []);
+  //       tl.to(section, { opacity: 0, y: -50 }, 0) // Fade out the current section
+  //         .fromTo(
+  //           nextSection,
+  //           { opacity: 0, y: 50 },
+  //           { opacity: 1, y: 0 },
+  //           "<"
+  //         ); // Fade in the next section
+  //     }
+  //   });
+  // }, []);
   const [openModalIndex, setOpenModalIndex] = useState(null);
   const [videoLoading, setVideoLoading] = useState(true);
 
@@ -74,51 +74,6 @@ export default function Home() {
       title: "Why You Should Trust Me",
       videoSrc: "https://www.youtube.com/embed/4UZrsTqkcW4",
     },
-    {
-      imageSrc: "/images/slider-img-1.webp",
-      title: "Why You Should Trust Me",
-      videoSrc: "https://www.youtube.com/embed/4UZrsTqkcW4",
-    },
-    {
-      imageSrc: "/images/slider-img-1.webp",
-      title: "Why You Should Trust Me",
-      videoSrc: "https://www.youtube.com/embed/4UZrsTqkcW4",
-    },
-    {
-      imageSrc: "/images/slider-img-1.webp",
-      title: "Why You Should Trust Me",
-      videoSrc: "https://www.youtube.com/embed/4UZrsTqkcW4",
-    },
-    {
-      imageSrc: "/images/slider-img-1.webp",
-      title: "Why You Should Trust Me",
-      videoSrc: "https://www.youtube.com/embed/4UZrsTqkcW4",
-    },
-    {
-      imageSrc: "/images/slider-img-1.webp",
-      title: "Why You Should Trust Me",
-      videoSrc: "https://www.youtube.com/embed/4UZrsTqkcW4",
-    },
-    {
-      imageSrc: "/images/slider-img-1.webp",
-      title: "Why You Should Trust Me",
-      videoSrc: "https://www.youtube.com/embed/4UZrsTqkcW4",
-    },
-    {
-      imageSrc: "/images/slider-img-1.webp",
-      title: "Why You Should Trust Me",
-      videoSrc: "https://www.youtube.com/embed/4UZrsTqkcW4",
-    },
-    {
-      imageSrc: "/images/slider-img-1.webp",
-      title: "Why You Should Trust Me",
-      videoSrc: "https://www.youtube.com/embed/4UZrsTqkcW4",
-    },
-    {
-      imageSrc: "/images/slider-img-1.webp",
-      title: "Why You Should Trust Me",
-      videoSrc: "https://www.youtube.com/embed/4UZrsTqkcW4",
-    },
   ];
 
   return (
@@ -127,28 +82,27 @@ export default function Home() {
 
       <div className="container">
         {/* First Section */}
-        <div className="scroll-section  pt-28 lg:pt-48 text-md lg:text-2xl font-tavirajItalic text-center">
+        <div className="  pt-28 lg:pt-48 text-md lg:text-2xl font-tavirajItalic text-center">
           <p>
-            Personally having used Genotropin it is a Very High quality HGH.
-            People ask me the general difference between the pharmaceutical
-            brands. Genotropin has more water retention and is more suitable for
-            bulking omnitrope a little less and thus more suitable for cutting.
-            However these are minor differences as all pharmaceutical hgh is the
-            best in the world.
+            Dosages for youth and beauty should be at around 3 iu per day. For a
+            model like body around 5iu and for bodybuilding purposes around 7 iu
+            per day is recommended.
           </p>
         </div>
 
         {/* Second Section */}
 
-        <div className="scroll-section  pt-28">
-          <div className="pb-10">
+        <div className="pt-28 lg:pt-48">
+          <div className="lg:pb-10 pb-16">
             <h2 className="text-3xl lg:text-5xl font-taviraj">
               LATEST PACKAGING
             </h2>
             <p className="py-4">
-              It is nothing short of a miracle substance, it is known as the
-              master hormone. For this reason, it builds muscle, burns fat,
-              repairs old injuries and makes you look younger.
+              As you can see in the video after having had access to omnitrope
+              as well as humatrope I have decided to focus exclusively on
+              Genotropin as i find it is the most desirable of all the
+              pharmaceutical brands mg to mg it is much stronger than the other
+              brands . So we have decided to only stock this in the pharmacy.
             </p>
             <p className="italic">Each Pack contains 36iu as pictured below.</p>
           </div>
@@ -178,13 +132,16 @@ export default function Home() {
             ))}
           </Swiper>
         </div>
-        <div className="pt-0 md:pt-32">
-          <div className="  pt-28 lg:pt-24 pb-14">
-            <h2 className="text-3xl lg:text-5xl text-center font-taviraj">
-              Why You Should Trust Me
-            </h2>
-          </div>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
+        <div className="pt-32 lg:pt-48">
+          <p className="">
+            <span className="text-3xl lg:text-5xl font-taviraj">A</span>s you
+            can see in the video after having had access to omnitrope as well as
+            humatrope I have decided to focus exclusively on Genotropin as i
+            find it is the most desirable of all the pharmaceutical brands mg to
+            mg it is much stronger than the other brands . So we have decided to
+            only stock this in the pharmacy.
+          </p>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-2 mt-10  gap-8">
             {gridItems.map((item, index) => (
               <div
                 key={index}
@@ -194,7 +151,7 @@ export default function Home() {
                 <div className="relative  w-full before:absolute before:left-0 before:right-0 before:top-0 before:z-10 before:h-full before:w-full before:bg-black before:opacity-50">
                   <Image
                     src={item.imageSrc}
-                    className="w-full max-w-[1500px] object-cover rounded-lg"
+                    className="w-full max-w-[1500px] max-h-full lg:max-h-[400px] object-cover rounded-lg"
                     width={1500}
                     height={200}
                     alt={item.title}
@@ -242,95 +199,26 @@ export default function Home() {
               </div>
             ))}
           </div>
+        </div>
 
-          {/*
-          <div className=" pt-28 lg:pt-24">
-            <div className="pb-10">
-              <h2 className="text-3xl lg:text-5xl text-center font-taviraj">
-                Why You Should Trust Me
-              </h2>
-            </div>
-            <div className="flex flex-col mx-auto gap-3 max-w-4xl text-center">
-              <iframe
-                className="video_frame max-w-[900px] w-full md:h-[500px] h-[200px]"
-                src="https://player.vimeo.com/video/361158553?autoplay=1"
-              ></iframe>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Veritatis alias velit corporis facere in quaerat incidunt
-                temporibus ducimus esse, nostrum, magni quia.
-              </p>
-            </div>
-          </div>
-         
-          <div className="pt-28 lg:pt-24">
-            <div className="pb-10">
-              <h2 className="text-3xl lg:text-5xl text-center font-taviraj">
-                Why You Should Trust Me
-              </h2>
-            </div>
-            <div className="flex flex-col mx-auto gap-3 max-w-4xl text-center">
-              <iframe
-                className="video_frame max-w-[900px] w-full md:h-[500px] h-[200px]"
-                src="https://player.vimeo.com/video/361158553?autoplay=1"
-              ></iframe>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Veritatis alias velit corporis facere in quaerat incidunt
-                temporibus ducimus esse, nostrum, magni quia.
-              </p>
-            </div>
-          </div>
-         
-          <div className=" pt-28 lg:pt-24">
-            <div className="pb-10">
-              <h2 className="text-3xl lg:text-5xl text-center font-taviraj">
-                Why You Should Trust Me
-              </h2>
-            </div>
-            <div className="flex flex-col mx-auto gap-3 max-w-4xl text-center">
-              <iframe
-                className="video_frame max-w-[900px] w-full md:h-[500px] h-[200px]"
-                src="https://player.vimeo.com/video/361158553?autoplay=1"
-              ></iframe>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Veritatis alias velit corporis facere in quaerat incidunt
-                temporibus ducimus esse, nostrum, magni quia.
-              </p>
-            </div>
-          </div> */}
+        <div className="  pt-28 lg:pt-48 text-md lg:text-2xl font-taviraj  text-center">
+          <p className="font-tavirajItalic">
+            Payment by Credit card through PayPal Bank Wire or Western
+            Union/Moneygram Worldwide shipping via discreet packaging. UK USA
+            CANADA and EUROPE have 100% success rate over 22 years of shipping
+            !!!! No hidden costs all fees included. 
+          </p>
+          <p className="mt-10">PLEASE NOTE THIS IS THE
+          LATEST PACKAGING STARTING FROM THE BEGINNING OF 2023</p>
         </div>
       </div>
 
       {/* form */}
 
       <section className="pt-12 lg:pt-48 ">
-        <div className="container px-4 py-16 sm:px-6 lg:px-8">
-          <div className="grid items-center grid-cols-1 gap-x-16 gap-y-8 lg:grid-cols-5">
-            <div className="lg:col-span-2 lg:py-12">
-              <h2 className="text-2xl lg:text-5xl pb-6 lg:pb-12 font-taviraj">
-                Buy Now
-              </h2>
-              <p className="max-w-xl text-lg">
-                At the same time, the fact that we are wholly owned and totally
-                independent from manufacturer and other group control gives you
-                confidence that we will only recommend what is right for you.
-              </p>
-
-              <div className="mt-8">
-                <a href="#" className="text-lg font-bold text-white">
-                  {" "}
-                  0151 475 4450{" "}
-                </a>
-
-                <address className="mt-2 not-italic">
-                  282 Kevin Brook, Imogeneborough, CA 58517
-                </address>
-              </div>
-            </div>
-
-            <div className="rounded-lg bg-white text-black p-8 shadow-lg lg:col-span-3 lg:p-12">
+        <div className="container px-4 lg:py-16 sm:px-6 lg:px-8">
+          <div className="grid items-center grid-cols-1 gap-x-16 gap-y-8 ">
+            <div className="rounded-lg bg-white text-black px-4 lg:px-8 pt-8 pb-6 shadow-lg lg:col-span-3 lg-px-8">
               <form action="#" className="space-y-4">
                 <div>
                   <label className="sr-only" htmlFor="name">
@@ -437,6 +325,18 @@ export default function Home() {
                   >
                     Order Now
                   </button>
+                </div>
+                <div>
+                  <p>
+                    For custom orders and inquires about hgh, please contact me
+                    directly.{" "}
+                    <a
+                      href="mailto:fedyanasosovich@gmail.com"
+                      className="text-darkPurple underline line-clamp-2 underline-offset-4"
+                    >
+                      fedyanasosovich@gmail.com
+                    </a>
+                  </p>
                 </div>
               </form>
             </div>

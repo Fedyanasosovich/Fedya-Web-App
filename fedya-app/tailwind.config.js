@@ -11,7 +11,8 @@ module.exports = {
         background: "var(--background)",
         foreground: "var(--foreground)",
         purple: "#9a92d9",
-        golden: "#8f8064"
+        golden: "#8f8064",
+        darkPurple: '#800080'
       },
       fontFamily: {
         taviraj: ["var(--taviraj-regular)", "serif"], // Use the custom CSS variable for Taviraj-Regular
