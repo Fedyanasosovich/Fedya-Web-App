@@ -50,6 +50,7 @@ export default function Home() {
   const openModal = (index) => {
     // Toggle modal visibility: If the same modal is clicked again, close it.
     setOpenModalIndex(openModalIndex === index ? null : index);
+ 
   };
 
   const spinner = () => {
@@ -107,7 +108,6 @@ export default function Home() {
     { images: [], videos: [] }
   );
 
-  
   // You now have separate arrays for images and videos
   const { images, videos } = separateFiles;
   const videoOne = videos[0];
@@ -116,7 +116,7 @@ export default function Home() {
   const gridItems = [
     {
       imageSrc: "/images/slider-img-1.webp",
-      title: "Why You Should Trust Me",
+      title: "Buying hgh in a pharmacy hidden camera",
       videoSrc: files.length > 0 && restVideos[0].url,
     },
     {
@@ -228,9 +228,6 @@ export default function Home() {
                     height={200}
                     alt={item.title}
                   />
-                  <h2 className="text-xl md:text-3xl absolute bottom-0 z-30 p-2 font-taviraj">
-                    {item.title}
-                  </h2>
                 </div>
 
                 {/* Conditionally render the modal if it matches the openModalIndex */}
@@ -243,7 +240,7 @@ export default function Home() {
                           aria-label="Close modal"
                           onClick={() => setOpenModalIndex(null)} // Close modal
                         />
-                        <div className="modal__video-align">
+                        <div className="modal__video-align flex-col items-center">
                           {videoLoading ? (
                             <div className="modal__spinner">
                               <BiLoaderAlt
@@ -260,10 +257,14 @@ export default function Home() {
                             height="500"
                             src={item.videoSrc}
                             controls
+                            autoPlay
                             title="YouTube video player"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                             allowFullScreen
                           ></video>
+                          <h2 className="text-2xl text-center  md:text-3xl text-white  bottom-0 z-30 p-2 font-taviraj">
+                            {item.title}
+                          </h2>
                         </div>
                       </div>
                     </div>

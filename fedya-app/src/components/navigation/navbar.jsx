@@ -13,7 +13,7 @@ const Button = ({ id, title, rightIcon, leftIcon, containerClass }) => {
     <button
       id={id}
       className={clsx(
-        "group relative z-10 w-fit cursor-pointer overflow-hidden rounded-full border  px-12 py-2.5",
+        "group relative z-10 w-fit cursor-pointer overflow-hidden border-none bg-darkPurple rounded-full   px-12 py-2.5",
         containerClass
       )}
     >
@@ -179,7 +179,7 @@ const NavBar = () => {
                 <img src="/images/F.png" alt="logo" className="w-10" />
                 <div className="flex flex-col gap-0 font-medium leading-none text-lg ">
                   <span className="text-golden">Fedya</span>
-                  <span>Nasosovich</span>
+                  <span className="text-darkPurple">Nasosovich</span>
                 </div>
               </div>
 
@@ -201,7 +201,7 @@ const NavBar = () => {
               <Button
                 id="product-button"
                 title="Contact"
-                containerClass="md:flex text-foreground px-10 border-purple   font-bold border-2 py-2 hidden items-center justify-center gap-1"
+                containerClass="md:flex text-foreground px-10    font-bold py-2 hidden items-center justify-center gap-1 "
               />
               <div
                 onClick={toggleMenu}
