@@ -56,19 +56,6 @@ export default function Home() {
     setVideoLoading(!videoLoading);
   };
 
-  const gridItems = [
-    {
-      imageSrc: "/images/slider-img-1.webp",
-      title: "Why You Should Trust Me",
-      videoSrc: "https://www.youtube.com/embed/4UZrsTqkcW4",
-    },
-    {
-      imageSrc: "/images/slider-img-1.webp",
-      title: "Why You Should Trust Me",
-      videoSrc: "https://www.youtube.com/embed/4UZrsTqkcW4",
-    },
-  ];
-
   function callingAfterAweekAutomatically(apiCall) {
     apiCall();
 
@@ -120,79 +107,113 @@ export default function Home() {
     { images: [], videos: [] }
   );
 
+  
   // You now have separate arrays for images and videos
   const { images, videos } = separateFiles;
+  const videoOne = videos[0];
+  const restVideos = videos.slice(1);
+
+  const gridItems = [
+    {
+      imageSrc: "/images/slider-img-1.webp",
+      title: "Why You Should Trust Me",
+      videoSrc: files.length > 0 && restVideos[0].url,
+    },
+    {
+      imageSrc: "/images/slider-img-1.webp",
+      title: "Why You Should Trust Me",
+      videoSrc: files.length > 0 && restVideos[1].url,
+    },
+  ];
+
   useEffect(() => {
     console.log(images);
     console.log(videos);
   }, [files]);
+
   return (
     <>
-      <Hero />
+      <Hero vidUrl={files.length > 0 && videoOne.url} />
 
       <div className="container">
         {/* First Section */}
-        <div className="  pt-28 lg:pt-48 text-md lg:text-2xl font-tavirajItalic text-center">
+
+        <div className="  pt-12 lg:pt-48 flex flex-col gap-5 text-md lg:text-2xl  ">
           <p>
+            Human Growth Hormone – Somatropin is the wonder substance of the
+            last few decades. It is used by everyone from models to
+            bodybuilders, athletes to actors from singers to celebrities. It is
+            nothing short of a miracle substance, it is know as the master
+            hormone. For this reason it builds muscle, burns fat, repairs old
+            injuries and makes you look younger.
+          </p>
+          <p className="font-tavirajItalic">
             Dosages for youth and beauty should be at around 3 iu per day. For a
             model like body around 5iu and for bodybuilding purposes around 7 iu
             per day is recommended.
+          </p>
+          <p>
+            As you can see in the video after having had access to omnitrope as
+            well as humatrope I have decided to focus exclusively on Genotropin
+            as i find it is the most desirable of all the pharmaceutical brands
+            mg to mg it is much stronger than the other brands . So we have
+            decided to only stock this in the pharmacy.
+          </p>
+          <p>Each Pack contains 36iu as pictured below.</p>
+          <div className="py-6 lg:pt-48">
+            <Swiper
+              modules={[Navigation, Pagination, Scrollbar, A11y]}
+              spaceBetween={0}
+              slidesPerView={3}
+              pagination={{ clickable: true }}
+              scrollbar={{ draggable: true }}
+              navigation={true}
+              className="mySwiper px-20"
+              breakpoints={{
+                300: { slidesPerView: 1 },
+                768: { slidesPerView: 3 },
+              }}
+            >
+              {images &&
+                images.map((items, i) => (
+                  <SwiperSlide key={i} className="px-14">
+                    <Image
+                      src={items.url}
+                      width={300}
+                      height={300}
+                      className="h-64 w-full object-cover rounded"
+                      alt={items.key}
+                    />
+                  </SwiperSlide>
+                ))}
+            </Swiper>
+          </div>
+          <p>
+            Each order is handled by me personally purchased through the
+            pharmacy with a valid prescription via doctors supervision.
+          </p>
+          <p>
+            Payment by Credit card through PayPal Bank Wire or Western
+            Union/Moneygram
+          </p>
+          <p>Worldwide shipping via discreet packaging.</p>
+          <p>
+            UK USA CANADA and EUROPE have 100% success rate over 17 years of
+            shipping !!!!
+          </p>
+          <p>No hidden costs all fees included.</p>
+          <p>
+            PLEASE NOTE THIS IS THE LATEST PACKAGING STARTING FROM THE BEGINNING
+            OF 2023
           </p>
         </div>
 
         {/* Second Section */}
 
-        <div className="pt-28 lg:pt-48">
-          <div className="lg:pb-10 pb-16">
-            <h2 className="text-3xl lg:text-5xl font-taviraj">
-              LATEST PACKAGING
-            </h2>
-            <p className="py-4">
-              As you can see in the video after having had access to omnitrope
-              as well as humatrope I have decided to focus exclusively on
-              Genotropin as i find it is the most desirable of all the
-              pharmaceutical brands mg to mg it is much stronger than the other
-              brands . So we have decided to only stock this in the pharmacy.
-            </p>
-            <p className="italic">Each Pack contains 36iu as pictured below.</p>
-          </div>
-          <Swiper
-            modules={[Navigation, Pagination, Scrollbar, A11y]}
-            spaceBetween={0}
-            slidesPerView={3}
-            pagination={{ clickable: true }}
-            scrollbar={{ draggable: true }}
-            navigation={true}
-            className="mySwiper px-20"
-            breakpoints={{
-              300: { slidesPerView: 1 },
-              768: { slidesPerView: 3 },
-            }}
-          >
-            {images &&
-              images.map((items, i) => (
-                <SwiperSlide key={i} className="px-14">
-                  <Image
-                    src={items.url}
-                    width={300}
-                    height={300}
-                    className="h-64 w-full object-cover rounded"
-                    alt={items.key}
-                  />
-                </SwiperSlide>
-              ))}
-          </Swiper>
-        </div>
-        <div className="pt-32 lg:pt-48">
-          <p className="">
-            <span className="text-3xl lg:text-5xl font-taviraj">A</span>s you
-            can see in the video after having had access to omnitrope as well as
-            humatrope I have decided to focus exclusively on Genotropin as i
-            find it is the most desirable of all the pharmaceutical brands mg to
-            mg it is much stronger than the other brands . So we have decided to
-            only stock this in the pharmacy.
-          </p>
+        <div className=" lg:pt-48">
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-2 mt-10  gap-8">
+            {/* <video src=""></video> */}
+
             {gridItems.map((item, index) => (
               <div
                 key={index}
@@ -231,17 +252,18 @@ export default function Home() {
                               />
                             </div>
                           ) : null}
-                          <iframe
+                          <video
                             className="modal__video-style"
                             onLoad={spinner}
                             loading="lazy"
                             width="800"
                             height="500"
                             src={item.videoSrc}
+                            controls
                             title="YouTube video player"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                             allowFullScreen
-                          ></iframe>
+                          ></video>
                         </div>
                       </div>
                     </div>
@@ -250,19 +272,6 @@ export default function Home() {
               </div>
             ))}
           </div>
-        </div>
-
-        <div className="  pt-28 lg:pt-48 text-md lg:text-2xl font-taviraj  text-center">
-          <p className="font-tavirajItalic">
-            Payment by Credit card through PayPal Bank Wire or Western
-            Union/Moneygram Worldwide shipping via discreet packaging. UK USA
-            CANADA and EUROPE have 100% success rate over 22 years of shipping
-            !!!! No hidden costs all fees included.
-          </p>
-          <p className="mt-10">
-            PLEASE NOTE THIS IS THE LATEST PACKAGING STARTING FROM THE BEGINNING
-            OF 2023
-          </p>
         </div>
       </div>
 

@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 
-const Hero = () => {
+const Hero = ({ vidUrl }) => {
   return (
     <div className=" bg-grid-lines hero-sec relative overflow-hidden  ">
       <div className="flex items-center  min-h-svh container   ">
@@ -11,7 +11,7 @@ const Hero = () => {
               PFIZER <br /> GENOTROPIN
             </h1>
             <span className="h-1 round block w-full bg-darkPurple"></span>
-            <p className="italic">
+            {/* <p className="italic">
               &quot;Each order is handled by me personally purchased through the
               pharmacy with a valid prescription via doctors supervision.&quot;
             </p>
@@ -22,11 +22,12 @@ const Hero = () => {
               is nothing short of a miracle substance, it is know as the master
               hormone. For this reason it builds muscle, burns fat, repairs old
               injuries and makes you look younger.
-            </p>
+            </p> */}
           </div>
-          <Image
-            src="/images/hero-1.jpeg"
+          <video
+            src={vidUrl}
             width={400}
+            controls
             className="rounded-xl w-full lg:w-[400px]   shadow-2xl"
             height={400}
             alt="Pfizer Genotropin"
