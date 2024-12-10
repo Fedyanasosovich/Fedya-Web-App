@@ -11,9 +11,9 @@ const Hero = ({ vidUrl }) => {
               PFIZER <br /> GENOTROPIN
             </h1>
             <span className="h-1 round block w-full bg-darkPurple"></span>
-            <p className="italic">
+            {/* <p className="italic">
               &quot;Proof of buying hgh in the pharmacy&quot;
-            </p>
+            </p> */}
             {/* <p>
               Human Growth Hormone – Somatropin is the wonder substance of the
               last few decades. It is used by everyone from models to
