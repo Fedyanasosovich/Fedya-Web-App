@@ -11,6 +11,7 @@ import Image from "next/image";
 import Footer from "@/components/footer/Footer";
 import { IoCloseOutline } from "react-icons/io5";
 import { BiLoaderAlt } from "react-icons/bi";
+import { IoIosPlayCircle } from "react-icons/io";
 
 export default function Home() {
   // useEffect(() => {
@@ -50,7 +51,6 @@ export default function Home() {
   const openModal = (index) => {
     // Toggle modal visibility: If the same modal is clicked again, close it.
     setOpenModalIndex(openModalIndex === index ? null : index);
- 
   };
 
   const spinner = () => {
@@ -110,30 +110,33 @@ export default function Home() {
 
   // You now have separate arrays for images and videos
   const { images, videos } = separateFiles;
-  const videoOne = videos[0];
-  const restVideos = videos.slice(1);
+  let middleIndex = Math.floor(videos.length / 2);
+  const videoOne = [videos[middleIndex]];
+  const restVideos = videos
+    .slice(0, middleIndex)
+    .concat(videos.slice(middleIndex + 1));
 
   const gridItems = [
     {
-      imageSrc: "/images/slider-img-1.webp",
+      imageSrc: "/images/thumbnail-1.png",
       title: "Buying hgh in a pharmacy hidden camera",
       videoSrc: files.length > 0 && restVideos[0].url,
     },
     {
-      imageSrc: "/images/slider-img-1.webp",
+      imageSrc: "/images/thumbnail-2.png",
       title: "Why You Should Trust Me",
       videoSrc: files.length > 0 && restVideos[1].url,
     },
   ];
 
   useEffect(() => {
-    console.log(images);
+    // console.log(images);
     console.log(videos);
   }, [files]);
 
   return (
     <>
-      <Hero vidUrl={files.length > 0 && videoOne.url} />
+      <Hero vidUrl={files.length > 0 && videoOne[0].url} />
 
       <div className="container">
         {/* First Section */}
@@ -220,14 +223,17 @@ export default function Home() {
                 onClick={() => openModal(index)} // Pass the index to open the correct modal
                 className="cursor-pointer  w-full"
               >
-                <div className="relative  w-full before:absolute before:left-0 before:right-0 before:top-0 before:z-10 before:h-full before:w-full before:bg-black before:opacity-50">
+                <div className="relative  w-full before:absolute before:left-0 before:right-0 before:top-0 before:z-10 before:h-full h-full z-10 before:w-full before:bg-black before:opacity-50">
                   <Image
                     src={item.imageSrc}
-                    className="w-full max-w-[1500px] max-h-full lg:max-h-[400px] object-cover rounded-lg"
+                    className="w-full max-w-[1500px] h-full max-h-full lg:max-h-[400px] object-cover rounded-lg"
                     width={1500}
                     height={200}
                     alt={item.title}
                   />
+                  <p className="absolute top-1/2 z-20 left-1/2 -translate-x-1/2 -translate-y-1/2">
+                    <IoIosPlayCircle size={54}/>
+                  </p>
                 </div>
 
                 {/* Conditionally render the modal if it matches the openModalIndex */}
