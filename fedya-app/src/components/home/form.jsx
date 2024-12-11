@@ -4,7 +4,6 @@ const Form = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    phone: "",
     product: "",
     paymentMethod: "",
     message: "",
@@ -80,7 +79,7 @@ const Form = () => {
                 />
               </div>
 
-              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+         
                 <div>
                   <label className="sr-only" htmlFor="email">
                     Email
@@ -97,22 +96,8 @@ const Form = () => {
                   />
                 </div>
 
-                <div>
-                  <label className="sr-only" htmlFor="phone">
-                    Phone
-                  </label>
-                  <input
-                    className="w-full rounded-lg border border-gray-600 p-3 text-sm"
-                    placeholder="Phone Number"
-                    type="tel"
-                    id="phone"
-                    name="phone"
-                    value={formData.phone}
-                    onChange={handleChange}
-                    required
-                  />
-                </div>
-              </div>
+               
+            
 
               <div className="grid md:grid-cols-2 gap-4">
                 <div>
