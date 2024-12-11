@@ -12,6 +12,7 @@ import Footer from "@/components/footer/Footer";
 import { IoCloseOutline } from "react-icons/io5";
 import { BiLoaderAlt } from "react-icons/bi";
 import { IoIosPlayCircle } from "react-icons/io";
+import Form from "@/components/home/form";
 
 export default function Home() {
   // useEffect(() => {
@@ -232,7 +233,7 @@ export default function Home() {
                     alt={item.title}
                   />
                   <p className="absolute top-1/2 z-20 left-1/2 -translate-x-1/2 -translate-y-1/2">
-                    <IoIosPlayCircle size={54}/>
+                    <IoIosPlayCircle size={54} />
                   </p>
                 </div>
 
@@ -284,135 +285,7 @@ export default function Home() {
 
       {/* form */}
 
-      <section className="pt-12 lg:pt-48 ">
-        <div className="container px-4 lg:py-16 sm:px-6 lg:px-8">
-          <div className="grid items-center grid-cols-1 gap-x-16 gap-y-8 ">
-            <div className="rounded-lg bg-white text-black px-4 lg:px-8 pt-8 pb-6 shadow-lg lg:col-span-3 lg-px-8">
-              <form action="#" className="space-y-4">
-                <div>
-                  <label className="sr-only" htmlFor="name">
-                    Name
-                  </label>
-                  <input
-                    className="w-full rounded-lg border border-gray-600 p-3 text-sm"
-                    placeholder="Name"
-                    type="text"
-                    id="name"
-                  />
-                </div>
-
-                <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-                  <div>
-                    <label className="sr-only" htmlFor="email">
-                      Email
-                    </label>
-                    <input
-                      className="w-full rounded-lg border border-gray-600 p-3 text-sm"
-                      placeholder="Email address"
-                      type="email"
-                      id="email"
-                    />
-                  </div>
-
-                  <div>
-                    <label className="sr-only" htmlFor="phone">
-                      Phone
-                    </label>
-                    <input
-                      className="w-full rounded-lg border border-gray-600 p-3 text-sm"
-                      placeholder="Phone Number"
-                      type="tel"
-                      id="phone"
-                    />
-                  </div>
-                </div>
-
-                <div className="grid md:grid-cols-2 gap-4">
-                  <div>
-                    <label className="sr-only" htmlFor="product">
-                      Product
-                    </label>
-                    <select
-                      id="product"
-                      className="w-full rounded-lg text-black border border-gray-600 p-3 text-sm"
-                    >
-                      <option value="">Select Quantity</option>
-                      <option value="product1">
-                        2 x 36 iu total 72iu . Price is 760 euro (380 euro per
-                        pack)
-                      </option>
-                      <option value="product2">
-                        4 x 36 iu total 144 iu Price is 1480 euro (370 euro per
-                        pack)
-                      </option>
-                      <option value="product3">
-                        6 x 36 iu total 216 iu Price is 2160 euro (360 euro per
-                        pack )
-                      </option>
-                      <option value="product4">
-                        10 x 36 iu total 360iu Price is 3500 euro (350 euro per
-                        pack)
-                      </option>
-                    </select>
-                  </div>
-                  <div>
-                    <label className="sr-only" htmlFor="product">
-                      Product
-                    </label>
-                    <select
-                      id="product"
-                      className="w-full rounded-lg text-black border border-gray-600 p-3 text-sm"
-                    >
-                      <option value="">Select Payment Method</option>
-                      <option value="Paypal">Paypal</option>
-                      <option value="Bank-Wire">Bank Wire</option>
-                      <option value="Western-Union">
-                        Western Union / Money Gram
-                      </option>
-                      <option value="Crypto">Crypto</option>
-                    </select>
-                  </div>
-                </div>
-
-                <div>
-                  <label className="sr-only" htmlFor="message">
-                    Message
-                  </label>
-
-                  <textarea
-                    className="w-full rounded-lg border border-gray-600 p-3 text-sm"
-                    placeholder="Message"
-                    rows="8"
-                    id="message"
-                  ></textarea>
-                </div>
-
-                <div className="mt-4">
-                  <button
-                    type="submit"
-                    className="inline-block w-full rounded-lg bg-black px-5 py-3 font-medium text-white sm:w-auto"
-                  >
-                    Order Now
-                  </button>
-                </div>
-                <div>
-                  <p>
-                    For custom orders and inquires about hgh, please contact me
-                    directly.{" "}
-                    <a
-                      href="mailto:fedyanasosovich@gmail.com"
-                      className="text-darkPurple underline line-clamp-2 underline-offset-4"
-                    >
-                      fedyanasosovich@gmail.com
-                    </a>
-                  </p>
-                </div>
-              </form>
-            </div>
-          </div>
-        </div>
-      </section>
-
+      <Form />
       <Footer />
     </>
   );

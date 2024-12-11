@@ -12,11 +12,9 @@ const Footer = () => {
             &copy; 2024, Fedya Nasosovich. All rights reserved.
           </p>
           <ul className=" flex  gap-3 justify-end">
-        
-
             <li>
               <a
-                href="https://www.instagram.com/fedya_nasosovich/profilecard/?igsh=MTBzMXBheXV1b3IzcA=="
+                href="https://www.instagram.com/fedya_nasosovich/"
                 rel="noreferrer"
                 target="_blank"
                 className="text-white-700 transition hover:opacity-75"
@@ -37,7 +35,6 @@ const Footer = () => {
                 </svg>
               </a>
             </li>
-
           </ul>
         </div>
       </div>
