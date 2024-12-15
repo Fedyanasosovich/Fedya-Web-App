@@ -3,7 +3,9 @@ import { NextResponse } from "next/server";
 export function middleware(request) {
   const url = request.nextUrl.clone();
   const hostname = request.headers.get("host");
-
+  if (url.pathname.startsWith("/api")) {
+    return NextResponse.next();
+  }
   // Define domain-to-page mapping
   const domainMapping = {
     "https://buypfizergenotropinhgh.com": "/buypfizergenotropinhgh",
