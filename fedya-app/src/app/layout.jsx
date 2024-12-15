@@ -1,6 +1,7 @@
 import localFont from "next/font/local";
 import "./globals.css";
 import NavBar from "@/components/navigation/navbar";
+import Footer from "@/components/footer/Footer";
 
 const workSans = localFont({
   src: "./fonts/WorkSans-VariableFont.ttf",
@@ -34,6 +35,7 @@ export default function RootLayout({ children }) {
       >
         <NavBar />
         <main className=" ">{children}</main>
+        <Footer />
       </body>
     </html>
   );
