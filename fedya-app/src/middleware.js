@@ -3,7 +3,7 @@ import { NextResponse } from "next/server";
 export function middleware(request) {
   const url = request.nextUrl.clone();
   const hostname = request.headers.get("host");
-  if (url.pathname.startsWith("/api") || url.pathname.startsWith("/_next")) {
+  if (url.pathname.startsWith("/api")) {
     return NextResponse.next();
   }
   // Define domain-to-page mapping
@@ -23,7 +23,7 @@ export function middleware(request) {
 
   // Check if the requested URL is for a static asset (CSS, JS, images, etc.)
   const isStaticAsset =
-    /\.(css|js|png|jpg|jpeg|gif|svg|woff|woff2|eot|ttf|otf)$/i.test(
+    /\.(css|js|png|jpg|jpeg|gif|svg|woff|woff2|eot|ttf|otf|webp)$/i.test(
       url.pathname
     );
 
