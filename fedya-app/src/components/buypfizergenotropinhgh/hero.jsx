@@ -1,14 +1,14 @@
 import React from "react";
 import Image from "next/image";
 
-const Hero = ({ vidUrl }) => {
+const Hero = ({title, vidUrl, text }) => {
   return (
     <div className=" bg-grid-lines hero-sec relative overflow-hidden  ">
       <div className="flex items-center  min-h-svh container   ">
         <div className="flex lg:flex-row flex-col  lg:my-0 mt-32 mb-12   justify-between items-center w-full gap-12">
           <div className="max-w-2xl lg:text-start text-center flex flex-col gap-3">
-            <h1 className="text-5xl  lg:text-8xl font-taviraj ">
-              PFIZER <br /> GENOTROPIN
+            <h1 className="text-4xl  lg:text-8xl font-taviraj ">
+             {title}
             </h1>
             <span className="h-1 round block w-full bg-darkPurple"></span>
             {/* <p className="italic">
@@ -23,14 +23,17 @@ const Hero = ({ vidUrl }) => {
               injuries and makes you look younger.
             </p> */}
           </div>
-          <video
+       { vidUrl &&  <video
             src={vidUrl}
             width={400}
             controls
             className="rounded-xl w-full lg:w-[400px]   shadow-2xl"
             height={400}
             alt="Pfizer Genotropin"
-          />
+          />}
+          { text && <p className="text-justify">
+            {text}
+          </p>}
         </div>
       </div>
     </div>

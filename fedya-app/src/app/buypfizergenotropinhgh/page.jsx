@@ -137,7 +137,10 @@ export default function Home() {
 
   return (
     <>
-      <Hero vidUrl={files.length > 0 && videoOne[0].url} />
+      <Hero
+        vidUrl={files.length > 0 && videoOne[0].url}
+        title={`PFIZER GENOTROPIN`}
+      />
 
       <div className="container">
         {/* First Section */}
@@ -286,7 +289,6 @@ export default function Home() {
       {/* form */}
 
       <Form />
-    
     </>
   );
 }
