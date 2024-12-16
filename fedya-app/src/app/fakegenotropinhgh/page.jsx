@@ -293,7 +293,7 @@ export default function Home() {
             <div>
               <figcaption className="font-taviraj">Fake</figcaption>
               <Image
-                src={"/images/fakegenotropinhgh/Fake-Box-Font.webp"}
+                src={"/images/fakegenotropinhgh/fake-Box-Font.webp"}
                 width={300}
                 height={300}
                 alt="Fake Box Font"
