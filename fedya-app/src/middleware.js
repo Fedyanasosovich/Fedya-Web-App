@@ -3,7 +3,7 @@ import { NextResponse } from "next/server";
 export function middleware(request) {
   const url = request.nextUrl.clone();
   const hostname = request.headers.get("host");
-  if (url.pathname.startsWith("/api") || url.pathname.startsWith("/_next") || url.pathname.startsWith("/public")) {
+  if (url.pathname.startsWith("/api") || url.pathname.startsWith("/_next")) {
     return NextResponse.next();
   }
   // Define domain-to-page mapping
