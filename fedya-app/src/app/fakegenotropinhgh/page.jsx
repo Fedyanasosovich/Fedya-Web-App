@@ -296,7 +296,7 @@ export default function Home() {
                 src={"/images/fakegenotropinhgh/Fake-Box-Font.webp"}
                 width={300}
                 height={300}
-                alt="Real Box Font"
+                alt="Fake Box Font"
               />
             </div>
           </div>
