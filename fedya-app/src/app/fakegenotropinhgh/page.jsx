@@ -151,7 +151,6 @@ export default function Home() {
         {/* First Section */}
 
         <div className="  pt-12 lg:pt-48 flex flex-col gap-5 text-md lg:text-2xl  ">
-          <p></p>
           <p className="font-tavirajItalic">
             Below I will show you ways to tell if your hgh is real. Ofcourse the
             easiest way is to purchase it from me as you can see my videos where
@@ -160,7 +159,7 @@ export default function Home() {
             to cross reference all these different ways and then come to a
             conclusion.
           </p>
-          <h2 className="font-taviraj text-5xl">Testing</h2>
+          <h2 className="font-taviraj text-3xl mt-8">Testing</h2>
           <p>
             Blood tests for IGF should be conducted before and 1-2 months after
             the beginning of usage. HGH serum test should be done 2-4 hours post
@@ -174,7 +173,7 @@ export default function Home() {
             use 1 iu and get an increase in serum by 1 point another by 4
             points…. However it is a start.
           </p>
-          <h2 className="font-taviraj text-5xl">Usage</h2>
+          <h2 className="font-taviraj text-3xl mt-8">Usage</h2>
           <p>
             Usually human growth hormone has some specific effects on people fat
             loss, looking younger, better sleep, crazy vivid dreams swollen or
@@ -186,7 +185,7 @@ export default function Home() {
             person may be starving or lose his appetite and have an overwhelming
             feeling of wellbeing.
           </p>
-          <h2 className="font-taviraj text-5xl">Logical analysis</h2>
+          <h2 className="font-taviraj text-3xl mt-8">Logical analysis</h2>
           <p>
             Price – There is no such thing as cheap hgh. Some countries are
             cheaper due to it being a low income country and some countries are
@@ -199,7 +198,7 @@ export default function Home() {
             doctor ? Do they have a script ? Or do they sell anything under the
             sun.
           </p>
-          <h2 className="font-taviraj text-5xl">Packaging</h2>
+          <h2 className="font-taviraj text-3xl mt-8">Packaging</h2>
           <p>
             Packaging can be faked almost to perfection nowadays but thankfully
             you can still tell the originals from the fakes. Using photos that I
@@ -224,7 +223,9 @@ export default function Home() {
             any fakes . As I said before to be 100% sure please buy hgh from me
             !!!!
           </p>
-          <h2 className="font-taviraj text-5xl">Fake Yellow Humatrope HGH</h2>
+          <h2 className="font-taviraj text-3xl mt-8">
+            Fake Yellow Humatrope HGH
+          </h2>
           <p>
             Yellow humatrope hgh has a huge flaw in the fact that the barcode is
             totally wrong. This is the most commonly faked hgh and it scans
@@ -269,228 +270,378 @@ export default function Home() {
             </Swiper>
           </div>
 
-          <h2 className="font-taviraj text-5xl">Fake Genotropin HGH</h2>
+          <h2 className="font-taviraj text-3xl mt-8">Fake Genotropin HGH</h2>
           <p>
             The quality of these fakes are surreal. Thus I have provided a lot
             of photos so you can tell the difference. Again price and non
             matching serial numbers are a huge giveaway.
           </p>
 
-          <p>
+          <p className="mt-4">
             The real box font is in capital letters. The fake one in smaller
             letters.
           </p>
           <div className="flex gap-3">
-            <div>
-              <figcaption className="font-taviraj">Real</figcaption>
-              <Image
-                src={"/images/fakegenotropinhgh/Real-Box-Font.webp"}
-                width={300}
-                height={300}
-                alt="Real Box Font"
-              />
-            </div>
-            <div>
-              <figcaption className="font-taviraj">Fake</figcaption>
-              <Image
-                src={"/images/fakegenotropinhgh/fake-Box-Font.webp"}
-                width={300}
-                height={300}
-                alt="Fake Box Font"
-              />
-            </div>
+            <Swiper
+              modules={[Navigation, Pagination, Scrollbar, A11y]}
+              spaceBetween={0}
+              slidesPerView={3}
+              pagination={{ clickable: true }}
+              scrollbar={{ draggable: true }}
+              navigation={true}
+              className="mySwiper px-20"
+              breakpoints={{
+                300: { slidesPerView: 1 },
+                768: { slidesPerView: 3 },
+              }}
+            >
+              <SwiperSlide className="px-14">
+                <div>
+                  <figcaption className="font-taviraj">Real</figcaption>
+                  <Image
+                    src={"/images/fakegenotropinhgh/Real-Box-Font.webp"}
+                    width={300}
+                    height={300}
+                    alt="Real Box Font"
+                  />
+                </div>
+              </SwiperSlide>
+              <SwiperSlide className="px-14">
+                <div>
+                  <figcaption className="font-taviraj">Fake</figcaption>
+                  <Image
+                    src={"/images/fakegenotropinhgh/fake-Box-Font.webp"}
+                    width={300}
+                    height={300}
+                    alt="Fake Box Font"
+                  />
+                </div>
+              </SwiperSlide>
+            </Swiper>
           </div>
-          <p>The Real package has a much thinner purple line.</p>
+          <p className="mt-4">
+            The Real package has a much thinner purple line.
+          </p>
           <div className="flex gap-3">
-            <div>
-              <figcaption className="font-taviraj">Real</figcaption>
-              <Image
-                src={"/images/fakegenotropinhgh/Thin-purple-line-real.webp"}
-                width={300}
-                height={300}
-                alt="Thin Purple Line"
-              />
-            </div>
-            <div>
-              <figcaption className="font-taviraj">Fake</figcaption>
-              <Image
-                src={"/images/fakegenotropinhgh/Thick-purple-line-fake.webp"}
-                width={300}
-                height={300}
-                alt="Thick Purple Line"
-              />
-            </div>
+            <Swiper
+              modules={[Navigation, Pagination, Scrollbar, A11y]}
+              spaceBetween={0}
+              slidesPerView={3}
+              pagination={{ clickable: true }}
+              scrollbar={{ draggable: true }}
+              navigation={true}
+              className="mySwiper px-20"
+              breakpoints={{
+                300: { slidesPerView: 1 },
+                768: { slidesPerView: 3 },
+              }}
+            >
+              <SwiperSlide className="px-14">
+                <div>
+                  <figcaption className="font-taviraj">Real</figcaption>
+                  <Image
+                    src={"/images/fakegenotropinhgh/Thin-purple-line-real.webp"}
+                    width={300}
+                    height={300}
+                    alt="Thin Purple Line"
+                  />
+                </div>
+              </SwiperSlide>
+              <SwiperSlide className="px-14">
+                <div>
+                  <figcaption className="font-taviraj">Fake</figcaption>
+                  <Image
+                    src={
+                      "/images/fakegenotropinhgh/Thick-purple-line-fake.webp"
+                    }
+                    width={300}
+                    height={300}
+                    alt="Thick Purple Line"
+                  />
+                </div>
+              </SwiperSlide>
+            </Swiper>
           </div>
-          <p>
+          <p className="mt-4">
             Differences between fake qr code and real qr code. The real qr code
             is smaller.
           </p>
           <div className="flex gap-3">
-            <div>
-              <figcaption className="font-taviraj">Real</figcaption>
-              <Image
-                src={"/images/fakegenotropinhgh/Real-QR-code.webp"}
-                width={300}
-                height={300}
-                alt="Real-QR-code"
-              />
-            </div>
-            <div>
-              <figcaption className="font-taviraj">Fake</figcaption>
-              <Image
-                src={"/images/fakegenotropinhgh/Fake-QR-code.webp"}
-                width={300}
-                height={300}
-                alt="Fake-QR-code"
-              />
-            </div>
+            <Swiper
+              modules={[Navigation, Pagination, Scrollbar, A11y]}
+              spaceBetween={0}
+              slidesPerView={3}
+              pagination={{ clickable: true }}
+              scrollbar={{ draggable: true }}
+              navigation={true}
+              className="mySwiper px-20"
+              breakpoints={{
+                300: { slidesPerView: 1 },
+                768: { slidesPerView: 3 },
+              }}
+            >
+              <SwiperSlide className="px-14">
+                <div>
+                  <figcaption className="font-taviraj">Real</figcaption>
+                  <Image
+                    src={"/images/fakegenotropinhgh/Real-QR-code.webp"}
+                    width={300}
+                    height={300}
+                    alt="Real-QR-code"
+                  />
+                </div>
+              </SwiperSlide>
+              <SwiperSlide className="px-14">
+                <div>
+                  <figcaption className="font-taviraj">Fake</figcaption>
+                  <Image
+                    src={"/images/fakegenotropinhgh/Fake-QR-code.webp"}
+                    width={300}
+                    height={300}
+                    alt="Fake-QR-code"
+                  />
+                </div>
+              </SwiperSlide>
+            </Swiper>
           </div>
-          <p>
+          <p className="mt-4">
             There are both fakes and original boxes from both Belgium and
             Almanya so country of manufacture is no indication
           </p>
           <div className="flex gap-3">
-            <div>
-              <figcaption className="font-taviraj">Real</figcaption>
-              <Image
-                src={
-                  "/images/fakegenotropinhgh/Real-country-of-manufacture.webp"
-                }
-                width={300}
-                height={300}
-                alt="Real-QR-code"
-              />
-            </div>
-            <div>
-              <figcaption className="font-taviraj">Fake</figcaption>
-              <Image
-                src={
-                  "/images/fakegenotropinhgh/fake-country-of-manufacture.webp"
-                }
-                width={300}
-                height={300}
-                alt="Fake-QR-code"
-              />
-            </div>
+            <Swiper
+              modules={[Navigation, Pagination, Scrollbar, A11y]}
+              spaceBetween={0}
+              slidesPerView={3}
+              pagination={{ clickable: true }}
+              scrollbar={{ draggable: true }}
+              navigation={true}
+              className="mySwiper px-20"
+              breakpoints={{
+                300: { slidesPerView: 1 },
+                768: { slidesPerView: 3 },
+              }}
+            >
+              <SwiperSlide className="px-14">
+                <div>
+                  <figcaption className="font-taviraj">Real</figcaption>
+                  <Image
+                    src={
+                      "/images/fakegenotropinhgh/Real-country-of-manufacture.webp"
+                    }
+                    width={300}
+                    height={300}
+                    alt="Real-QR-code"
+                  />
+                </div>
+              </SwiperSlide>
+              <SwiperSlide className="px-14">
+                <div>
+                  <figcaption className="font-taviraj">Fake</figcaption>
+                  <Image
+                    src={
+                      "/images/fakegenotropinhgh/fake-country-of-manufacture.webp"
+                    }
+                    width={300}
+                    height={300}
+                    alt="Fake-QR-code"
+                  />
+                </div>
+              </SwiperSlide>
+            </Swiper>
           </div>
-          <p>
+          <p className="mt-4">
             The real mg on the packet are printed. The fake one has a sticker.
           </p>
           <div className="flex gap-3">
-            <div>
-              <figcaption className="font-taviraj">Real</figcaption>
-              <Image
-                src={"/images/fakegenotropinhgh/Real-mg-printed.webp"}
-                width={300}
-                height={300}
-                alt="Real-mg-printed"
-              />
-            </div>
-            <div>
-              <figcaption className="font-taviraj">Fake</figcaption>
-              <Image
-                src={"/images/fakegenotropinhgh/Fake-mg-sticker.webp"}
-                width={300}
-                height={300}
-                alt="Fake-mg-printed"
-              />
-            </div>
+            <Swiper
+              modules={[Navigation, Pagination, Scrollbar, A11y]}
+              spaceBetween={0}
+              slidesPerView={3}
+              pagination={{ clickable: true }}
+              scrollbar={{ draggable: true }}
+              navigation={true}
+              className="mySwiper px-20"
+              breakpoints={{
+                300: { slidesPerView: 1 },
+                768: { slidesPerView: 3 },
+              }}
+            >
+              <SwiperSlide className="px-14">
+                <div>
+                  <figcaption className="font-taviraj">Real</figcaption>
+                  <Image
+                    src={"/images/fakegenotropinhgh/Real-mg-printed.webp"}
+                    width={300}
+                    height={300}
+                    alt="Real-mg-printed"
+                  />
+                </div>
+              </SwiperSlide>
+              <SwiperSlide className="px-14">
+                <div>
+                  <figcaption className="font-taviraj">Fake</figcaption>
+                  <Image
+                    src={"/images/fakegenotropinhgh/Fake-mg-sticker.webp"}
+                    width={300}
+                    height={300}
+                    alt="Fake-mg-printed"
+                  />
+                </div>
+              </SwiperSlide>
+            </Swiper>
           </div>
-          <p>
+          <p className="mt-4">
             The sticker on the inset is lighter in the real packet. The fake one
             is darker.
           </p>
           <div className="flex gap-3">
-            <div>
-              <figcaption className="font-taviraj">Real</figcaption>
-              <Image
-                src={"/images/fakegenotropinhgh/Real-blue-sticker.webp"}
-                width={300}
-                height={300}
-                alt="Real-blue-sticker"
-              />
-            </div>
-            <div>
-              <figcaption className="font-taviraj">Fake</figcaption>
-              <Image
-                src={"/images/fakegenotropinhgh/Fake-blue-sticker.webp"}
-                width={300}
-                height={300}
-                alt="Real-blue-sticker"
-              />
-            </div>
+            <Swiper
+              modules={[Navigation, Pagination, Scrollbar, A11y]}
+              spaceBetween={0}
+              slidesPerView={3}
+              pagination={{ clickable: true }}
+              scrollbar={{ draggable: true }}
+              navigation={true}
+              className="mySwiper px-20"
+              breakpoints={{
+                300: { slidesPerView: 1 },
+                768: { slidesPerView: 3 },
+              }}
+            >
+              <SwiperSlide className="px-14">
+                <div>
+                  <figcaption className="font-taviraj">Real</figcaption>
+                  <Image
+                    src={"/images/fakegenotropinhgh/Real-blue-sticker.webp"}
+                    width={300}
+                    height={300}
+                    alt="Real-blue-sticker"
+                  />
+                </div>
+              </SwiperSlide>
+              <SwiperSlide className="px-14">
+                <div>
+                  <figcaption className="font-taviraj">Fake</figcaption>
+                  <Image
+                    src={"/images/fakegenotropinhgh/Fake-blue-sticker.webp"}
+                    width={300}
+                    height={300}
+                    alt="Real-blue-sticker"
+                  />
+                </div>
+              </SwiperSlide>
+            </Swiper>
           </div>
-          <p>
+          <p className="mt-4">
             Lastly the adjustment dial on the back of the pen is printed on the
             real pen. The fake pen has a sticker over it. I assume it is a 16iu
             pen that has had a sticker over it to look like its calibrated for a
             36iu pen. So in essence it may be real but underdosed.
           </p>
           <div className="flex gap-3">
-            <div>
-              <figcaption className="font-taviraj">Real</figcaption>
-              <Image
-                src={"/images/fakegenotropinhgh/Real-pen-adjustment.webp"}
-                width={300}
-                height={300}
-                alt="Real-pen-adjustment"
-              />
-            </div>
-            <div>
-              <figcaption className="font-taviraj">Fake</figcaption>
-              <Image
-                src={"/images/fakegenotropinhgh/Fake-pen-adjustment.webp"}
-                width={300}
-                height={300}
-                alt="Fake-pen-adjustment"
-              />
-            </div>
+            <Swiper
+              modules={[Navigation, Pagination, Scrollbar, A11y]}
+              spaceBetween={0}
+              slidesPerView={3}
+              pagination={{ clickable: true }}
+              scrollbar={{ draggable: true }}
+              navigation={true}
+              className="mySwiper px-20"
+              breakpoints={{
+                300: { slidesPerView: 1 },
+                768: { slidesPerView: 3 },
+              }}
+            >
+              <SwiperSlide className="px-14">
+                <div>
+                  <figcaption className="font-taviraj">Real</figcaption>
+                  <Image
+                    src={"/images/fakegenotropinhgh/Real-pen-adjustment.webp"}
+                    width={300}
+                    height={300}
+                    alt="Real-pen-adjustment"
+                  />
+                </div>
+              </SwiperSlide>
+              <SwiperSlide className="px-14">
+                <div>
+                  <figcaption className="font-taviraj">Fake</figcaption>
+                  <Image
+                    src={"/images/fakegenotropinhgh/Fake-pen-adjustment.webp"}
+                    width={300}
+                    height={300}
+                    alt="Fake-pen-adjustment"
+                  />
+                </div>
+              </SwiperSlide>
+            </Swiper>
           </div>
-          <p>
+          <p className="mt-4">
             PLEASE NOTE FROM THE BEGINNING OF 2023 THE LOGO AND PACKAGING HAS
             CHANGED. THE ORIGINAL PACKAGING NOW HAS THESE CHANGES:
           </p>
 
-          <div>
-            <figcaption className="font-taviraj">A NEW LOGO</figcaption>
-            <Image
-              src={"/images/fakegenotropinhgh/New-logo.webp"}
-              className="w-full"
-              width={300}
-              height={300}
-              alt="Real-pen-adjustment"
-            />
-          </div>
-          <div>
-            <figcaption className="font-taviraj">
-              SMALLER PRINT ON THE EXPIRY DATE{" "}
-            </figcaption>
-            <Image
-              src={
-                "/images/fakegenotropinhgh/Smaller-print-on-expiry-date.webp"
-              }
-              className="w-full"
-              width={300}
-              height={300}
-              alt="Real-pen-adjustment"
-            />
-          </div>
-          <div>
-            <figcaption className="font-taviraj">
-              A DIFFERENT QR CODE STICKER WITH ROUND EDGES AND DARKER INK
-            </figcaption>
-            <Image
-              src={
-                "/images/fakegenotropinhgh/Different-qr-code-sticker-with-round-edges-darker-ink.webp"
-              }
-              className="w-full"
-              width={300}
-              height={300}
-              alt="Real-pen-adjustment"
-            />
-          </div>
+          <Swiper
+            modules={[Navigation, Pagination, Scrollbar, A11y]}
+            spaceBetween={0}
+            slidesPerView={3}
+            pagination={{ clickable: true }}
+            scrollbar={{ draggable: true }}
+            navigation={true}
+            className="mySwiper px-20"
+            breakpoints={{
+              300: { slidesPerView: 1 },
+              768: { slidesPerView: 3 },
+            }}
+          >
+            <SwiperSlide className="px-14">
+              <div>
+                <figcaption className="font-taviraj">A NEW LOGO</figcaption>
+                <Image
+                  src={"/images/fakegenotropinhgh/New-logo.webp"}
+                  className="w-full"
+                  width={300}
+                  height={300}
+                  alt="Real-pen-adjustment"
+                />
+              </div>
+            </SwiperSlide>
+            <SwiperSlide className="px-14">
+              <div>
+                <figcaption className="font-taviraj">
+                  SMALLER PRINT ON THE EXPIRY DATE{" "}
+                </figcaption>
+                <Image
+                  src={
+                    "/images/fakegenotropinhgh/Smaller-print-on-expiry-date.webp"
+                  }
+                  className="w-full"
+                  width={300}
+                  height={300}
+                  alt="Real-pen-adjustment"
+                />
+              </div>
+            </SwiperSlide>
+            <SwiperSlide className="px-14">
+              <div>
+                <figcaption className="font-taviraj">
+                  A DIFFERENT QR CODE STICKER WITH ROUND EDGES AND DARKER INK
+                </figcaption>
+                <Image
+                  src={
+                    "/images/fakegenotropinhgh/Different-qr-code-sticker-with-round-edges-darker-ink.webp"
+                  }
+                  className="w-full"
+                  width={300}
+                  height={300}
+                  alt="Real-pen-adjustment"
+                />
+              </div>
+            </SwiperSlide>
+          </Swiper>
 
-          <p>
+          <p className="mt-4">
             I hope all this has helped tremendously . Please bear in mind that
             some fakes may only have one mistake on the pen and the package is
             perfect. Others have many mistakes on the package but the pen is
@@ -500,11 +651,11 @@ export default function Home() {
 
         {/* Second Section */}
 
-        <div className=" lg:pt-48">
+        {/* <div className=" lg:pt-48">
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-2 mt-10  gap-8">
             {/* <video src=""></video> */}
 
-            {/* gridItems.map((item, index) => (
+        {/* gridItems.map((item, index) => (
               <div
                 key={index}
                 onClick={() => openModal(index)} // Pass the index to open the correct modal
@@ -524,8 +675,8 @@ export default function Home() {
                 </div>
 
                 {/* Conditionally render the modal if it matches the openModalIndex */}
-            {/* {openModalIndex === index && ( */}
-            {/* <section className="modal__bg">
+        {/* {openModalIndex === index && ( */}
+        {/* <section className="modal__bg">
                     <div className="modal__align">
                       <div className="modal__content">
                         <IoCloseOutline
@@ -565,14 +716,14 @@ export default function Home() {
                 )}
               </div> */}
 
-            {/* )) } */}
-          </div>
-        </div>
+        {/* )) } */}
+        {/* </div> */}
+        {/* </div> */}
       </div>
 
       {/* form */}
 
-      <Form />
+      {/* <Form /> */}
     </>
   );
 }
