@@ -1,7 +1,7 @@
 import React from "react";
-import Image from "next/image";
 
-const Hero = ({title, vidUrl, text }) => {
+
+const Hero = ({title, vidUrl }) => {
   return (
     <div className=" bg-grid-lines hero-sec relative overflow-hidden  ">
       <div className="flex items-center  min-h-svh container   ">
@@ -11,17 +11,7 @@ const Hero = ({title, vidUrl, text }) => {
              {title}
             </h1>
             <span className="h-1 round block w-full bg-darkPurple"></span>
-            {/* <p className="italic">
-              &quot;Proof of buying hgh in the pharmacy&quot;
-            </p> */}
-            {/* <p>
-              Human Growth Hormone – Somatropin is the wonder substance of the
-              last few decades. It is used by everyone from models to
-              bodybuilders, athletes to actors from singers to celebrities. It
-              is nothing short of a miracle substance, it is know as the master
-              hormone. For this reason it builds muscle, burns fat, repairs old
-              injuries and makes you look younger.
-            </p> */}
+          
           </div>
        { vidUrl &&  <video
             src={vidUrl}
@@ -31,9 +21,7 @@ const Hero = ({title, vidUrl, text }) => {
             height={400}
             alt="Pfizer Genotropin"
           />}
-          { text && <p className="text-justify">
-            {text}
-          </p>}
+         
         </div>
       </div>
     </div>

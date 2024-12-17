@@ -1,6 +1,7 @@
 "use client";
-import Hero from "@/components/buypfizergenotropinhgh/hero";
-import { useEffect, useState } from "react";
+
+import Hero from "@/components/fakegenotropinhgh/hero";
+
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -9,10 +10,12 @@ import "swiper/css";
 import "swiper/css/navigation";
 import Image from "next/image";
 
-import { IoCloseOutline } from "react-icons/io5";
+import { IoCloseOutline, IoLogoInstagram } from "react-icons/io5";
 import { BiLoaderAlt } from "react-icons/bi";
 import { IoIosPlayCircle } from "react-icons/io";
-import Form from "@/components/buypfizergenotropinhgh/form";
+
+import DynamicSlider from "@/components/fakegenotropinhgh/dynamicSlider";
+import Link from "next/link";
 
 export default function Home() {
   // useEffect(() => {
@@ -46,72 +49,18 @@ export default function Home() {
   //     }
   //   });
   // }, []);
-  const [openModalIndex, setOpenModalIndex] = useState(null);
-  const [videoLoading, setVideoLoading] = useState(true);
+  // const [openModalIndex, setOpenModalIndex] = useState(null);
+  // const [videoLoading, setVideoLoading] = useState(true);
 
-  const openModal = (index) => {
-    // Toggle modal visibility: If the same modal is clicked again, close it.
-    setOpenModalIndex(openModalIndex === index ? null : index);
-  };
+  // const openModal = (index) => {
+  //   // Toggle modal visibility: If the same modal is clicked again, close it.
+  //   setOpenModalIndex(openModalIndex === index ? null : index);
+  // };
 
-  const spinner = () => {
-    setVideoLoading(!videoLoading);
-  };
+  // const spinner = () => {
+  //   setVideoLoading(!videoLoading);
+  // };
 
-  function callingAfterAweekAutomatically(apiCall) {
-    apiCall();
-
-    // Set timeout for one week (604800 seconds)
-    setTimeout(() => {
-      callingAfterAweekAutomatically(apiCall); // Recursively call the function
-    }, 604800 * 1000); // Convert seconds to milliseconds
-  }
-
-  async function fetchAllFileUrls(bucketName) {
-    try {
-      const response = await fetch("/api/getPresignedUrl", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ bucketName }),
-      });
-
-      const data = await response.json();
-
-      return data.urls; // Array of objects with { key, url }
-    } catch (error) {
-      console.error("Error fetching file URLs:", error);
-      return [];
-    }
-  }
-
-  const [files, setFiles] = useState([]);
-
-  async function loadFiles() {
-    const fileUrls = await fetchAllFileUrls("fakegenotropinhgh.com");
-    setFiles(fileUrls);
-  }
-
-  useEffect(() => {
-    callingAfterAweekAutomatically(loadFiles);
-  }, []);
-
-  const separateFiles = files.reduce(
-    (acc, file) => {
-      const extension = file.key.split(".").pop().toLowerCase();
-      if (["jpg", "jpeg", "png", "webp"].includes(extension)) {
-        acc.images.push(file);
-      } else if (["mp4"].includes(extension)) {
-        acc.videos.push(file);
-      }
-      return acc;
-    },
-    { images: [], videos: [] }
-  );
-
-  // You now have separate arrays for images and videos
-  const { images, videos } = separateFiles;
   // let middleIndex = Math.floor(videos.length / 2);
   // const videoOne = [videos[middleIndex]];
   // const restVideos = videos
@@ -131,10 +80,10 @@ export default function Home() {
   //   },
   // ];
 
-  useEffect(() => {
-    console.log(images);
-    // console.log(videos);
-  }, [files]);
+  // useEffect(() => {
+  //   // console.log(images);
+  //   // console.log(videos);
+  // }, [files]);
 
   return (
     <>
@@ -242,32 +191,7 @@ export default function Home() {
             with the same (21) code
           </p>
           <div className="py-6 lg:pt-48">
-            <Swiper
-              modules={[Navigation, Pagination, Scrollbar, A11y]}
-              spaceBetween={0}
-              slidesPerView={3}
-              pagination={{ clickable: true }}
-              scrollbar={{ draggable: true }}
-              navigation={true}
-              className="mySwiper px-20"
-              breakpoints={{
-                300: { slidesPerView: 1 },
-                768: { slidesPerView: 3 },
-              }}
-            >
-              {images &&
-                images.map((items, i) => (
-                  <SwiperSlide key={i} className="px-14">
-                    <Image
-                      src={items.url}
-                      width={300}
-                      height={300}
-                      className="h-64 w-full object-cover rounded"
-                      alt={items.key}
-                    />
-                  </SwiperSlide>
-                ))}
-            </Swiper>
+            <DynamicSlider />
           </div>
 
           <h2 className="font-taviraj text-3xl mt-8">Fake Genotropin HGH</h2>
@@ -314,6 +238,7 @@ export default function Home() {
                     width={300}
                     height={300}
                     alt="Fake Box Font"
+                    loading="eager"
                   />
                 </div>
               </SwiperSlide>
@@ -357,6 +282,7 @@ export default function Home() {
                     width={300}
                     height={300}
                     alt="Thick Purple Line"
+                    loading="eager"
                   />
                 </div>
               </SwiperSlide>
@@ -399,6 +325,7 @@ export default function Home() {
                     width={300}
                     height={300}
                     alt="Fake-QR-code"
+                    loading="eager"
                   />
                 </div>
               </SwiperSlide>
@@ -445,6 +372,7 @@ export default function Home() {
                     width={300}
                     height={300}
                     alt="Fake-QR-code"
+                    loading="eager"
                   />
                 </div>
               </SwiperSlide>
@@ -486,6 +414,7 @@ export default function Home() {
                     width={300}
                     height={300}
                     alt="Fake-mg-printed"
+                    loading="eager"
                   />
                 </div>
               </SwiperSlide>
@@ -528,6 +457,7 @@ export default function Home() {
                     width={300}
                     height={300}
                     alt="Real-blue-sticker"
+                    loading="eager"
                   />
                 </div>
               </SwiperSlide>
@@ -572,6 +502,7 @@ export default function Home() {
                     width={300}
                     height={300}
                     alt="Fake-pen-adjustment"
+                    loading="eager"
                   />
                 </div>
               </SwiperSlide>
@@ -582,64 +513,69 @@ export default function Home() {
             CHANGED. THE ORIGINAL PACKAGING NOW HAS THESE CHANGES:
           </p>
 
-          <Swiper
-            modules={[Navigation, Pagination, Scrollbar, A11y]}
-            spaceBetween={0}
-            slidesPerView={3}
-            pagination={{ clickable: true }}
-            scrollbar={{ draggable: true }}
-            navigation={true}
-            className="mySwiper px-20"
-            breakpoints={{
-              300: { slidesPerView: 1 },
-              768: { slidesPerView: 3 },
-            }}
-          >
-            <SwiperSlide className="px-14">
-              <div>
-                <figcaption className="font-taviraj">A NEW LOGO</figcaption>
-                <Image
-                  src={"/images/fakegenotropinhgh/New-logo.webp"}
-                  className="w-full"
-                  width={300}
-                  height={300}
-                  alt="Real-pen-adjustment"
-                />
-              </div>
-            </SwiperSlide>
-            <SwiperSlide className="px-14">
-              <div>
-                <figcaption className="font-taviraj">
-                  SMALLER PRINT ON THE EXPIRY DATE{" "}
-                </figcaption>
-                <Image
-                  src={
-                    "/images/fakegenotropinhgh/Smaller-print-on-expiry-date.webp"
-                  }
-                  className="w-full"
-                  width={300}
-                  height={300}
-                  alt="Real-pen-adjustment"
-                />
-              </div>
-            </SwiperSlide>
-            <SwiperSlide className="px-14">
-              <div>
-                <figcaption className="font-taviraj">
-                  A DIFFERENT QR CODE STICKER WITH ROUND EDGES AND DARKER INK
-                </figcaption>
-                <Image
-                  src={
-                    "/images/fakegenotropinhgh/Different-qr-code-sticker-with-round-edges-darker-ink.webp"
-                  }
-                  className="w-full"
-                  width={300}
-                  height={300}
-                  alt="Real-pen-adjustment"
-                />
-              </div>
-            </SwiperSlide>
-          </Swiper>
+          <div>
+            <Swiper
+              modules={[Navigation, Pagination, Scrollbar, A11y]}
+              spaceBetween={0}
+              slidesPerView={3}
+              pagination={{ clickable: true }}
+              scrollbar={{ draggable: true }}
+              navigation={true}
+              className="mySwiper px-20"
+              breakpoints={{
+                300: { slidesPerView: 1 },
+                768: { slidesPerView: 3 },
+              }}
+            >
+              <SwiperSlide className="px-14">
+                <div>
+                  <figcaption className="font-taviraj">A NEW LOGO</figcaption>
+                  <Image
+                    src={"/images/fakegenotropinhgh/New-logo.webp"}
+                    className="w-full object-cove h-72"
+                    width={300}
+                    height={300}
+                    alt="Real-pen-adjustment"
+                    loading="eager"
+                  />
+                </div>
+              </SwiperSlide>
+              <SwiperSlide className="px-14">
+                <div>
+                  <figcaption className="font-taviraj">
+                    SMALLER PRINT ON THE EXPIRY DATE{" "}
+                  </figcaption>
+                  <Image
+                    src={
+                      "/images/fakegenotropinhgh/Smaller-print-on-expiry-date.webp"
+                    }
+                    className="w-full object-cove h-72"
+                    width={300}
+                    height={300}
+                    alt="Real-pen-adjustment"
+                    loading="eager"
+                  />
+                </div>
+              </SwiperSlide>
+              <SwiperSlide className="px-14">
+                <div>
+                  <figcaption className="font-taviraj">
+                    A DIFFERENT QR CODE STICKER WITH ROUND EDGES AND DARKER INK
+                  </figcaption>
+                  <Image
+                    src={
+                      "/images/fakegenotropinhgh/Different-qr-code-sticker-with-round-edges-darker-ink.webp"
+                    }
+                    className="w-full object-cover h-72"
+                    width={300}
+                    height={300}
+                    alt="Real-pen-adjustment"
+                    loading="eager"
+                  />
+                </div>
+              </SwiperSlide>
+            </Swiper>
+          </div>
 
           <p className="mt-4">
             I hope all this has helped tremendously . Please bear in mind that
@@ -719,11 +655,14 @@ export default function Home() {
         {/* )) } */}
         {/* </div> */}
         {/* </div> */}
+
+        <div className="mt-10 text-center">
+          <p className="mb-2">Follow us on</p>
+          <Link href={"https://www.instagram.com/fedya_nasosovich/"}>
+            <IoLogoInstagram size={34} className="text-darkPurple mx-auto" />
+          </Link>
+        </div>
       </div>
-
-      {/* form */}
-
-      {/* <Form /> */}
     </>
   );
 }
