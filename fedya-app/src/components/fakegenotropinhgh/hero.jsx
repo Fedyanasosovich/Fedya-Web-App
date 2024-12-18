@@ -7,9 +7,9 @@ const Hero = ({ title }) => {
   return (
     <div className=" bg-grid-lines  relative z-20 overflow-hidden  ">
       <div className="flex items-center  min-h-svh container   ">
-        <div className="flex lg:flex-row flex-col  lg:my-0 mt-32 mb-4  justify-between items-center w-full gap-12">
+        <div className="flex flex-col  lg:max-w-2xl lg:mx-auto  lg:my-0 mt-32 mb-4  justify-between items-center w-full gap-12 lg:gap-6">
 
-        <div>
+        <div className="lg:hidden block">
           <Link href={"https://buypfizergenotropinhgh.com/"} target="_blank">
             <Button
                 title={"Click here to purchase pharmaceutical  HGH"}
@@ -23,12 +23,12 @@ const Hero = ({ title }) => {
               </Link>
             </div>
         </div>
-          <div className="max-w-2xl lg:text-start text-center flex flex-col gap-3">
-            <h1 className="text-4xl  lg:text-8xl font-taviraj ">{title}</h1>
+          <div className="max-w-2xl lg:text-start text-center flex flex-col gap-3 lg:mt-16">
+            <h1 className="text-4xl lg:text-center  lg:text-8xl font-taviraj ">{title}</h1>
             <span className="h-1 round block w-full bg-darkPurple"></span>
           </div>
 
-          <p className="text-justify">
+          <p className="text-justify lg:text-center">
             From the hundreds of clients I deal with 90% of those who have
             previously purchased human growth hormone ( somatropin) over the
             internet or from a source have received fake hgh . This page is
@@ -36,7 +36,20 @@ const Hero = ({ title }) => {
             your money !!!!
           </p>
 
-        
+          <div className="lg:block hidden">
+          <Link href={"https://buypfizergenotropinhgh.com/"} target="_blank">
+            <Button
+                title={"Click here to purchase pharmaceutical  HGH"}
+                containerClass={"text-sm px-6"}
+              />
+          </Link>
+            <div className="mt-5">
+              <p className="mb-2 text-center">Follow us on</p>
+              <Link href={"https://www.instagram.com/fedya_nasosovich/"}>
+                <IoLogoInstagram size={34} className="text-darkPurple mx-auto" />
+              </Link>
+            </div>
+        </div>
         </div>
       </div>
     </div>

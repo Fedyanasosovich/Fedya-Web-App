@@ -100,7 +100,7 @@ export default function Home() {
       <div className="container">
         {/* First Section */}
 
-        <div className="  pt-12 lg:pt-48 flex flex-col gap-5 text-md lg:text-2xl  ">
+        <div className="  pt-12 lg:pt-24 flex flex-col gap-5 text-md lg:text-2xl  ">
           <p className="font-tavirajItalic">
             Below I will show you ways to tell if your hgh is real. Ofcourse the
             easiest way is to purchase it from me as you can see my videos where
@@ -191,7 +191,7 @@ export default function Home() {
             boxes all have a separate (21) code. The fake boxes are all printed
             with the same (21) code
           </p>
-          <div className="py-6 lg:pt-48">
+          <div className="py-6 lg:pt-12">
             <DynamicSlider />
           </div>
 
@@ -210,6 +210,7 @@ export default function Home() {
             <Swiper
               modules={[Navigation, Pagination, Scrollbar, A11y]}
               spaceBetween={0}
+           
               slidesPerView={3}
               pagination={{ clickable: true }}
               scrollbar={{ draggable: true }}
@@ -217,28 +218,28 @@ export default function Home() {
               className="mySwiper px-20"
               breakpoints={{
                 300: { slidesPerView: 1 },
-                768: { slidesPerView: 3 },
+                768: { slidesPerView: 2 },
               }}
             >
-              <SwiperSlide className="px-14">
-                <div>
+              <SwiperSlide className="px-14 w-full">
+                <div className="w-full">
                   <figcaption className="font-taviraj">Real</figcaption>
                   <Image
                     src={"/images/fakegenotropinhgh/Real-Box-Font.webp"}
-                    width={300}
-                    height={300}
+                    width={900}
+                    height={900}
                     alt="Real Box Font"
                     className="w-full object-cover "
                   />
                 </div>
               </SwiperSlide>
-              <SwiperSlide className="px-14">
-                <div>
+              <SwiperSlide className="px-14 w-full">
+                <div className="w-full">
                   <figcaption className="font-taviraj">Fake</figcaption>
                   <Image
                     src={"/images/fakegenotropinhgh/fake-Box-Font.webp"}
-                    width={300}
-                    height={300}
+                    width={900}
+                    height={900}
                     alt="Fake Box Font"
                     loading="eager"
                     className="w-full object-cover "
@@ -258,10 +259,11 @@ export default function Home() {
               pagination={{ clickable: true }}
               scrollbar={{ draggable: true }}
               navigation={true}
+          
               className="mySwiper px-20"
               breakpoints={{
                 300: { slidesPerView: 1 },
-                768: { slidesPerView: 3 },
+                768: { slidesPerView: 2 },
               }}
             >
               <SwiperSlide className="px-14">
@@ -269,9 +271,9 @@ export default function Home() {
                   <figcaption className="font-taviraj">Real</figcaption>
                   <Image
                     src={"/images/fakegenotropinhgh/Thin-purple-line-real.webp"}
-                    width={300}
+                    width={900}
+                    height={900}
                     className="w-full object-cover "
-                    height={300}
                     alt="Thin Purple Line"
                   />
                 </div>
@@ -283,8 +285,8 @@ export default function Home() {
                     src={
                       "/images/fakegenotropinhgh/Thick-purple-line-fake.webp"
                     }
-                    width={300}
-                    height={300}
+                    width={900}
+                    height={900}
                     className="w-full object-cover "
                     alt="Thick Purple Line"
                     loading="eager"
@@ -316,8 +318,8 @@ export default function Home() {
                   <figcaption className="font-taviraj">Fake</figcaption>
                   <Image
                     src={"/images/fakegenotropinhgh/Real-QR-code.webp"}
-                    width={300}
-                    height={300}
+                    width={900}
+                    height={900}
                     alt="Real-QR-code"
                     className="w-full object-cover "
                   />
@@ -328,8 +330,8 @@ export default function Home() {
                   <figcaption className="font-taviraj">Fake</figcaption>
                   <Image
                     src={"/images/fakegenotropinhgh/Fake-QR-code.webp"}
-                    width={300}
-                    height={300}
+                    width={900}
+                    height={900}
                     alt="Fake-QR-code"
                     loading="eager"
                     className="w-full object-cover "
@@ -341,8 +343,8 @@ export default function Home() {
                   <figcaption className="font-taviraj">Real</figcaption>
                   <Image
                     src={"/images/fakegenotropinhgh/Real-qr-code.jpg"}
-                    width={300}
-                    height={300}
+                    width={900}
+                    height={900}
                     alt="Fake-QR-code"
                     loading="eager"
                     className="w-full object-cover "
@@ -366,7 +368,7 @@ export default function Home() {
               className="mySwiper px-20"
               breakpoints={{
                 300: { slidesPerView: 1 },
-                768: { slidesPerView: 3 },
+                768: { slidesPerView: 2 },
               }}
             >
               <SwiperSlide className="px-14">
@@ -376,8 +378,8 @@ export default function Home() {
                     src={
                       "/images/fakegenotropinhgh/Real-country-of-manufacture.webp"
                     }
-                    width={300}
-                    height={300}
+                    width={900}
+                    height={900}
                     className="w-full object-cover "
                     alt="Real-QR-code"
                   />
@@ -390,8 +392,8 @@ export default function Home() {
                     src={
                       "/images/fakegenotropinhgh/fake-country-of-manufacture.webp"
                     }
-                    width={300}
-                    height={300}
+                    width={900}
+                    height={900}
                     alt="Fake-QR-code"
                     className="w-full object-cover "
                     loading="eager"
@@ -414,7 +416,7 @@ export default function Home() {
               className="mySwiper px-20"
               breakpoints={{
                 300: { slidesPerView: 1 },
-                768: { slidesPerView: 3 },
+                768: { slidesPerView: 2 },
               }}
             >
               <SwiperSlide className="px-14">
@@ -422,8 +424,8 @@ export default function Home() {
                   <figcaption className="font-taviraj">Real</figcaption>
                   <Image
                     src={"/images/fakegenotropinhgh/Real-mg-printed.webp"}
-                    width={300}
-                    height={300}
+                    width={900}
+                    height={900}
                     className="w-full object-cover "
                     alt="Real-mg-printed"
                   />
@@ -434,8 +436,8 @@ export default function Home() {
                   <figcaption className="font-taviraj">Fake</figcaption>
                   <Image
                     src={"/images/fakegenotropinhgh/Fake-mg-sticker.webp"}
-                    width={300}
-                    height={300}
+                    width={900}
+                    height={900}
                     alt="Fake-mg-printed"
                     loading="eager"
                     className="w-full object-cover "
@@ -459,7 +461,7 @@ export default function Home() {
               className="mySwiper px-20"
               breakpoints={{
                 300: { slidesPerView: 1 },
-                768: { slidesPerView: 3 },
+                768: { slidesPerView: 2 },
               }}
             >
               <SwiperSlide className="px-14">
@@ -467,8 +469,8 @@ export default function Home() {
                   <figcaption className="font-taviraj">Real</figcaption>
                   <Image
                     src={"/images/fakegenotropinhgh/Real-blue-sticker.webp"}
-                    width={300}
-                    height={300}
+                    width={900}
+                    height={900}
                     alt="Real-blue-sticker"
                     className="w-full object-cover "
                   />
@@ -479,8 +481,8 @@ export default function Home() {
                   <figcaption className="font-taviraj">Fake</figcaption>
                   <Image
                     src={"/images/fakegenotropinhgh/Fake-blue-sticker.webp"}
-                    width={300}
-                    height={300}
+                    width={900}
+                    height={900}
                     alt="Real-blue-sticker"
                     loading="eager"
                     className="w-full object-cover "
@@ -506,7 +508,7 @@ export default function Home() {
               className="mySwiper px-20"
               breakpoints={{
                 300: { slidesPerView: 1 },
-                768: { slidesPerView: 3 },
+                768: { slidesPerView: 2 },
               }}
             >
               <SwiperSlide className="px-14">
@@ -514,8 +516,8 @@ export default function Home() {
                   <figcaption className="font-taviraj">Real</figcaption>
                   <Image
                     src={"/images/fakegenotropinhgh/Real-pen-adjustment.webp"}
-                    width={300}
-                    height={300}
+                    width={900}
+                    height={900}
                     className="w-full object-cover "
                     alt="Real-pen-adjustment"
                   />
@@ -526,8 +528,8 @@ export default function Home() {
                   <figcaption className="font-taviraj">Fake</figcaption>
                   <Image
                     src={"/images/fakegenotropinhgh/Fake-pen-adjustment.webp"}
-                    width={300}
-                    height={300}
+                    width={900}
+                    height={900}
                     alt="Fake-pen-adjustment"
                     loading="eager"
                     className="w-full object-cover "
@@ -551,7 +553,7 @@ export default function Home() {
               className="mySwiper px-20"
               breakpoints={{
                 300: { slidesPerView: 1 },
-                768: { slidesPerView: 3 },
+                768: { slidesPerView: 2 },
               }}
             >
               <SwiperSlide className="px-14">

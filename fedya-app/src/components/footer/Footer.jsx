@@ -3,7 +3,7 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <footer className="bg-black mt-12 lg:mt-48">
+    <footer className="bg-black mt-12 lg:mt-16">
       <div className="container space-y-8 px-4 py-10 sm:px-6 lg:space-y-10 lg:px-8">
         <div className="grid grid-cols-2 items-center  sm:flex sm:items-center sm:justify-between">
           <Image src={"/images/F.png"} width={50} height={50} alt="logo" />
