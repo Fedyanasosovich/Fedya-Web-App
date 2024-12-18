@@ -7,13 +7,15 @@ const Hero = ({ title }) => {
   return (
     <div className=" bg-grid-lines  relative z-20 overflow-hidden  ">
       <div className="flex items-center  min-h-svh container   ">
-        <div className="flex lg:flex-row flex-col  lg:my-0 mt-32 mb-12   justify-between items-center w-full gap-12">
+        <div className="flex lg:flex-row flex-col  lg:my-0 mt-32 mb-4  justify-between items-center w-full gap-12">
 
         <div>
-          <Button
-              title={"Click here to purchase pharmaceutical  HGH"}
-              containerClass={"text-sm px-6"}
-            />
+          <Link href={"https://buypfizergenotropinhgh.com/"} target="_blank">
+            <Button
+                title={"Click here to purchase pharmaceutical  HGH"}
+                containerClass={"text-sm px-6"}
+              />
+          </Link>
             <div className="mt-5">
               <p className="mb-2 text-center">Follow us on</p>
               <Link href={"https://www.instagram.com/fedya_nasosovich/"}>

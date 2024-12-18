@@ -340,7 +340,7 @@ export default function Home() {
                 <div>
                   <figcaption className="font-taviraj">Real</figcaption>
                   <Image
-                    src={"/images/fakegenotropinhgh/Real-QR-code.jpg"}
+                    src={"/images/fakegenotropinhgh/Real-qr-code.jpg"}
                     width={300}
                     height={300}
                     alt="Fake-QR-code"
@@ -726,10 +726,12 @@ export default function Home() {
         {/* </div> */}
 
         <div className="flex flex-col items-center mt-12">
-          <Button
-            title={"Click here to purchase pharmaceutical  HGH"}
-            containerClass={"text-sm px-6"}
-          />
+          <Link href={"https://buypfizergenotropinhgh.com/"} target="_blank">
+            <Button
+              title={"Click here to purchase pharmaceutical  HGH"}
+              containerClass={"text-sm px-6"}
+            />
+          </Link>
           <div className="mt-5">
             <p className="mb-2 text-center">Follow us on</p>
             <Link href={"https://www.instagram.com/fedya_nasosovich/"}>
