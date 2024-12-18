@@ -13,10 +13,10 @@ const Button = ({ id, title, rightIcon, leftIcon, containerClass }) => {
       {leftIcon}
 
       <span className="relative inline-flex overflow-hidden font-general text-xs capitalize">
-        <div className="translate-y-0 skew-y-0 transition duration-500 group-hover:translate-y-[-210%] group-hover:skew-y-12 text-base">
+        <div className="translate-y-0 skew-y-0 transition duration-500 group-hover:translate-y-[-240%] group-hover:skew-y-12 text-base">
           {title}
         </div>
-        <div className="absolute translate-y-[214%] skew-y-12 transition duration-500 group-hover:translate-y-0 group-hover:skew-y-0 text-base">
+        <div className="absolute translate-y-[234%] skew-y-12 transition duration-500 group-hover:translate-y-0 group-hover:skew-y-0 text-base">
           {title}
         </div>
       </span>

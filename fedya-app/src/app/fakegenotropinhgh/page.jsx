@@ -16,6 +16,7 @@ import { IoIosPlayCircle } from "react-icons/io";
 
 import DynamicSlider from "@/components/fakegenotropinhgh/dynamicSlider";
 import Link from "next/link";
+import Button from "@/components/global/button";
 
 export default function Home() {
   // useEffect(() => {
@@ -227,6 +228,7 @@ export default function Home() {
                     width={300}
                     height={300}
                     alt="Real Box Font"
+                    className="w-full object-cover "
                   />
                 </div>
               </SwiperSlide>
@@ -239,6 +241,7 @@ export default function Home() {
                     height={300}
                     alt="Fake Box Font"
                     loading="eager"
+                    className="w-full object-cover "
                   />
                 </div>
               </SwiperSlide>
@@ -267,6 +270,7 @@ export default function Home() {
                   <Image
                     src={"/images/fakegenotropinhgh/Thin-purple-line-real.webp"}
                     width={300}
+                    className="w-full object-cover "
                     height={300}
                     alt="Thin Purple Line"
                   />
@@ -281,6 +285,7 @@ export default function Home() {
                     }
                     width={300}
                     height={300}
+                    className="w-full object-cover "
                     alt="Thick Purple Line"
                     loading="eager"
                   />
@@ -289,8 +294,8 @@ export default function Home() {
             </Swiper>
           </div>
           <p className="mt-4">
-            Differences between fake qr code and real qr code. The real qr code
-            is smaller.
+            The old qr code had 2 lines of serial numbers. The new qr code has 4
+            lines of serial numbers.
           </p>
           <div className="flex gap-3">
             <Swiper
@@ -308,12 +313,13 @@ export default function Home() {
             >
               <SwiperSlide className="px-14">
                 <div>
-                  <figcaption className="font-taviraj">Real</figcaption>
+                  <figcaption className="font-taviraj">Fake</figcaption>
                   <Image
                     src={"/images/fakegenotropinhgh/Real-QR-code.webp"}
                     width={300}
                     height={300}
                     alt="Real-QR-code"
+                    className="w-full object-cover "
                   />
                 </div>
               </SwiperSlide>
@@ -326,6 +332,20 @@ export default function Home() {
                     height={300}
                     alt="Fake-QR-code"
                     loading="eager"
+                    className="w-full object-cover "
+                  />
+                </div>
+              </SwiperSlide>
+              <SwiperSlide className="px-14">
+                <div>
+                  <figcaption className="font-taviraj">Real</figcaption>
+                  <Image
+                    src={"/images/fakegenotropinhgh/Real-QR-code.jpg"}
+                    width={300}
+                    height={300}
+                    alt="Fake-QR-code"
+                    loading="eager"
+                    className="w-full object-cover "
                   />
                 </div>
               </SwiperSlide>
@@ -351,20 +371,21 @@ export default function Home() {
             >
               <SwiperSlide className="px-14">
                 <div>
-                  <figcaption className="font-taviraj">Real</figcaption>
+                  {/* <figcaption className="font-taviraj">Real</figcaption> */}
                   <Image
                     src={
                       "/images/fakegenotropinhgh/Real-country-of-manufacture.webp"
                     }
                     width={300}
                     height={300}
+                    className="w-full object-cover "
                     alt="Real-QR-code"
                   />
                 </div>
               </SwiperSlide>
               <SwiperSlide className="px-14">
                 <div>
-                  <figcaption className="font-taviraj">Fake</figcaption>
+                  {/* <figcaption className="font-taviraj">Fake</figcaption> */}
                   <Image
                     src={
                       "/images/fakegenotropinhgh/fake-country-of-manufacture.webp"
@@ -372,6 +393,7 @@ export default function Home() {
                     width={300}
                     height={300}
                     alt="Fake-QR-code"
+                    className="w-full object-cover "
                     loading="eager"
                   />
                 </div>
@@ -402,6 +424,7 @@ export default function Home() {
                     src={"/images/fakegenotropinhgh/Real-mg-printed.webp"}
                     width={300}
                     height={300}
+                    className="w-full object-cover "
                     alt="Real-mg-printed"
                   />
                 </div>
@@ -415,6 +438,7 @@ export default function Home() {
                     height={300}
                     alt="Fake-mg-printed"
                     loading="eager"
+                    className="w-full object-cover "
                   />
                 </div>
               </SwiperSlide>
@@ -446,6 +470,7 @@ export default function Home() {
                     width={300}
                     height={300}
                     alt="Real-blue-sticker"
+                    className="w-full object-cover "
                   />
                 </div>
               </SwiperSlide>
@@ -458,6 +483,7 @@ export default function Home() {
                     height={300}
                     alt="Real-blue-sticker"
                     loading="eager"
+                    className="w-full object-cover "
                   />
                 </div>
               </SwiperSlide>
@@ -490,6 +516,7 @@ export default function Home() {
                     src={"/images/fakegenotropinhgh/Real-pen-adjustment.webp"}
                     width={300}
                     height={300}
+                    className="w-full object-cover "
                     alt="Real-pen-adjustment"
                   />
                 </div>
@@ -503,6 +530,52 @@ export default function Home() {
                     height={300}
                     alt="Fake-pen-adjustment"
                     loading="eager"
+                    className="w-full object-cover "
+                  />
+                </div>
+              </SwiperSlide>
+            </Swiper>
+          </div>
+          <p className="mt-4">
+            The real pen has no space between the text lot mfg and the number.
+            The fake pen has a large space.
+          </p>
+          <div className="flex gap-3">
+            <Swiper
+              modules={[Navigation, Pagination, Scrollbar, A11y]}
+              spaceBetween={0}
+              slidesPerView={3}
+              pagination={{ clickable: true }}
+              scrollbar={{ draggable: true }}
+              navigation={true}
+              className="mySwiper px-20"
+              breakpoints={{
+                300: { slidesPerView: 1 },
+                768: { slidesPerView: 3 },
+              }}
+            >
+              <SwiperSlide className="px-14">
+                <div>
+                  <figcaption className="font-taviraj">Fake</figcaption>
+                  <Image
+                    src={"/images/fakegenotropinhgh/1000026235.png"}
+                    width={300}
+                    height={300}
+                    className="w-full object-cover "
+                    alt="Real-pen-adjustment"
+                  />
+                </div>
+              </SwiperSlide>
+              <SwiperSlide className="px-14">
+                <div>
+                  <figcaption className="font-taviraj">Real</figcaption>
+                  <Image
+                    src={"/images/fakegenotropinhgh/1000026236.png"}
+                    width={300}
+                    height={300}
+                    alt="Fake-pen-adjustment"
+                    loading="eager"
+                    className="w-full object-cover "
                   />
                 </div>
               </SwiperSlide>
@@ -531,7 +604,7 @@ export default function Home() {
                 <div>
                   <figcaption className="font-taviraj">A NEW LOGO</figcaption>
                   <Image
-                    src={"/images/fakegenotropinhgh/New-logo.webp"}
+                    src={"/images/fakegenotropinhgh/DSC_1603.JPG"}
                     className="w-full object-cove h-72"
                     width={300}
                     height={300}
@@ -546,9 +619,7 @@ export default function Home() {
                     SMALLER PRINT ON THE EXPIRY DATE{" "}
                   </figcaption>
                   <Image
-                    src={
-                      "/images/fakegenotropinhgh/Smaller-print-on-expiry-date.webp"
-                    }
+                    src={"/images/fakegenotropinhgh/DSC_1600.JPG"}
                     className="w-full object-cove h-72"
                     width={300}
                     height={300}
@@ -563,9 +634,7 @@ export default function Home() {
                     A DIFFERENT QR CODE STICKER WITH ROUND EDGES AND DARKER INK
                   </figcaption>
                   <Image
-                    src={
-                      "/images/fakegenotropinhgh/Different-qr-code-sticker-with-round-edges-darker-ink.webp"
-                    }
+                    src={"/images/fakegenotropinhgh/DSC_1602.JPG"}
                     className="w-full object-cover h-72"
                     width={300}
                     height={300}
@@ -656,11 +725,17 @@ export default function Home() {
         {/* </div> */}
         {/* </div> */}
 
-        <div className="mt-10 text-center">
-          <p className="mb-2">Follow us on</p>
-          <Link href={"https://www.instagram.com/fedya_nasosovich/"}>
-            <IoLogoInstagram size={34} className="text-darkPurple mx-auto" />
-          </Link>
+        <div className="flex flex-col items-center mt-12">
+          <Button
+            title={"Click here to purchase pharmaceutical  HGH"}
+            containerClass={"text-sm px-6"}
+          />
+          <div className="mt-5">
+            <p className="mb-2 text-center">Follow us on</p>
+            <Link href={"https://www.instagram.com/fedya_nasosovich/"}>
+              <IoLogoInstagram size={34} className="text-darkPurple mx-auto" />
+            </Link>
+          </div>
         </div>
       </div>
     </>
