@@ -24,7 +24,7 @@ const Hero = ({ title }) => {
             </div>
         </div>
           <div className="max-w-2xl lg:text-start text-center flex flex-col gap-3 lg:mt-16">
-            <h1 className="text-4xl lg:text-center  lg:text-8xl font-taviraj ">{title}</h1>
+            <h1 className="text-4xl lg:text-center  lg:text-6xl font-taviraj ">{title}</h1>
             <span className="h-1 round block w-full bg-darkPurple"></span>
           </div>
 
