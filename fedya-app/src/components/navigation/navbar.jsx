@@ -9,8 +9,9 @@ import { HiOutlineMenuAlt4 } from "react-icons/hi";
 import { RxCross2 } from "react-icons/rx";
 import Lenis from "@studio-freight/lenis";
 import Button from "../global/button";
+import Link from "next/link";
 
-const navItems = ["Home", "Free Video Courses", "Ebooks", "Buys HGH"];
+const navItems = ["Home", "Latest videos", "Identify fake hgh ", "Buy hgh from the pharmacy "];
 
 const NavBar = () => {
   // State for toggling audio and visual indicator
@@ -216,17 +217,14 @@ const NavBar = () => {
               {item}
             </a>
           ))}
-          <a href="#" className="nav-hover-btn !mx-0 !text-2xl">
-            Text Test
-          </a>
-          <a href="#" className="nav-hover-btn !mx-0 !text-2xl">
-            Text Test
-          </a>
-          <Button
-            id="product-button"
-            title="Contact"
-            containerClass="flex text-foreground px-10 border-purple font-bold border-2 py-2 items-center justify-center gap-1 mt-auto"
-          />
+      
+          <Link href="mailto:fedyanasosovich@gmail.com" className="mt-auto">
+            <Button
+              id="product-button"
+              title="Contact"
+              containerClass="flex text-foreground px-10 border-purple font-bold border-2 py-2 items-center justify-center gap-1 "
+            />
+          </Link>
         </div>
       </nav>
     </div>

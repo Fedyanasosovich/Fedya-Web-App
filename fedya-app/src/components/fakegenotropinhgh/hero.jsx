@@ -7,7 +7,7 @@ const Hero = ({ title }) => {
   return (
     <div className=" bg-grid-lines  relative z-20 overflow-hidden  ">
       <div className="flex items-center  min-h-svh container   ">
-        <div className="flex flex-col  lg:max-w-2xl lg:mx-auto  lg:my-0 mt-32 mb-4  justify-between items-center w-full gap-12 lg:gap-6">
+        <div className="flex flex-col  lg:max-w-2xl lg:mx-auto  lg:my-0 mt-16 mb-4  justify-between items-center w-full gap-12 lg:gap-6">
 
         <div className="lg:hidden block">
           <Link href={"https://buypfizergenotropinhgh.com/"} target="_blank">
