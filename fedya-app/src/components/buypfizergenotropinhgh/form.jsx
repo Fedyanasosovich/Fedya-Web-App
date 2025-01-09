@@ -1,7 +1,8 @@
-"use client"
+"use client";
 
 import React, { useState } from "react";
 import { VscLoading } from "react-icons/vsc";
+
 const Form = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -81,58 +82,86 @@ const Form = () => {
                 />
               </div>
 
-         
+              <div>
+                <label className="sr-only" htmlFor="email">
+                  Email
+                </label>
+                <input
+                  className="w-full rounded-lg border border-gray-600 p-3 text-sm"
+                  placeholder="Email address"
+                  type="email"
+                  id="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
+                />
+              </div>
+
+              <div className="grid gap-4">
                 <div>
-                  <label className="sr-only" htmlFor="email">
-                    Email
-                  </label>
-                  <input
-                    className="w-full rounded-lg border border-gray-600 p-3 text-sm"
-                    placeholder="Email address"
-                    type="email"
-                    id="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    required
-                  />
+                  <p className="text-sm font-medium mb-2">Product</p>
+                  <div className="w-full border border-gray-600 p-3 rounded-lg">
+                    <div className="mb-2">
+                      <input
+                        type="radio"
+                        id="product-2x36iu"
+                        name="product"
+                        value="2x36iu"
+                        checked={formData.product === "2x36iu"}
+                        onChange={handleChange}
+                        required
+                      />
+                      <label htmlFor="product-2x36iu" className="ml-2">
+                        2 x 36 iu total 72iu. Price is 760 euro (380 euro per
+                        pack)
+                      </label>
+                    </div>
+                    <div className="mb-2">
+                      <input
+                        type="radio"
+                        id="product-4x36iu"
+                        name="product"
+                        value="4x36iu"
+                        checked={formData.product === "4x36iu"}
+                        onChange={handleChange}
+                      />
+                      <label htmlFor="product-4x36iu" className="ml-2">
+                        4 x 36 iu total 144 iu. Price is 1480 euro (370 euro per
+                        pack)
+                      </label>
+                    </div>
+                    <div className="mb-2">
+                      <input
+                        type="radio"
+                        id="product-6x36iu"
+                        name="product"
+                        value="6x36iu"
+                        checked={formData.product === "6x36iu"}
+                        onChange={handleChange}
+                      />
+                      <label htmlFor="product-6x36iu" className="ml-2">
+                        6 x 36 iu total 216 iu. Price is 2160 euro (360 euro per
+                        pack)
+                      </label>
+                    </div>
+                    <div className="mb-2">
+                      <input
+                        type="radio"
+                        id="product-10x36iu"
+                        name="product"
+                        value="10x36iu"
+                        checked={formData.product === "10x36iu"}
+                        onChange={handleChange}
+                      />
+                      <label htmlFor="product-10x36iu" className="ml-2">
+                        10 x 36 iu total 360iu. Price is 3500 euro (350 euro per
+                        pack)
+                      </label>
+                    </div>
+                  </div>
                 </div>
 
-               
-            
-
-              <div className="grid md:grid-cols-2 gap-4">
-                <div>
-                  <label className="sr-only" htmlFor="product">
-                    Product
-                  </label>
-                  <select
-                    id="product"
-                    name="product"
-                    className="w-full rounded-lg text-black border border-gray-600 p-3 text-sm"
-                    value={formData.product}
-                    onChange={handleChange}
-                    required
-                  >
-                    <option value="">Select Quantity</option>
-                    <option value="2x36iu">
-                      2 x 36 iu total 72iu . Price is 760 euro (380 euro per
-                      pack)
-                    </option>
-                    <option value="4x36iu">
-                      4 x 36 iu total 144 iu Price is 1480 euro (370 euro per
-                      pack)
-                    </option>
-                    <option value="6x36iu">
-                      6 x 36 iu total 216 iu Price is 2160 euro (360 euro per
-                      pack)
-                    </option>
-                    <option value="10x36iu">
-                      10 x 36 iu total 360iu Price is 3500 euro (350 euro per
-                      pack)
-                    </option>
-                  </select>
-                </div>
                 <div>
                   <label className="sr-only" htmlFor="paymentMethod">
                     Payment Method

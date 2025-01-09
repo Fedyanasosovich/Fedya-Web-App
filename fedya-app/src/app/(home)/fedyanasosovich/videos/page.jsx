@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React, { useEffect, useState } from "react";
 import { BiLoaderAlt } from "react-icons/bi";
 import { IoIosPlayCircle } from "react-icons/io";
@@ -35,21 +35,21 @@ const page = () => {
     const video = document.createElement("video");
     video.src = videoUrl;
     video.crossOrigin = "anonymous"; // Handle cross-origin issues if necessary
-    let currentTime = 1; // Start at 1 second
+    let currentTime = 200; // Start at 1 second
     const maxRetries = 5; // Maximum number of retries
     let retries = 0;
-  
+
     const captureFrame = () => {
       const canvas = document.createElement("canvas");
       canvas.width = video.videoWidth;
       canvas.height = video.videoHeight;
       const ctx = canvas.getContext("2d");
       ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
-      
+
       // Check if the frame is black
       const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
       const isBlackFrame = isBlack(imageData);
-  
+
       if (!isBlackFrame || retries >= maxRetries) {
         // If the frame is not black OR max retries reached, save the thumbnail
         const thumbnailUrl = canvas.toDataURL("image/png");
@@ -61,16 +61,16 @@ const page = () => {
         video.currentTime = currentTime;
       }
     };
-  
+
     video.onloadeddata = () => {
       video.onseeked = captureFrame;
       video.currentTime = currentTime;
     };
-  
+
     video.onerror = () => {
       console.error(`Failed to load video: ${videoUrl}`);
     };
-  
+
     // Helper function to check if a frame is black
     const isBlack = (imageData) => {
       const { data } = imageData;
@@ -83,7 +83,6 @@ const page = () => {
       return true;
     };
   };
-  
 
   useEffect(() => {
     if (!fetchCall) {
@@ -111,9 +110,8 @@ const page = () => {
   return (
     <>
       <Hero
-        title={"Free Video Courses"}
-        text={`To celebrate the launch of the new website and thank my dedicated fans I
-        have decided to unlock all the previously paid content for free. Enjoy! 🚀`}
+        title={"Latest Videos"}
+        text={`Here you will find the latest videos as they are uploaded. 🚀`}
       />
       <div className="pt-12 lg:pt-48">
         <div className="grid grid-cols-2 container mx-4 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -146,7 +144,12 @@ const page = () => {
 
                 {/* Video Title */}
                 <h3 className="text-center mt-2 text-white text-sm">
-                  {item.key.replace(/_/g, " ").replace(/\.[^/.]+$/, "")}
+                  {item.key
+                    .replace(/_/g, " ")
+                    .replace(/\.[^/.]+$/, "")
+                    .replaceAll("x264", "")
+              
+                    }
                 </h3>
 
                 {/* Modal */}
@@ -161,7 +164,7 @@ const page = () => {
                         onClick={(e) => e.stopPropagation()} // Prevent click propagation
                       >
                         <IoCloseOutline
-                          className="modal__close absolute top-2 right-2 text-white text-3xl cursor-pointer"
+                          className="modal__close absolute z-[999] top-2 right-2 text-black text-3xl cursor-pointer"
                           aria-label="Close modal"
                           onClick={() => setOpenModalIndex(null)} // Close modal on close button click
                         />
@@ -177,16 +180,19 @@ const page = () => {
                           <video
                             className="modal__video-style w-full max-w-3xl"
                             onLoadedData={() => setVideoLoading(false)}
-                            loading="lazy"
+                           preload="true"
                             src={item.url}
                             controls
-                            autoPlay
+                            autoPlay="true"
                             title={item.key}
                           ></video>
                           <h2 className="text-xl text-center mt-4 text-white">
-                            {item.key
-                              .replace(/_/g, " ")
-                              .replace(/\.[^/.]+$/, "")}
+                            {
+                              item.key
+                                .replace(/_/g, " ") // Replace underscores with spaces
+                                .replace(/\.[^/.]+$/, "") // Remove file extension
+                                .replaceAll("x264", "") // Remove "x264" from the string
+                            }
                           </h2>
                         </div>
                       </div>
