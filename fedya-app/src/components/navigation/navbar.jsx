@@ -11,7 +11,17 @@ import Lenis from "@studio-freight/lenis";
 import Button from "../global/button";
 import Link from "next/link";
 
-const navItems = ["Home", "Latest videos", "Identify fake hgh ", "Buy hgh from the pharmacy "];
+const navItems = [
+  { name: "Home", url: "/" },
+  { name: "Latest videos", url: "/videos" },
+  {
+    name: "Identify fake hgh ",
+
+    url: "/fakehgh",
+  },
+
+  { name: "Buy hgh from the pharmacy ", url: "/buyhgh" },
+];
 
 const NavBar = () => {
   // State for toggling audio and visual indicator
@@ -217,7 +227,7 @@ const NavBar = () => {
               {item}
             </a>
           ))}
-      
+
           <Link href="mailto:fedyanasosovich@gmail.com" className="mt-auto">
             <Button
               id="product-button"
