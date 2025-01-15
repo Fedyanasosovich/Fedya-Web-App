@@ -175,13 +175,13 @@ const NavBar = () => {
               <div className="flex h-full items-center l">
                 <div className="hidden md:block">
                   {navItems.map((item, index) => (
-                    <a
+                    <Link
                       key={index}
-                      href={`#${item.toLowerCase()}`}
+                      href={item.url}
                       className="nav-hover-btn py-"
                     >
-                      {item}
-                    </a>
+                      {item.name}
+                    </Link>
                   ))}
                 </div>
               </div>
@@ -219,13 +219,13 @@ const NavBar = () => {
       >
         <div className="pt-28 pb-12 flex flex-col h-full items-center font-taviraj gap-4">
           {navItems.map((item, index) => (
-            <a
+            <Link
               key={index}
-              href={`#${item.toLowerCase()}`}
+              href={item.url}
               className="nav-hover-btn !mx-0 !text-2xl"
             >
-              {item}
-            </a>
+              {item.name}
+            </Link>
           ))}
 
           <Link href="mailto:fedyanasosovich@gmail.com" className="mt-auto">
