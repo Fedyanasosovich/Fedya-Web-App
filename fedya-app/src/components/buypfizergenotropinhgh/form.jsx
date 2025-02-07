@@ -169,18 +169,18 @@ const Form = () => {
                   <select
                     id="paymentMethod"
                     name="paymentMethod"
-                    className="w-full rounded-lg text-black border border-gray-600 p-3 text-sm"
+                    className="w-full rounded-lg text-black border font-inherit border-gray-600 p-3 text-sm"
                     value={formData.paymentMethod}
                     onChange={handleChange}
                     required
                   >
                     <option value="">Select Payment Method</option>
-                    <option value="Paypal">Paypal</option>
-                    <option value="Bank-Wire">Bank Wire</option>
-                    <option value="Western-Union">
+                    
+                    <option  value="Bank-Wire">Bank Wire</option>
+                    <option  value="Western-Union">
                       Western Union / Money Gram
                     </option>
-                    <option value="Crypto">Crypto</option>
+                    <option  value="Crypto">Crypto</option>
                   </select>
                 </div>
               </div>

@@ -19,6 +19,9 @@ module.exports = {
         tavirajItalic: ["var(--taviraj-italic)", "serif"], // For Taviraj-Italic
         workSans: ["var(--worksans-variableFont)", "sans-serif"], // For Work Sans
       },
+      fontWeight: {
+        inherit: "inherit",
+      },
     },
   },
   plugins: [],

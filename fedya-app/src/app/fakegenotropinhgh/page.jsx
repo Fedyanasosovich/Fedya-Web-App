@@ -647,7 +647,20 @@ export default function Home() {
               </SwiperSlide>
             </Swiper>
           </div>
+          <div>
+                  <Image
+                    src={
+                      "/images/fakegenotropinhgh/New-qr-code-update-2027.JPG"
+                    }
+                    width={900}
+                    height={900}
+                    className="w-full object-cover "
+                    alt="Thick Purple Line"
+                    loading="eager"
+                  />
+                  <figcaption  className="font-taviraj">For pens expiring after January of 2027 the 17 code now looks like this. </figcaption>
 
+                </div>
           <p className="mt-4">
             I hope all this has helped tremendously . Please bear in mind that
             some fakes may only have one mistake on the pen and the package is
@@ -656,76 +669,9 @@ export default function Home() {
           </p>
         </div>
 
-        {/* Second Section */}
+  
 
-        {/* <div className=" lg:pt-48">
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-2 mt-10  gap-8">
-            {/* <video src=""></video> */}
-
-        {/* gridItems.map((item, index) => (
-              <div
-                key={index}
-                onClick={() => openModal(index)} // Pass the index to open the correct modal
-                className="cursor-pointer  w-full"
-              >
-                <div className="relative  w-full before:absolute before:left-0 before:right-0 before:top-0 before:z-10 before:h-full h-full z-10 before:w-full before:bg-black before:opacity-50">
-                  <Image
-                    src={item.imageSrc}
-                    className="w-full max-w-[1500px] h-full max-h-full lg:max-h-[400px] object-cover rounded-lg"
-                    width={1500}
-                    height={200}
-                    alt={item.title}
-                  />
-                  <p className="absolute top-1/2 z-20 left-1/2 -translate-x-1/2 -translate-y-1/2">
-                    <IoIosPlayCircle size={54} />
-                  </p>
-                </div>
-
-                {/* Conditionally render the modal if it matches the openModalIndex */}
-        {/* {openModalIndex === index && ( */}
-        {/* <section className="modal__bg">
-                    <div className="modal__align">
-                      <div className="modal__content">
-                        <IoCloseOutline
-                          className="modal__close"
-                          aria-label="Close modal"
-                          onClick={() => setOpenModalIndex(null)} // Close modal
-                        />
-                        <div className="modal__video-align flex-col items-center">
-                          {videoLoading ? (
-                            <div className="modal__spinner">
-                              <BiLoaderAlt
-                                className="modal__spinner-style"
-                                fadeIn="none"
-                              />
-                            </div>
-                          ) : null}
-                          <video
-                            className="modal__video-style"
-                            onLoad={spinner}
-                            loading="lazy"
-                            width="800"
-                            height="500"
-                            src={item.videoSrc}
-                            controls
-                            autoPlay
-                            title="YouTube video player"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowFullScreen
-                          ></video>
-                          <h2 className="text-2xl text-center  md:text-3xl text-white  bottom-0 z-30 p-2 font-taviraj">
-                            {item.title}
-                          </h2>
-                        </div>
-                      </div>
-                    </div>
-                  </section>
-                )}
-              </div> */}
-
-        {/* )) } */}
-        {/* </div> */}
-        {/* </div> */}
+      
 
         <div className="flex flex-col items-center mt-12">
           <Link href={"https://buypfizergenotropinhgh.com/"} target="_blank">
