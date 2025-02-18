@@ -12,15 +12,15 @@ import Button from "../global/button";
 import Link from "next/link";
 
 const navItems = [
-  { name: "Home", url: "/fedyanasosovich" },
-  { name: "Latest videos", url: "/fedyanasosovich/videos" },
+  { name: "Home", url: "fedyanasosovich.com" },
+  { name: "Latest videos", url: "fedyanasosovich.com/videos" },
   {
     name: "Identify fake hgh ",
 
-    url: "/fakegenotropinhgh",
+    url: "fakegenotropinhgh.com",
   },
 
-  { name: "Buy hgh from the pharmacy ", url: "/buypfizergenotropinhgh" },
+  { name: "Buy hgh from the pharmacy ", url: "buypfizergenotropinhgh.com" },
 ];
 
 const NavBar = () => {
