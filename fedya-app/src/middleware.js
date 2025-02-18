@@ -31,7 +31,7 @@ export function middleware(request) {
 
 // Function to check if the requested URL is for a static asset
 function isStaticAsset(pathname) {
-  return pathname.match(/\.(css|js|png|jpg|jpeg|gif|svg|woff|woff2|eot|ttf|otf|webp)$/i);
+  return pathname.match(/\.(css|js|png|jpg|jpeg|gif|svg|woff|woff2|eot|ttf|otf|webp|ico)$/i);
 }
 
 // Function to normalize hostnames (strip protocols and "www")
