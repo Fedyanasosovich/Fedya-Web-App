@@ -221,7 +221,7 @@ export default function Home() {
                 768: { slidesPerView: 2 },
               }}
             >
-              <SwiperSlide className="px-14 !w-[412px]">
+              <SwiperSlide className="px-14 md:!w-[412px]">
                 <div className="w-full">
                   <figcaption className="font-taviraj">Real</figcaption>
                   <Image
@@ -233,7 +233,7 @@ export default function Home() {
                   />
                 </div>
               </SwiperSlide>
-              <SwiperSlide className="px-14 !w-[412px]">
+              <SwiperSlide className="px-14 md:!w-[412px]">
                 <div className="w-full">
                   <figcaption className="font-taviraj">Fake</figcaption>
                   <Image
@@ -266,7 +266,7 @@ export default function Home() {
                 768: { slidesPerView: 2 },
               }}
             >
-              <SwiperSlide className="px-14 !w-[412px]">
+              <SwiperSlide className="px-14 md:!w-[412px]">
                 <div>
                   <figcaption className="font-taviraj">Real</figcaption>
                   <Image
@@ -278,7 +278,7 @@ export default function Home() {
                   />
                 </div>
               </SwiperSlide>
-              <SwiperSlide className="px-14 !w-[412px]">
+              <SwiperSlide className="px-14 md:!w-[412px]">
                 <div>
                   <figcaption className="font-taviraj">Fake</figcaption>
                   <Image
@@ -371,7 +371,7 @@ export default function Home() {
                 768: { slidesPerView: 2 },
               }}
             >
-              <SwiperSlide className="px-14 !w-[412px]">
+              <SwiperSlide className="px-14 md:!w-[412px]">
                 <div>
                   {/* <figcaption className="font-taviraj">Real</figcaption> */}
                   <Image
@@ -385,7 +385,7 @@ export default function Home() {
                   />
                 </div>
               </SwiperSlide>
-              <SwiperSlide className="px-14 !w-[412px]">
+              <SwiperSlide className="px-14 md:!w-[412px]">
                 <div>
                   {/* <figcaption className="font-taviraj">Fake</figcaption> */}
                   <Image
@@ -419,7 +419,7 @@ export default function Home() {
                 768: { slidesPerView: 2 },
               }}
             >
-              <SwiperSlide className="px-14 !w-[412px]">
+              <SwiperSlide className="px-14 md:!w-[412px]">
                 <div>
                   <figcaption className="font-taviraj">Real</figcaption>
                   <Image
@@ -431,7 +431,7 @@ export default function Home() {
                   />
                 </div>
               </SwiperSlide>
-              <SwiperSlide className="px-14 !w-[412px]">
+              <SwiperSlide className="px-14 md:!w-[412px]">
                 <div>
                   <figcaption className="font-taviraj">Fake</figcaption>
                   <Image
@@ -464,7 +464,7 @@ export default function Home() {
                 768: { slidesPerView: 2 },
               }}
             >
-              <SwiperSlide className="px-14 !w-[412px]">
+              <SwiperSlide className="px-14 md:!w-[412px]">
                 <div>
                   <figcaption className="font-taviraj">Real</figcaption>
                   <Image
@@ -476,7 +476,7 @@ export default function Home() {
                   />
                 </div>
               </SwiperSlide>
-              <SwiperSlide className="px-14 !w-[412px]">
+              <SwiperSlide className="px-14 md:!w-[412px]">
                 <div>
                   <figcaption className="font-taviraj">Fake</figcaption>
                   <Image
@@ -511,7 +511,7 @@ export default function Home() {
                 768: { slidesPerView: 2 },
               }}
             >
-              <SwiperSlide className="px-14 !w-[412px]">
+              <SwiperSlide className="px-14 md:!w-[412px]">
                 <div>
                   <figcaption className="font-taviraj">Real</figcaption>
                   <Image
@@ -523,7 +523,7 @@ export default function Home() {
                   />
                 </div>
               </SwiperSlide>
-              <SwiperSlide className="px-14 !w-[412px]">
+              <SwiperSlide className="px-14 md:!w-[412px]">
                 <div>
                   <figcaption className="font-taviraj">Fake</figcaption>
                   <Image
@@ -622,7 +622,7 @@ export default function Home() {
                   </figcaption>
                   <Image
                     src={"/images/fakegenotropinhgh/DSC_1600.JPG"}
-                    className="w-full object-cove h-72"
+                    className="w-full object-cover h-72"
                     width={300}
                     height={300}
                     alt="Real-pen-adjustment"
@@ -647,14 +647,14 @@ export default function Home() {
               </SwiperSlide>
             </Swiper>
           </div>
-          <div>
+          <div className="flex justify-center items-center flex-col">
                   <Image
                     src={
                       "/images/fakegenotropinhgh/New-qr-code-update-2027.JPG"
                     }
                     width={900}
                     height={900}
-                    className="w-full object-cover "
+                    className="w-full md:max-w-xl max-h-56 object-cover "
                     alt="Thick Purple Line"
                     loading="eager"
                   />

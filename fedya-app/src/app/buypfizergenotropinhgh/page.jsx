@@ -272,7 +272,7 @@ export default function Home() {
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                             allowFullScreen
                           ></video>
-                          <h2 className="text-2xl text-center  md:text-3xl text-white  bottom-0 z-30 p-2 font-taviraj">
+                          <h2 className="text-2xl text-center  md:text-3xl text-white  bottom-0 z-30 p-2 font-taviraj py-5">
                             {item.title}
                           </h2>
                         </div>

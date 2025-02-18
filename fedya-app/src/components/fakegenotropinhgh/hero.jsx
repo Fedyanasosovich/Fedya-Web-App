@@ -3,7 +3,7 @@ import Image from "next/image";
 import Button from "../global/button";
 import { IoLogoInstagram } from "react-icons/io5";
 import Link from "next/link";
-const Hero = ({ title }) => {
+const Hero = ({ title ,  text}) => {
   return (
     <div className=" bg-grid-lines  relative z-20 overflow-hidden  ">
       <div className="flex items-center  min-h-56   md:min-h-svh  container   ">
@@ -29,11 +29,12 @@ const Hero = ({ title }) => {
           </div>
 
           <p className="text-justify lg:text-center">
-            From the hundreds of clients I deal with 90% of those who have
+           {/* {!removeText && `From the hundreds of clients I deal with 90% of those who have
             previously purchased human growth hormone ( somatropin) over the
             internet or from a source have received fake hgh . This page is
             designed to help you identify and know the signs so as not to lose
-            your money !!!!
+            your money !!!!`} */}
+           {text}
           </p>
 
           <div className="lg:block hidden">

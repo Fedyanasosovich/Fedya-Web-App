@@ -186,7 +186,7 @@ const page = () => {
                             autoPlay="true"
                             title={item.key}
                           ></video>
-                          <h2 className="text-xl text-center mt-4 text-white">
+                          <h2 className="text-xl text-center py-5 px-4 text-white">
                             {
                               item.key
                                 .replace(/_/g, " ") // Replace underscores with spaces

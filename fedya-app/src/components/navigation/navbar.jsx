@@ -12,15 +12,15 @@ import Button from "../global/button";
 import Link from "next/link";
 
 const navItems = [
-  { name: "Home", url: "/" },
-  { name: "Latest videos", url: "/videos" },
+  { name: "Home", url: "/fedyanasosovich" },
+  { name: "Latest videos", url: "/fedyanasosovich/videos" },
   {
     name: "Identify fake hgh ",
 
-    url: "/fakehgh",
+    url: "/fakegenotropinhgh",
   },
 
-  { name: "Buy hgh from the pharmacy ", url: "/buyhgh" },
+  { name: "Buy hgh from the pharmacy ", url: "/buypfizergenotropinhgh" },
 ];
 
 const NavBar = () => {
@@ -76,6 +76,7 @@ const NavBar = () => {
 
   // Toggle audio and visual indicator
   const toggleAudioIndicator = () => {
+    
     setIsAudioPlaying((prev) => !prev);
     setIsIndicatorActive((prev) => !prev);
   };
@@ -150,7 +151,12 @@ const NavBar = () => {
       }
     }
   }, [hamburgerClick]);
-
+  const handleNavLinkClick = () => {
+    toggleMenu()
+    setHamburgerClick(false);
+    document.body.style.overflow = "";
+  };
+  
   return (
     <div>
       <div
@@ -178,6 +184,7 @@ const NavBar = () => {
                     <Link
                       key={index}
                       href={item.url}
+                      onClick={handleNavLinkClick}
                       className="nav-hover-btn py-"
                     >
                       {item.name}
@@ -222,6 +229,7 @@ const NavBar = () => {
             <Link
               key={index}
               href={item.url}
+              onClick={handleNavLinkClick}
               className="nav-hover-btn !mx-0 !text-2xl"
             >
               {item.name}

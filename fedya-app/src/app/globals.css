@@ -76,12 +76,14 @@ body {
 .modal__video-align {
   display: flex;
   position: relative;
-  bottom: 37px;
+  bottom: 37px;background: #000000d9;
+  border-radius: 20px;
 }
 
 .modal__video-style {
   border-radius: 20px;
   z-index: 100;
+  background-color: #000000d9;
 }
 
 .modal__spinner {
