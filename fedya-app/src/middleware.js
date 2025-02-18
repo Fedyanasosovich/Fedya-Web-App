@@ -2,43 +2,40 @@ import { NextResponse } from "next/server";
 
 export function middleware(request) {
   const url = request.nextUrl.clone();
-  const hostname = request.headers.get("host");
-  if (url.pathname.startsWith("/api")) {
+  const hostname = request.headers.get("host")?.toLowerCase();
+
+  // Skip middleware for API routes and static assets
+  if (url.pathname.startsWith("/api") || isStaticAsset(url.pathname)) {
     return NextResponse.next();
   }
+
+  // Normalize hostname (remove protocol & 'www.')
+  const normalizedHost = normalizeHostname(hostname);
+
   // Define domain-to-page mapping
   const domainMapping = {
-    "https://buypfizergenotropinhgh.com": "/buypfizergenotropinhgh",
     "buypfizergenotropinhgh.com": "/buypfizergenotropinhgh",
-    "www.buypfizergenotropinhgh.com": "/buypfizergenotropinhgh",
-    "http://www.buypfizergenotropinhgh.com": "/buypfizergenotropinhgh",
-    "https://www.buypfizergenotropinhgh.com": "/buypfizergenotropinhgh",
-
     "fakegenotropinhgh.com": "/fakegenotropinhgh",
-    "www.fakegenotropinhgh.com": "/fakegenotropinhgh",
-    "http://www.fakegenotropinhgh.com": "/fakegenotropinhgh",
-    "https://www.fakegenotropinhgh.com": "/fakegenotropinhgh",
-    "https://fakegenotropinhgh.com": "/fakegenotropinhgh",
+    "fedyanasosovich.com": "/fedyanasosovich",
+    "fedyanasosovich.com/videos": "/fedyanasosovich/videos",
   };
 
-  // Check if the requested URL is for a static asset (CSS, JS, images, etc.)
-  const isStaticAsset =
-    /\.(css|js|png|jpg|jpeg|gif|svg|woff|woff2|eot|ttf|otf|webp)$/i.test(
-      url.pathname
-    );
-
-  if (isStaticAsset) {
-    // If it's a static asset, return it as is, without rewriting
-    return NextResponse.next();
-  }
-
-  // Check if the hostname matches one of your domains
-  const targetPage = domainMapping[hostname];
-  if (targetPage) {
-    url.pathname = targetPage; // Rewrite to the target page
+  // If there's a match, rewrite to the target page
+  if (domainMapping[normalizedHost]) {
+    url.pathname = domainMapping[normalizedHost];
     return NextResponse.rewrite(url);
   }
 
-  // Default behavior (if no match found)
   return NextResponse.next();
+}
+
+// Function to check if the requested URL is for a static asset
+function isStaticAsset(pathname) {
+  return pathname.match(/\.(css|js|png|jpg|jpeg|gif|svg|woff|woff2|eot|ttf|otf|webp)$/i);
+}
+
+// Function to normalize hostnames (strip protocols and "www")
+function normalizeHostname(hostname) {
+  if (!hostname) return "";
+  return hostname.replace(/^www\./, ""); // Remove "www." prefix
 }
