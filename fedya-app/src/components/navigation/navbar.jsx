@@ -12,15 +12,15 @@ import Button from "../global/button";
 import Link from "next/link";
 
 const navItems = [
-  { name: "Home", url: "fedyanasosovich.com" },
-  { name: "Latest videos", url: "fedyanasosovich.com/videos" },
+  { name: "Home", url: "https://fedyanasosovich.com" },
+  { name: "Latest videos", url: "https://fedyanasosovich.com/videos" },
   {
     name: "Identify fake hgh ",
 
-    url: "fakegenotropinhgh.com",
+    url: "https://fakegenotropinhgh.com",
   },
 
-  { name: "Buy hgh from the pharmacy ", url: "buypfizergenotropinhgh.com" },
+  { name: "Buy hgh from the pharmacy ", url: "https://buypfizergenotropinhgh.com" },
 ];
 
 const NavBar = () => {
@@ -183,8 +183,9 @@ const NavBar = () => {
                   {navItems.map((item, index) => (
                     <Link
                       key={index}
-                      href={item.url}
+                  href={`${item.url}`} 
                       onClick={handleNavLinkClick}
+                   
                       className="nav-hover-btn py-"
                     >
                       {item.name}
@@ -228,7 +229,7 @@ const NavBar = () => {
           {navItems.map((item, index) => (
             <Link
               key={index}
-              href={item.url}
+              href={`https://${item.url}`} 
               onClick={handleNavLinkClick}
               className="nav-hover-btn !mx-0 !text-2xl"
             >
