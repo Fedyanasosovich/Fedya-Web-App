@@ -313,7 +313,7 @@ export default function Home() {
                 768: { slidesPerView: 3 },
               }}
             >
-              <SwiperSlide className="px-14">
+              <SwiperSlide className="px-14  md:!w-[412px]">
                 <div>
                   <figcaption className="font-taviraj">Fake</figcaption>
                   <Image
@@ -325,7 +325,7 @@ export default function Home() {
                   />
                 </div>
               </SwiperSlide>
-              <SwiperSlide className="px-14">
+              <SwiperSlide className="px-14  md:!w-[412px]">
                 <div>
                   <figcaption className="font-taviraj">Fake</figcaption>
                   <Image
@@ -338,7 +338,7 @@ export default function Home() {
                   />
                 </div>
               </SwiperSlide>
-              <SwiperSlide className="px-14">
+              <SwiperSlide className="px-14  md:!w-[412px]">
                 <div>
                   <figcaption className="font-taviraj">Real</figcaption>
                   <Image
