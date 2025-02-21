@@ -23,7 +23,7 @@ export default function Home() {
     <>
       <Hero
         title={"Welcome to the World of Fedya Nasosovich"}
-        text={`the world-famous coach with an astonishing 22 years of experience in transforming lives!`}
+      
         removeText={true}
       />
 

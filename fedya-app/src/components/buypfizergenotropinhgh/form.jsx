@@ -180,6 +180,9 @@ const Form = () => {
                     <option  value="Western-Union">
                       Western Union / Money Gram
                     </option>
+                    <option  value="Western-Union">
+                      Revolut / Wise
+                    </option>
                     <option  value="Crypto">Crypto</option>
                   </select>
                 </div>
