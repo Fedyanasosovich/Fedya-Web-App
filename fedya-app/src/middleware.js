@@ -17,10 +17,15 @@ export function middleware(request) {
     "buypfizergenotropinhgh.com": "/buypfizergenotropinhgh",
     "fakegenotropinhgh.com": "/fakegenotropinhgh",
     "fedyanasosovich.com": "/fedyanasosovich",
-    "fedyanasosovich.com/videos": "/fedyanasosovich/videos",
   };
 
-  // If there's a match, rewrite to the target page
+  // Handle special case for /videos on fedyanasosovich.com
+  if (normalizedHost === "fedyanasosovich.com" && url.pathname.startsWith("/videos")) {
+    url.pathname = "/fedyanasosovich/videos";
+    return NextResponse.rewrite(url);
+  }
+
+  // If there's a match for the domain, rewrite to the target page
   if (domainMapping[normalizedHost]) {
     url.pathname = domainMapping[normalizedHost];
     return NextResponse.rewrite(url);
@@ -31,7 +36,9 @@ export function middleware(request) {
 
 // Function to check if the requested URL is for a static asset
 function isStaticAsset(pathname) {
-  return pathname.match(/\.(css|js|png|jpg|jpeg|gif|svg|woff|woff2|eot|ttf|otf|webp|ico)$/i);
+  return pathname.match(
+    /\.(css|js|png|jpg|jpeg|gif|svg|woff|woff2|eot|ttf|otf|webp|ico)$/i
+  );
 }
 
 // Function to normalize hostnames (strip protocols and "www")

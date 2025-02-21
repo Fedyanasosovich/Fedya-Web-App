@@ -218,6 +218,8 @@ const NavBar = () => {
           </div>
         </header>
       </div>
+
+      {/* mobile nav */}
       <nav
         ref={navRef}
         className={clsx(
@@ -229,7 +231,7 @@ const NavBar = () => {
           {navItems.map((item, index) => (
             <Link
               key={index}
-              href={`https://${item.url}`} 
+              href={`${item.url}`} 
               onClick={handleNavLinkClick}
               className="nav-hover-btn !mx-0 !text-2xl"
             >
