@@ -100,7 +100,7 @@ export default function Home() {
       <div className="container">
         {/* First Section */}
 
-        <div className="  pt-12 lg:pt-24 flex flex-col gap-5 text-md lg:text-2xl  ">
+        <div className="  pt-12  flex flex-col gap-5 text-md lg:text-2xl  ">
           <p className="font-tavirajItalic">
             Below I will show you ways to tell if your hgh is real. Ofcourse the
             easiest way is to purchase it from me as you can see my videos where

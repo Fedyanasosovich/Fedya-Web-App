@@ -6,7 +6,7 @@ import Link from "next/link";
 const Hero = ({ title ,  text}) => {
   return (
     <div className=" bg-grid-lines  relative z-20 overflow-hidden  ">
-      <div className="flex items-center  min-h-56   md:min-h-svh  container   ">
+      <div className="flex items-center   min-h-56 md:min-h-[600px] container   ">
         <div className="flex flex-col  lg:max-w-2xl lg:mx-auto  lg:my-0 mt-24 mb-4  justify-between items-center w-full gap-12 lg:gap-6 pb-6 ">
 
         <div className="lg:hidden block">

@@ -145,7 +145,7 @@ export default function Home() {
       <div className="container">
         {/* First Section */}
 
-        <div className="  pt-12 lg:pt-48 flex flex-col gap-5 text-md lg:text-2xl  ">
+        <div className="  pt-12  flex flex-col gap-5 text-md lg:text-2xl  ">
           <p>
             Human Growth Hormone – Somatropin is the wonder substance of the
             last few decades. It is used by everyone from models to

@@ -198,6 +198,7 @@ const NavBar = () => {
                 id="product-button"
                 title="Contact"
                 containerClass="md:flex text-foreground px-10    font-bold py-2 hidden items-center justify-center gap-1 "
+                href={"mailto:fedyanasosovich@gmail.com"}
               />
               <div
                 onClick={toggleMenu}
@@ -244,6 +245,7 @@ const NavBar = () => {
               id="product-button"
               title="Contact"
               containerClass="flex text-foreground px-10 border-purple font-bold border-2 py-2 items-center justify-center gap-1 "
+              href={"mailto:fedyanasosovich@gmail.com"}
             />
           </Link>
         </div>

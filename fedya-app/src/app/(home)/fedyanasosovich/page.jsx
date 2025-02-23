@@ -1,6 +1,6 @@
 "use client";
 
-import Hero from "@/components/fakegenotropinhgh/hero";
+import Hero from "@/components/fedyanasosovich/hero";
 
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
