@@ -538,51 +538,7 @@ export default function Home() {
               </SwiperSlide>
             </Swiper>
           </div>
-          <p className="mt-4">
-            The real pen has no space between the text lot mfg and the number.
-            The fake pen has a large space.
-          </p>
-          <div className="flex gap-3">
-            <Swiper
-              modules={[Navigation, Pagination, Scrollbar, A11y]}
-              spaceBetween={0}
-              slidesPerView={3}
-              pagination={{ clickable: true }}
-              scrollbar={{ draggable: true }}
-              navigation={true}
-              className="mySwiper px-20"
-              breakpoints={{
-                300: { slidesPerView: 1 },
-                768: { slidesPerView: 2 },
-              }}
-            >
-              <SwiperSlide className="px-14">
-                <div>
-                  <figcaption className="font-taviraj">Fake</figcaption>
-                  <Image
-                    src={"/images/fakegenotropinhgh/1000026235.png"}
-                    width={300}
-                    height={300}
-                    className="w-full object-cover "
-                    alt="Real-pen-adjustment"
-                  />
-                </div>
-              </SwiperSlide>
-              <SwiperSlide className="px-14">
-                <div>
-                  <figcaption className="font-taviraj">Real</figcaption>
-                  <Image
-                    src={"/images/fakegenotropinhgh/1000026236.png"}
-                    width={300}
-                    height={300}
-                    alt="Fake-pen-adjustment"
-                    loading="eager"
-                    className="w-full object-cover "
-                  />
-                </div>
-              </SwiperSlide>
-            </Swiper>
-          </div>
+        
           <p className="mt-4">
             PLEASE NOTE FROM THE BEGINNING OF 2023 THE LOGO AND PACKAGING HAS
             CHANGED. THE ORIGINAL PACKAGING NOW HAS THESE CHANGES:
