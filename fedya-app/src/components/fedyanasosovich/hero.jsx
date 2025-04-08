@@ -1,5 +1,6 @@
+
 import React from "react";
-import Image from "next/image";
+
 import Button from "../global/button";
 import { IoLogoInstagram } from "react-icons/io5";
 import Link from "next/link";
