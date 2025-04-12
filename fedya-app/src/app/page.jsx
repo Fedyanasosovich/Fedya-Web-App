@@ -15,37 +15,6 @@ import { IoIosPlayCircle } from "react-icons/io";
 import Form from "@/components/buypfizergenotropinhgh/form";
 
 export default function Home() {
-  // useEffect(() => {
-  //   gsap.registerPlugin(ScrollTrigger);
-
-  //   const sections = gsap.utils.toArray(".");
-
-  //   sections.forEach((section, i) => {
-  //     const nextSection = sections[i + 1];
-
-  //     if (nextSection) {
-  //       // Define timeline for fading out the current section and fading in the next section
-  //       const tl = gsap.timeline({
-  //         scrollTrigger: {
-  //           trigger: section,
-  //           start: "top top", // Trigger when the current section starts to scroll into view
-  //           end: "bottom top", // End when the section leaves the screen
-  //           scrub: true,
-  //           pin: true, // Pin the section in place while it's fading out
-  //           pinSpacing: false,
-  //         },
-  //       });
-
-  //       tl.to(section, { opacity: 0, y: -50 }, 0) // Fade out the current section
-  //         .fromTo(
-  //           nextSection,
-  //           { opacity: 0, y: 50 },
-  //           { opacity: 1, y: 0 },
-  //           "<"
-  //         ); // Fade in the next section
-  //     }
-  //   });
-  // }, []);
   const [openModalIndex, setOpenModalIndex] = useState(null);
   const [videoLoading, setVideoLoading] = useState(true);
 
