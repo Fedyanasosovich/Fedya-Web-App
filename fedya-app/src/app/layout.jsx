@@ -24,12 +24,17 @@ const tavirajItalic = localFont({
 
 export const metadata = {
   title: "Buy Pfizer Genotropin Pharmaceutical HGH - Fedya Nasosovich",
-
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <head>
+        <meta
+          name="google-site-verification"
+          content="YARGhg_Sns4BdAKLxbzs7H9gLml3rXDPxE5hByN-53I"
+        />
+      </head>
       <body
         className={`${workSans.variable} ${tavirajRegular.variable} ${tavirajItalic.variable} antialiased`}
       >
