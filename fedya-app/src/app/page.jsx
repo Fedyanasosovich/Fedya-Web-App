@@ -92,7 +92,7 @@ export default async function Home() {
           </p>
           <p>Worldwide shipping via discreet packaging.</p>
           <p>
-            UK USA CANADA and EUROPE have 100% success rate over 17 years of
+            UK USA CANADA and EUROPE have 100% success rate over 22 years of
             shipping !!!!
           </p>
           <p>No hidden costs all fees included.</p>

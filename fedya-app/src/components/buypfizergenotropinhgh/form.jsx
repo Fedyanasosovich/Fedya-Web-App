@@ -105,57 +105,57 @@ const Form = () => {
                     <div className="mb-2">
                       <input
                         type="radio"
-                        id="product-2x36iu"
+                        id="product-2x30iu"
                         name="product"
-                        value="2x36iu"
-                        checked={formData.product === "2x36iu"}
+                        value="2x30iu"
+                        checked={formData.product === "2x30iu"}
                         onChange={handleChange}
                         required
                       />
-                      <label htmlFor="product-2x36iu" className="ml-2">
-                        2 x 36 iu total 72iu. Price is 760 euro (380 euro per
+                      <label htmlFor="product-2x30iu" className="ml-2">
+                        2 x 30 iu total 72iu. Price is 760 euro (380 euro per
                         pack)
                       </label>
                     </div>
                     <div className="mb-2">
                       <input
                         type="radio"
-                        id="product-4x36iu"
+                        id="product-4x30iu"
                         name="product"
-                        value="4x36iu"
-                        checked={formData.product === "4x36iu"}
+                        value="4x30iu"
+                        checked={formData.product === "4x30iu"}
                         onChange={handleChange}
                       />
-                      <label htmlFor="product-4x36iu" className="ml-2">
-                        4 x 36 iu total 144 iu. Price is 1480 euro (370 euro per
+                      <label htmlFor="product-4x30iu" className="ml-2">
+                        4 x 30 iu total 144 iu. Price is 1480 euro (370 euro per
                         pack)
                       </label>
                     </div>
                     <div className="mb-2">
                       <input
                         type="radio"
-                        id="product-6x36iu"
+                        id="product-6x30iu"
                         name="product"
-                        value="6x36iu"
-                        checked={formData.product === "6x36iu"}
+                        value="6x30iu"
+                        checked={formData.product === "6x30iu"}
                         onChange={handleChange}
                       />
-                      <label htmlFor="product-6x36iu" className="ml-2">
-                        6 x 36 iu total 216 iu. Price is 2160 euro (360 euro per
+                      <label htmlFor="product-6x30iu" className="ml-2">
+                        6 x 30 iu total 216 iu. Price is 2160 euro (360 euro per
                         pack)
                       </label>
                     </div>
                     <div className="mb-2">
                       <input
                         type="radio"
-                        id="product-10x36iu"
+                        id="product-10x30iu"
                         name="product"
-                        value="10x36iu"
-                        checked={formData.product === "10x36iu"}
+                        value="10x30iu"
+                        checked={formData.product === "10x30iu"}
                         onChange={handleChange}
                       />
-                      <label htmlFor="product-10x36iu" className="ml-2">
-                        10 x 36 iu total 360iu. Price is 3500 euro (350 euro per
+                      <label htmlFor="product-10x30iu" className="ml-2">
+                        10 x 30 iu total 360iu. Price is 3500 euro (350 euro per
                         pack)
                       </label>
                     </div>
