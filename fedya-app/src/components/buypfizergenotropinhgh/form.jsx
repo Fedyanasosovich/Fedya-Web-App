@@ -113,7 +113,7 @@ const Form = () => {
                         required
                       />
                       <label htmlFor="product-2x30iu" className="ml-2">
-                        2 x 30 iu total 72iu. Price is 760 euro (380 euro per
+                        2x 30iu = 60iu Price is 760 euro (380 euro per
                         pack)
                       </label>
                     </div>
@@ -127,7 +127,7 @@ const Form = () => {
                         onChange={handleChange}
                       />
                       <label htmlFor="product-4x30iu" className="ml-2">
-                        4 x 30 iu total 144 iu. Price is 1480 euro (370 euro per
+                       4 x30iu = 120iu Price is 1480 euro (370 euro per
                         pack)
                       </label>
                     </div>
@@ -141,7 +141,7 @@ const Form = () => {
                         onChange={handleChange}
                       />
                       <label htmlFor="product-6x30iu" className="ml-2">
-                        6 x 30 iu total 216 iu. Price is 2160 euro (360 euro per
+                        6x30 = 180iu Price is 2160 euro (360 euro per
                         pack)
                       </label>
                     </div>
@@ -155,7 +155,7 @@ const Form = () => {
                         onChange={handleChange}
                       />
                       <label htmlFor="product-10x30iu" className="ml-2">
-                        10 x 30 iu total 360iu. Price is 3500 euro (350 euro per
+                        10 x 30 = 300 iu Price is 3500 euro (350 euro per
                         pack)
                       </label>
                     </div>

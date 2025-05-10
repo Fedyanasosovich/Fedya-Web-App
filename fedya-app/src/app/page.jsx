@@ -51,7 +51,7 @@ export default async function Home() {
     <>
       <Hero 
         vidUrl={heroVideo} 
-        title={`Sandozomnitrope`} 
+        title={`Sandoz Omnitrope`} 
       />
 
       <div className="container">
