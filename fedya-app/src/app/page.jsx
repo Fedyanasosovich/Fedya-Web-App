@@ -45,7 +45,7 @@ export default async function Home() {
     },
   ];
 
-  const heroVideo = videoOne.length > 0 ? videoOne[0].url : "";
+  const heroVideo =  "/videos/saizen.mp4";
 
   return (
     <>
