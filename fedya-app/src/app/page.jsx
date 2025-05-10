@@ -70,14 +70,7 @@ export default async function Home() {
             model like body around 5iu and for bodybuilding purposes around 7 iu
             per day is recommended.
           </p>
-          <p>
-            As you can see in the video after having had access to omnitrope as
-            well as humatrope I have decided to focus exclusively on Genotropin
-            as i find it is the most desirable of all the pharmaceutical brands
-            mg to mg it is much stronger than the other brands . So we have
-            decided to only stock this in the pharmacy.
-          </p>
-          <p>Each Pack contains 36iu as pictured below.</p>
+       
           
           {/* Gallery Section - Client Component */}
           <GallerySection images={images} />
