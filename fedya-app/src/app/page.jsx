@@ -1,4 +1,3 @@
-
 // page.jsx (Server Component)
 import Hero from "@/components/buypfizergenotropinhgh/hero";
 import GallerySection from "@/components/buypfizergenotropinhgh/GallerySection";
@@ -9,7 +8,7 @@ import { fetchAllFileUrls } from "@/libs/dataFetching";
 export default async function Home() {
   // Server-side data fetching
   const files = await fetchAllFileUrls("sandozomnitrope.com");
-  
+
   // Data processing logic
   const separateFiles = files.reduce(
     (acc, file) => {
@@ -21,22 +20,34 @@ export default async function Home() {
       }
       return acc;
     },
-    { images: [
-      '/images/DSC_1694.JPG',
-      '/images/DSC_1695.JPG',
-      '/images/DSC00043.JPG',
-      '/images/DSC00045.JPG',
-      '/images/DSC00046.JPG',
-    ], videos: [] }
+    {
+      images: [
+        "/images/DSC_1694.JPG",
+        "/images/DSC_1695.JPG",
+        "/images/DSC00043.JPG",
+        "/images/DSC00045.JPG",
+        "/images/DSC00046.JPG",
+      ],
+      videos: [],
+    }
   );
 
+  const images = [
+    { url: "/images/DSC1.JPG" },
+    { url: "/images/DSC2.JPG" },
+    { url: "/images/DSC00043.JPG" },
+    { url: "/images/DSC00045.JPG" },
+    { url: "/images/DSC00046.JPG" },
+  ];
+
   // You now have separate arrays for images and videos
-  const { images, videos } = separateFiles;
+  const { imagess, videos } = separateFiles;
   let middleIndex = Math.floor(videos.length / 2);
   const videoOne = videos.length > 0 ? [videos[middleIndex]] : [];
-  const restVideos = videos.length > 0 
-    ? videos.slice(0, middleIndex).concat(videos.slice(middleIndex + 1))
-    : [];
+  const restVideos =
+    videos.length > 0
+      ? videos.slice(0, middleIndex).concat(videos.slice(middleIndex + 1))
+      : [];
 
   const gridItems = [
     {
@@ -51,14 +62,11 @@ export default async function Home() {
     },
   ];
 
-  const heroVideo =  "/videos/saizen.mp4";
+  const heroVideo = "/videos/saizen.mp4";
 
   return (
     <>
-      <Hero 
-        vidUrl={heroVideo} 
-        title={`Sandoz Omnitrope`} 
-      />
+      <Hero vidUrl={heroVideo} title={`Sandoz Omnitrope`} />
 
       <div className="container">
         {/* First Section */}
@@ -76,11 +84,10 @@ export default async function Home() {
             model like body around 5iu and for bodybuilding purposes around 7 iu
             per day is recommended.
           </p>
-       
-          
+
           {/* Gallery Section - Client Component */}
           <GallerySection images={images} />
-          
+
           <p>
             Each order is handled by me personally purchased through the
             pharmacy with a valid prescription via doctors supervision.

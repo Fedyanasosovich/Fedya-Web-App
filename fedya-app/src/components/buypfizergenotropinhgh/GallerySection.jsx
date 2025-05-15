@@ -32,7 +32,7 @@ export default function GallerySection({ images }) {
                 width={300}
                 height={300}
                 className="h-64 w-full object-cover rounded"
-                alt={item.key}
+                alt={item.url}
               />
             </SwiperSlide>
           ))}
