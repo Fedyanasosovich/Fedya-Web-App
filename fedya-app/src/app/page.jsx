@@ -7,7 +7,7 @@ import { fetchAllFileUrls } from "@/libs/dataFetching";
 
 export default async function Home() {
   // Server-side data fetching
-  const files = await fetchAllFileUrls("sandozomnitrope.com");
+  const files = await fetchAllFileUrls("buypfizergenotropinhgh.com");
 
   // Data processing logic
   const separateFiles = files.reduce(
