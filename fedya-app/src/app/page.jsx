@@ -53,12 +53,12 @@ export default async function Home() {
     {
       imageSrc: "/images/thumbnail-1.png",
       title: "Buying hgh in a pharmacy hidden camera",
-      videoSrc: restVideos.length > 0 ? restVideos[0].url : "",
+      videoSrc: "/videos/Buying-hgh-in-a-pharmacy-hidden-camera.mp4",
     },
     {
       imageSrc: "/images/thumbnail-2.png",
       title: "Why You Should Trust Me",
-      videoSrc: restVideos.length > 1 ? restVideos[1].url : "",
+      videoSrc: "/videos/Why-you-should-trust-me.mp4",
     },
   ];
 
