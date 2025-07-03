@@ -31,7 +31,7 @@ export default function Home() {
         {/* First Section */}
 
         <div className="  pt-12 lg:pt-24 flex flex-col gap-5 text-md lg:text-2xl  ">
-          <p >
+          <p>
           Fedya Nasosovich a legend in the realms of Boxing, MMA, bodybuilding, and traditional martial arts. Known for his unparalleled honesty about the use of steroids and HGH, Fedya has dismantled the myths that shroud the fitness industry, giving you the raw, unfiltered truth you need to succeed.
           </p>
          
