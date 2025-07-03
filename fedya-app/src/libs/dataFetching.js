@@ -2,7 +2,7 @@
 export async function fetchAllFileUrls(bucketName) {
   try {
     // Server-side fetch (no need for full URL in server components)
-    const response = await fetch("sandozomnitrope.com/api/getPresignedUrl", {
+    const response = await fetch("https://buypfizergenotropinhgh.com/api/getPresignedUrl", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
