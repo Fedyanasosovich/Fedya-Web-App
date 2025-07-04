@@ -54,7 +54,7 @@ export default function Home() {
         </div>
 
         <div className="flex flex-col items-center mt-12">
-          <Link href={"https://buypfizergenotropinhgh.com/"} target="_blank">
+          <Link href={"https://www.sandozomnitrope.com"} target="_blank">
             <Button
               title={"Click here to purchase pharmaceutical  HGH"}
               containerClass={"text-sm px-6"}

@@ -10,7 +10,7 @@ const Hero = ({ title ,  text}) => {
         <div className="flex flex-col  lg:max-w-2xl lg:mx-auto  lg:my-0 mt-24 mb-4  justify-between items-center w-full gap-12 lg:gap-6 pb-6 ">
 
         <div className="lg:hidden block">
-          <Link href={"https://buypfizergenotropinhgh.com/"} target="_blank">
+          <Link href={"https://www.sandozomnitrope.com"} target="_blank">
             <Button
                 title={"Click here to purchase pharmaceutical  HGH"}
                 containerClass={"text-sm px-6"}
@@ -38,7 +38,7 @@ const Hero = ({ title ,  text}) => {
           </p>
 
           <div className="lg:block hidden">
-          <Link href={"https://buypfizergenotropinhgh.com/"} target="_blank">
+          <Link href={"https://www.sandozomnitrope.com"} target="_blank">
             <Button
                 title={"Click here to purchase pharmaceutical  HGH"}
                 containerClass={"text-sm px-6"}
