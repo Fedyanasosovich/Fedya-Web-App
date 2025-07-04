@@ -50,7 +50,7 @@ export default function Home() {
             transformation.
           </p>
 
-          <p>A word from Fedya himself. Please watch the video below.</p>
+          {/* <p>A word from Fedya himself. Please watch the video below.</p> */}
         </div>
 
         <div className="flex flex-col items-center mt-12">
