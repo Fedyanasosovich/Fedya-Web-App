@@ -76,7 +76,8 @@ body {
 .modal__video-align {
   display: flex;
   position: relative;
-  bottom: 37px;background: #000000d9;
+  bottom: 37px;
+  background: #000000d9;
   border-radius: 20px;
 }
 
@@ -409,4 +410,33 @@ body {
     transform: translateY(66%) scale(0.65);
     opacity: 0.8;
   }
+}
+
+/* Splash screen fade-in animation */
+@keyframes fadeInChar {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-char {
+  animation: fadeInChar 0.5s forwards;
+}
+
+@keyframes fadeInSplash {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.animate-fade-in {
+  animation: fadeInSplash 0.7s ease-in;
 }
