@@ -66,6 +66,7 @@ export default function Home() {
               <IoLogoInstagram size={34} className="text-darkPurple mx-auto" />
             </Link>
           </div>
+        
         </div>
       </div>
     </>

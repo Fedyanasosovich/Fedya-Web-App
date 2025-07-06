@@ -24,6 +24,7 @@ const Hero = ({ title, text }) => {
                 />
               </Link>
             </div>
+            
           </div>
           <div className="max-w-2xl lg:text-start text-center flex flex-col gap-3 lg:mt-24">
             <h1 className="text-4xl lg:text-center  lg:text-6xl font-taviraj ">
@@ -59,10 +60,10 @@ const Hero = ({ title, text }) => {
             </div>
           </div>
 
-          {/* <div className="grid md:grid-cols-2  gap-4">
+          <div className="grid md:grid-cols-2  gap-4">
             <video src="/10-Years-ago-!_x264.mp4"  controls loop></video>
             <video src="/Present-Day_x264.mp4" controls loop></video>
-          </div> */}
+          </div>
         </div>
       </div>
     </div>
