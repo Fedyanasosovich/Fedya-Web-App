@@ -21,17 +21,39 @@ export default function Home() {
     <>
       {showSplash && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-white dark:bg-black transition-opacity duration-700">
-          <h1 className="text-4xl md:text-6xl font-semibold tracking-widest text-darkPurple animate-fade-in">
-            {"F E D Y A  N A S O S O V I C H".split("").map((char, i) => (
+          <div className="flex flex-col items-center justify-center w-full h-full animate-fade-in-out">
+            <h1 className="text-5xl md:text-7xl font-normal tracking-widest text-center drop-shadow-lg mb-4">
               <span
-                key={i}
-                className="inline-block opacity-0 animate-fade-in-char"
-                style={{ animationDelay: `${i * 0.07}s` }}
+                style={{ color: '#8d7e63', textShadow: '0 2px 16px rgba(141,126,99,0.25)' }}
+                className="block mb-2"
               >
-                {char === " " ? "\u00A0" : char}
+                {"F E D Y A".split("").map((char, i) => (
+                  <span
+                    key={i}
+                    className="inline-block opacity-0 animate-fade-in-char"
+                    style={{ animationDelay: `${i * 0.07}s` }}
+                  >
+                    {char === " " ? "\u00A0" : char}
+                  </span>
+                ))}
               </span>
-            ))}
-          </h1>
+              <span
+                style={{ color: '#800080', textShadow: '0 2px 16px rgba(128,0,128,0.25)' }}
+                className="block mt-2"
+              >
+                {"N A S O S O V I C H".split("").map((char, i) => (
+                  <span
+                    key={i}
+                    className="inline-block opacity-0 animate-fade-in-char"
+                    style={{ animationDelay: `${(i + 7) * 0.07}s` }}
+                  >
+                    {char === " " ? "\u00A0" : char}
+                  </span>
+                ))}
+              </span>
+            </h1>
+            <div className="w-24 h-1 bg-gradient-to-r from-[#8d7e63] via-[#800080] to-[#8d7e63] rounded-full mt-2 mb-2 opacity-80 animate-fade-in" style={{ animationDelay: '1.2s' }} />
+          </div>
         </div>
       )}
       {!showSplash && (

@@ -440,3 +440,14 @@ body {
 .animate-fade-in {
   animation: fadeInSplash 0.7s ease-in;
 }
+
+@keyframes fadeInOutSplash {
+  0% { opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+.animate-fade-in-out {
+  animation: fadeInOutSplash 2.5s both;
+}
