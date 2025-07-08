@@ -20,7 +20,7 @@ export default function Home() {
   return (
     <>
       {showSplash && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-white dark:bg-black transition-opacity duration-700">
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black transition-opacity duration-700">
           <div className="flex flex-col items-center justify-center w-full h-full animate-fade-in-out">
             <h1 className="text-5xl md:text-7xl font-normal tracking-widest text-center drop-shadow-lg mb-4">
               <span
