@@ -60,7 +60,7 @@ const Hero = ({ title, text }) => {
             </div>
           </div>
 
-          <div className="grid md:grid-cols-2  gap-4">
+          <div className="grid grid-cols-2  gap-4">
             <video src="/10-Years-ago-!_x264.mp4"  controls loop></video>
             <video src="/Present-Day_x264.mp4" controls loop></video>
           </div>
