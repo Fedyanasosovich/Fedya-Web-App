@@ -50,7 +50,7 @@ export default function Home() {
                 {"F E D Y A".split("").map((char, i) => (
                   <span
                     key={i}
-                    className="inline-block opacity-0 animate-fade-in-char"
+                    className="inline-block !text-3xl md:!text-7xl  opacity-0 animate-fade-in-char"
                     style={{
                       animationDelay: `${i * 0.2}s`, // Slower timing
                       animationDuration: '0.6s',
