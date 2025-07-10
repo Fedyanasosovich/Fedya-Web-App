@@ -11,51 +11,69 @@ export default function Home() {
   const [showSplash, setShowSplash] = useState(true);
 
   useEffect(() => {
+    const lastLetterDelay = 12 * 0.15 * 1000; // ~1.8s (assuming 12 letters in total)
+    const pauseAfter = 2000; // 2 seconds pause after all letters shown
+    const totalSplashDuration = lastLetterDelay + pauseAfter;
+  
     const timer = setTimeout(() => {
       setShowSplash(false);
-    }, 2500); // 2.5 seconds
+    }, totalSplashDuration);
+  
     return () => clearTimeout(timer);
   }, []);
 
   return (
     <>
-      {showSplash && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black transition-opacity duration-700">
-          <div className="flex flex-col items-center justify-center w-full h-full animate-fade-in-out">
-            <h1 className="text-5xl md:text-7xl font-normal tracking-widest text-center drop-shadow-lg mb-4">
-              <span
-                style={{ color: '#8d7e63', textShadow: '0 2px 16px rgba(141,126,99,0.25)' }}
-                className="block mb-2"
-              >
-                {"F E D Y A".split("").map((char, i) => (
-                  <span
-                    key={i}
-                    className="inline-block opacity-0 animate-fade-in-char"
-                    style={{ animationDelay: `${i * 0.07}s` }}
-                  >
-                    {char === " " ? "\u00A0" : char}
-                  </span>
-                ))}
-              </span>
-              <span
-                style={{ color: '#800080', textShadow: '0 2px 16px rgba(128,0,128,0.25)' }}
-                className="block mt-2"
-              >
-                {"N A S O S O V I C H".split("").map((char, i) => (
-                  <span
-                    key={i}
-                    className="inline-block opacity-0 animate-fade-in-char"
-                    style={{ animationDelay: `${(i + 7) * 0.07}s` }}
-                  >
-                    {char === " " ? "\u00A0" : char}
-                  </span>
-                ))}
-              </span>
-            </h1>
-            <div className="w-24 h-1 bg-gradient-to-r from-[#8d7e63] via-[#800080] to-[#8d7e63] rounded-full mt-2 mb-2 opacity-80 animate-fade-in" style={{ animationDelay: '1.2s' }} />
-          </div>
-        </div>
-      )}
+  {/* Splash screen */}
+{showSplash && (
+  <div className="fixed inset-0 z-50 flex items-center justify-center bg-black transition-opacity duration-700">
+    <div className="flex flex-col items-center justify-center w-full h-full">
+      <h1 className="text-3xl md:text-7xl font-normal tracking-[0.3em] text-center drop-shadow-lg mb-4 leading-snug">
+        <span
+          style={{ color: '#8d7e63', textShadow: '0 2px 16px rgba(141,126,99,0.25)' }}
+          className="block mb-2"
+        >
+          {"F E D Y A".split("").map((char, i) => (
+            <span
+              key={i}
+              className="inline-block opacity-0 animate-fade-in-char"
+              style={{
+                animationDelay: `${i * 0.15}s`, // slowed down
+                animationDuration: '0.6s',
+              }}
+            >
+              {char === " " ? "\u00A0" : char}
+            </span>
+          ))}
+        </span>
+        <span
+          style={{ color: '#800080', textShadow: '0 2px 16px rgba(128,0,128,0.25)' }}
+          className="block mt-2"
+        >
+          {"N A S O S O V I C H".split("").map((char, i) => (
+            <span
+              key={i}
+              className="inline-block opacity-0 animate-fade-in-char"
+              style={{
+                animationDelay: `${(i + 5) * 0.15}s`,
+                animationDuration: '0.6s',
+              }}
+            >
+              {char === " " ? "\u00A0" : char}
+            </span>
+          ))}
+        </span>
+      </h1>
+
+      {/* Optional underline or extra visual */}
+      <div
+        className="w-24 h-1 bg-gradient-to-r from-[#8d7e63] via-[#800080] to-[#8d7e63] rounded-full mt-2 mb-2 opacity-80 animate-fade-in"
+        style={{ animationDelay: '2s' }}
+      />
+    </div>
+  </div>
+)}
+
       {!showSplash && (
         <>
           <Hero

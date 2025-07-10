@@ -425,7 +425,9 @@ body {
 }
 
 .animate-fade-in-char {
-  animation: fadeInChar 0.5s forwards;
+  animation-name: fade-in-char;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-out;
 }
 
 @keyframes fadeInSplash {
@@ -439,6 +441,17 @@ body {
 
 .animate-fade-in {
   animation: fadeInSplash 0.7s ease-in;
+}
+
+@keyframes fade-in-char {
+  0% {
+    opacity: 0;
+    transform: translateY(0.25em);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes fadeInOutSplash {
