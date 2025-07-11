@@ -23,7 +23,7 @@ const tavirajItalic = localFont({
 });
 
 export const metadata = {
-  title: "Buy Pfizer Genotropin Pharmaceutical HGH - Fedya Nasosovich",
+  title: "Buy pharmaceutical hgh online | Fedya Nasosovich",
 };
 
 export default function RootLayout({ children }) {

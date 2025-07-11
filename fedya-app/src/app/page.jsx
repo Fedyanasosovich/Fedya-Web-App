@@ -61,7 +61,7 @@ export default function Home() {
                   </span>
                 ))}
               </span>
-              <div className="h-1 bg-gradient-to-r from-[#8d7e63] via-[#800080] to-[#8d7e63] w-64 rounded-full mt-2 mb-2 opacity-80 animate-fade-in"></div>
+           
               <span
                 style={{ color: '#800080', textShadow: '0 2px 16px rgba(128,0,128,0.25)' }}
                 className="block mt-2"
