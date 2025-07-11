@@ -42,7 +42,7 @@ export default function Home() {
       {showSplash && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black transition-opacity duration-700">
           <div className="flex flex-col items-center justify-center w-full h-full px-4">
-            <h1 className="text-2xl md:text-7xl font-normal tracking-[0.3em] text-center drop-shadow-lg mb-4 leading-snug">
+            <h1 className="text-2xl flex flex-col items-center md:text-7xl font-normal tracking-[0.3em] text-center drop-shadow-lg mb-4 leading-snug">
               <span
                 style={{ color: '#8d7e63', textShadow: '0 2px 16px rgba(141,126,99,0.25)' }}
                 className="block mb-2 !text-3xl md:!text-7xl"
