@@ -62,6 +62,7 @@ export default function Home() {
                 ))}
               </span>
            <br/>
+           <br/>
               <span
                 style={{ color: '#800080', textShadow: '0 2px 16px rgba(128,0,128,0.25)' }}
                 className="block mt-2"
