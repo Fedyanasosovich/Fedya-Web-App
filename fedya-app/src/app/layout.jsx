@@ -23,7 +23,7 @@ const tavirajItalic = localFont({
 });
 
 export const metadata = {
-  title: "Buy pharmaceutical hgh online | Fedya Nasosovich",
+  title: "Fedya Nasosovich : Buy Pharmaceutical HGH",
 };
 
 export default function RootLayout({ children }) {
