@@ -116,13 +116,15 @@ export default async function Home() {
 
       {/* Form */}
       <Form />
-      <p>
-        Disclaimer: The above photographs on this website are the property of
-        Fedya Nasosovich . Any trademarks, logos, or brand identifiers depicted
-        in these photographs are the property of their respective owners (Sandoz
-        AG) and are used for illustrative purposes only. Fedya Nasosovich does
-        not claim ownership of or affiliation with these trademarks
-      </p>
+      <div className="container">
+        <p>
+          Disclaimer: The above photographs on this website are the property of
+          Fedya Nasosovich . Any trademarks, logos, or brand identifiers depicted
+          in these photographs are the property of their respective owners (Sandoz
+          AG) and are used for illustrative purposes only. Fedya Nasosovich does
+          not claim ownership of or affiliation with these trademarks
+        </p>
+      </div>
     </>
   );
 }
