@@ -24,6 +24,10 @@ const tavirajItalic = localFont({
 
 export const metadata = {
   title: "Buy Sandoz Omnitrope HGH straight from the pharmacy - Fedya Nasosovich",
+  description:
+    "Buy Sandoz Omnitrope, pharmaceutical grade HGH (Human Growth Hormone) online. Trusted source for genuine Sandoz Omnitrope and other pharmaceutical HGH products. Worldwide shipping.",
+  keywords:
+    "Sandoz Omnitrope, HGH, Human growth hormone, Buy pharmaceutical hgh, Buy hgh online, Buy Sandoz Omnitrope, pharmacy, Fedya Nasosovich, pharmaceutical HGH, genuine HGH, buy HGH, order HGH online, growth hormone therapy",
 };
 
 export default function RootLayout({ children }) {
