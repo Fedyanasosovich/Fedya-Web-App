@@ -39,6 +39,10 @@ export default function DisclaimerDialog() {
             from the pharmacy on your behalf.
           </p>
           <p>Please check local laws if ordering internationally.</p>
+          <p>
+            Once again we are not sponsored by or endorsed by or the
+            manufacturer of Sandoz Omnitrope!{" "}
+          </p>
         </div>
         <Button
           title="I agree"
