@@ -1,4 +1,4 @@
-// page.jsx (Server Component)
+"use client";
 import Hero from "@/components/buypfizergenotropinhgh/hero";
 import GallerySection from "@/components/buypfizergenotropinhgh/GallerySection";
 import VideoGrid from "@/components/buypfizergenotropinhgh/VideoGrid";
