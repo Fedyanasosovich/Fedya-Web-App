@@ -9,30 +9,30 @@ import DisclaimerDialog from "@/components/global/DisclaimerDialog";
 
 export default async function Home() {
   // Server-side data fetching
-  const files = await fetchAllFileUrls("buypfizergenotropinhgh.com");
+  // const files = await fetchAllFileUrls("buypfizergenotropinhgh.com");
 
   // Data processing logic
-  const separateFiles = files.reduce(
-    (acc, file) => {
-      const extension = file.key.split(".").pop().toLowerCase();
-      if (["jpg", "jpeg", "png"].includes(extension)) {
-        // acc.images.push(file);
-      } else if (["mp4"].includes(extension)) {
-        acc.videos.push(file);
-      }
-      return acc;
-    },
-    {
-      images: [
-        "/images/DSC_1694.JPG",
-        "/images/DSC_1695.JPG",
-        "/images/DSC00043.JPG",
-        "/images/DSC00045.JPG",
-        "/images/DSC00046.JPG",
-      ],
-      videos: [],
-    }
-  );
+  // const separateFiles = files.reduce(
+  //   (acc, file) => {
+  //     const extension = file.key.split(".").pop().toLowerCase();
+  //     if (["jpg", "jpeg", "png"].includes(extension)) {
+  //       // acc.images.push(file);
+  //     } else if (["mp4"].includes(extension)) {
+  //       acc.videos.push(file);
+  //     }
+  //     return acc;
+  //   },
+  //   {
+  //     images: [
+  //       "/images/DSC_1694.JPG",
+  //       "/images/DSC_1695.JPG",
+  //       "/images/DSC00043.JPG",
+  //       "/images/DSC00045.JPG",
+  //       "/images/DSC00046.JPG",
+  //     ],
+  //     videos: [],
+  //   }
+  // );
 
   const images = [
     { url: "/images/DSC1.JPG" },
@@ -43,13 +43,13 @@ export default async function Home() {
   ];
 
   // You now have separate arrays for images and videos
-  const { imagess, videos } = separateFiles;
-  let middleIndex = Math.floor(videos.length / 2);
-  const videoOne = videos.length > 0 ? [videos[middleIndex]] : [];
-  const restVideos =
-    videos.length > 0
-      ? videos.slice(0, middleIndex).concat(videos.slice(middleIndex + 1))
-      : [];
+  // const { imagess, videos } = separateFiles;
+  // let middleIndex = Math.floor(videos.length / 2);
+  // const videoOne = videos.length > 0 ? [videos[middleIndex]] : [];
+  // const restVideos =
+  //   videos.length > 0
+  //     ? videos.slice(0, middleIndex).concat(videos.slice(middleIndex + 1))
+  //     : [];
 
   const gridItems = [
     {
