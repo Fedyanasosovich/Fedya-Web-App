@@ -36,7 +36,8 @@ export default function DisclaimerDialog() {
             We provide a bespoke service whereby we obtain a prescription from
             the doctor on your behalf (after being given authorisation and
             consent from you) and we then use your prescription to purchase hgh
-            from the pharmacy on your behalf.
+            from the pharmacy on your behalf. As outlined in under the first
+            sale doctrine (17 U.S.C. § 109)
           </p>
           <p>Please check local laws if ordering internationally.</p>
           <p>
