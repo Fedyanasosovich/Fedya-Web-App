@@ -53,7 +53,7 @@ const ClientNavBar = ({ navItems }) => {
   const navContainerRef = useRef(null);
   const { y: currentScrollY } = useWindowScroll();
   const [isNavVisible, setIsNavVisible] = useState(true);
-  const [lastScrollY, setLastScrollY] = useState(0);
+  const lastScrollYRef = useRef(0);
 
   // Toggle audio and visual indicator
   const toggleAudioIndicator = () => {
@@ -84,6 +84,7 @@ const ClientNavBar = ({ navItems }) => {
 
   useEffect(() => {
     if (navContainerRef.current) {
+      const lastScrollY = lastScrollYRef.current;
       if (currentScrollY === 0) {
         // Topmost position: show navbar without floating-nav
         setIsNavVisible(true);
@@ -98,9 +99,10 @@ const ClientNavBar = ({ navItems }) => {
         navContainerRef.current.classList.add("floating-nav");
       }
 
-      setLastScrollY(currentScrollY);
+      lastScrollYRef.current = currentScrollY;
     }
-  }, [currentScrollY, lastScrollY]);
+    // Depend only on the scroll position to avoid state-change loops
+  }, [currentScrollY]);
 
   useEffect(() => {
     if (navContainerRef.current) {

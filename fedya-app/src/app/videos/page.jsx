@@ -12,6 +12,18 @@ const page = () => {
   const [fetchCall, setFetchCall] = useState(false);
   const [videoLoading, setVideoLoading] = useState(false);
 
+  // Helper to clean video title (remove leading/trailing numbers, underscores, extension)
+  const cleanTitle = (key) => {
+    if (!key) return "";
+    return key
+      .replace(/_/g, " ")
+      .replace(/\.[^/.]+$/, "") // remove file extension
+      .replace(/^\s*\d+[\s._-]*/, "") // remove leading numbers like "1 " or "1-"
+      .replace(/[\s._-]*\d+\s*$/, "") // remove trailing numbers like " 1" or "-1"
+      .replaceAll("x264", "")
+      .trim();
+  };
+
   async function fetchAllFileUrls(bucketName) {
     try {
       const response = await fetch("/api/getPresignedUrl", {
@@ -32,49 +44,139 @@ const page = () => {
 
   // Function to generate thumbnail from video
   const generateThumbnail = (videoUrl, index) => {
-    const video = document.createElement("video");
-    video.src = videoUrl;
-    video.crossOrigin = "anonymous"; // Handle cross-origin issues if necessary
-    let currentTime = 200; // Start at 1 second
-    const maxRetries = 5; // Maximum number of retries
-    let retries = 0;
+    try {
+      console.debug(`generateThumbnail start index=${index} url=${videoUrl}`);
+      const video = document.createElement("video");
+      video.preload = "auto";
+      video.muted = true;
+      video.playsInline = true;
+      video.crossOrigin = "anonymous"; // requires proper S3 CORS
 
-    const captureFrame = () => {
-      const canvas = document.createElement("canvas");
-      canvas.width = video.videoWidth;
-      canvas.height = video.videoHeight;
-      const ctx = canvas.getContext("2d");
-      ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+      // Hide video off-screen so browser will still load / decode it
+      video.style.position = "absolute";
+      video.style.left = "-9999px";
+      video.style.width = "1px";
+      video.style.height = "1px";
 
-      // Check if the frame is black
-      const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
-      const isBlackFrame = isBlack(imageData);
+      // start capture at ~2 seconds to avoid intro black frames
+      let currentTime = 2; // preferred capture time in seconds
+      const maxRetries = 5;
+      let retries = 0;
 
-      if (!isBlackFrame || retries >= maxRetries) {
-        // If the frame is not black OR max retries reached, save the thumbnail
-        const thumbnailUrl = canvas.toDataURL("image/png");
-        setThumbnails((prev) => ({ ...prev, [index]: thumbnailUrl }));
-      } else {
-        // If the frame is black, retry with a later timestamp
-        retries++;
-        currentTime += 2; // Increase the time by 2 seconds
-        video.currentTime = currentTime;
-      }
-    };
+      const cleanup = () => {
+        try {
+          video.pause();
+          video.removeAttribute("src");
+          video.load();
+        } catch (e) {}
+        try {
+          if (video.parentNode) video.parentNode.removeChild(video);
+        } catch (e) {}
+      };
 
-    video.onloadeddata = () => {
-      video.onseeked = captureFrame;
-      video.currentTime = currentTime;
-    };
+      const captureFrame = () => {
+        try {
+          console.debug(
+            `captureFrame called index=${index} retries=${retries}`
+          );
+          const canvas = document.createElement("canvas");
+          canvas.width = video.videoWidth || 320;
+          canvas.height = video.videoHeight || 180;
+          const ctx = canvas.getContext("2d");
+          ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
 
-    video.onerror = () => {
-      console.error(`Failed to load video: ${videoUrl}`);
-    };
+          // Try to read image data (may throw if canvas is tainted by CORS)
+          const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+          const isBlackFrame = isBlack(imageData);
+
+          if (!isBlackFrame || retries >= maxRetries) {
+            // Use compressed JPEG to reduce size before storing in localStorage
+            const thumbnailUrl = canvas.toDataURL("image/jpeg", 0.6);
+            console.debug(`thumbnail generated index=${index}`);
+            setThumbnails((prev) => ({ ...prev, [index]: thumbnailUrl }));
+            cleanup();
+          } else {
+            retries++;
+            const duration = video.duration || 0;
+            // On retry, advance by 1s to locate a non-black frame sooner
+            if (duration) {
+              currentTime = Math.min(
+                currentTime + 1,
+                Math.max(0.5, duration - 0.1)
+              );
+            } else {
+              currentTime += 1;
+            }
+            try {
+              console.debug(`retrying seek index=${index} to ${currentTime}`);
+              video.currentTime = currentTime;
+            } catch (e) {
+              // ignore
+            }
+          }
+        } catch (err) {
+          // Likely a CORS taint or draw error — abort
+          console.warn(
+            "Thumbnail capture failed (possible CORS or decode issue):",
+            err
+          );
+          cleanup();
+        }
+      };
+
+      const onLoadedData = () => {
+        console.debug(`video loadeddata/canplay for index=${index}`);
+        // Try to trigger decoding by attempting a muted play, then seek
+        try {
+          const p = video.play();
+          if (p && typeof p.then === "function") {
+            p.then(() => {
+              video.pause();
+              try {
+                video.currentTime = currentTime;
+              } catch (e) {}
+            }).catch(() => {
+              try {
+                video.currentTime = currentTime;
+              } catch (e) {}
+            });
+          } else {
+            try {
+              video.currentTime = currentTime;
+            } catch (e) {}
+          }
+        } catch (e) {
+          try {
+            video.currentTime = currentTime;
+          } catch (e) {}
+        }
+      };
+
+      video.addEventListener("loadeddata", onLoadedData, { once: true });
+      video.addEventListener("canplay", onLoadedData, { once: true });
+      video.addEventListener("seeked", captureFrame);
+      video.addEventListener("error", (e) => {
+        console.error(`Failed to load video for thumbnail: ${videoUrl}`, e);
+        cleanup();
+      });
+
+      // append to DOM to encourage loading/decoding
+      try {
+        document.body.appendChild(video);
+      } catch (e) {}
+
+      // assign src last to start load
+      video.src = videoUrl;
+      video.load();
+
+      // No automatic timeout: keep trying until a frame is captured or an explicit error occurs.
+    } catch (err) {
+      console.error("generateThumbnail error:", err);
+    }
 
     // Helper function to check if a frame is black
     const isBlack = (imageData) => {
       const { data } = imageData;
-      // Check the first few pixels for blackness
       for (let i = 0; i < data.length; i += 4) {
         if (data[i] !== 0 || data[i + 1] !== 0 || data[i + 2] !== 0) {
           return false; // Found a non-black pixel
@@ -96,16 +198,44 @@ const page = () => {
     if (cachedThumbnails) {
       setThumbnails(JSON.parse(cachedThumbnails));
     }
-
     if (videoData.length > 0) {
+      // Use a snapshot of thumbnails to avoid stale closure
+      const currentThumbs =
+        JSON.parse(localStorage.getItem("thumbnails") || "{}") || {};
       videoData.forEach((item, index) => {
-        if (!thumbnails[index]) {
+        if (!currentThumbs[index] && !thumbnails[index]) {
+          console.debug(
+            `No thumbnail cached for index=${index}, key=${item.key}, url=${item.url}`
+          );
           // Generate thumbnail only if not already cached
           generateThumbnail(item.url, index);
+        } else {
+          console.debug(`Thumbnail exists for index=${index}`);
         }
       });
     }
   }, [videoData]);
+
+  // Persist thumbnails to localStorage when they change
+  useEffect(() => {
+    const MAX_SAVED = 24; // limit number of thumbnails saved to avoid quota issues
+    try {
+      // Take numeric keys in ascending order and persist up to MAX_SAVED
+      const keys = Object.keys(thumbnails)
+        .map((k) => parseInt(k, 10))
+        .filter((n) => !Number.isNaN(n))
+        .sort((a, b) => a - b)
+        .slice(0, MAX_SAVED);
+      const toSave = {};
+      keys.forEach((k) => {
+        toSave[k] = thumbnails[k];
+      });
+      localStorage.setItem("thumbnails", JSON.stringify(toSave));
+    } catch (err) {
+      // If quota exceeded or other storage issues occur, drop persistence to avoid noisy errors.
+      console.warn("Could not persist thumbnails (quota?):", err);
+    }
+  }, [thumbnails]);
 
   return (
     <>
@@ -144,12 +274,7 @@ const page = () => {
 
                 {/* Video Title */}
                 <h3 className="text-center mt-2 text-white text-sm">
-                  {item.key
-                    .replace(/_/g, " ")
-                    .replace(/\.[^/.]+$/, "")
-                    .replaceAll("x264", "")
-              
-                    }
+                  {cleanTitle(item.key)}
                 </h3>
 
                 {/* Modal */}
@@ -180,19 +305,14 @@ const page = () => {
                           <video
                             className="modal__video-style w-full max-w-3xl"
                             onLoadedData={() => setVideoLoading(false)}
-                           preload="true"
+                            preload="true"
                             src={item.url}
                             controls
                             autoPlay="true"
                             title={item.key}
                           ></video>
                           <h2 className="text-xl text-center py-5 px-4 text-white">
-                            {
-                              item.key
-                                .replace(/_/g, " ") // Replace underscores with spaces
-                                .replace(/\.[^/.]+$/, "") // Remove file extension
-                                .replaceAll("x264", "") // Remove "x264" from the string
-                            }
+                            {cleanTitle(item.key)}
                           </h2>
                         </div>
                       </div>
