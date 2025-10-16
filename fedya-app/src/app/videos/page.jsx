@@ -11,6 +11,7 @@ const page = () => {
   const [thumbnails, setThumbnails] = useState({});
   const [fetchCall, setFetchCall] = useState(false);
   const [videoLoading, setVideoLoading] = useState(false);
+  const [isFetching, setIsFetching] = useState(false);
 
   // Helper to clean video title (remove leading/trailing numbers, underscores, extension)
   const cleanTitle = (key) => {
@@ -26,6 +27,7 @@ const page = () => {
 
   async function fetchAllFileUrls(bucketName) {
     try {
+      setIsFetching(true);
       const response = await fetch("/api/getPresignedUrl", {
         method: "POST",
         headers: {
@@ -37,7 +39,9 @@ const page = () => {
       const data = await response.json();
       setFetchCall(true);
       setVideoData(data.urls); // Assuming the API returns an array of video objects
+      setIsFetching(false);
     } catch (error) {
+      setIsFetching(false);
       console.error("Error fetching file URLs:", error);
     }
   }
@@ -245,7 +249,27 @@ const page = () => {
       />
       <div className="pt-12 lg:pt-48">
         <div className="grid grid-cols-2 container mx-4 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {videoData &&
+          {/* Show skeletons while fetching */}
+          {isFetching &&
+            Array.from({ length: 6 }).map((_, i) => (
+              <div key={`skeleton-${i}`} className="w-full">
+                <div className="w-full h-48 bg-gray-700 rounded-lg overflow-hidden">
+                  <div className="w-full h-full bg-gradient-to-r from-gray-600 via-gray-500 to-gray-600 animate-pulse" />
+                </div>
+                <div className="mt-2 h-4 bg-gray-700 rounded w-3/4 mx-auto animate-pulse" />
+              </div>
+            ))}
+
+          {/* Show message if fetch finished but no videos */}
+          {!isFetching && fetchCall && videoData.length === 0 && (
+            <div className="col-span-3 text-center text-gray-300 py-8">
+              No videos found.
+            </div>
+          )}
+
+          {/* Actual video items */}
+          {!isFetching &&
+            videoData &&
             videoData.map((item, index) => (
               <div
                 key={index}
@@ -254,19 +278,11 @@ const page = () => {
               >
                 {/* Video Thumbnail */}
                 <div className="relative w-full h-48 before:absolute before:inset-0 before:z-10 before:bg-black before:opacity-50">
-                  {thumbnails[index] ? (
-                    <img
-                      src={thumbnails[index]}
-                      alt={item.key}
-                      className="w-full h-full object-cover rounded-lg"
-                    />
-                  ) : (
-                    <img
-                      src="/images/default-thumbnail.png"
-                      alt={item.key}
-                      className="w-full h-full object-cover rounded-lg"
-                    />
-                  )}
+                  <img
+                    src="/images/download.jpeg"
+                    alt={"video thumbnail"}
+                    className="w-full h-full object-cover rounded-lg"
+                  />
                   <p className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20">
                     <IoIosPlayCircle size={54} className="text-white" />
                   </p>
