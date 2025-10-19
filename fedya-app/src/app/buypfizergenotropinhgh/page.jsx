@@ -58,14 +58,14 @@ export default function Home() {
     setVideoLoading(!videoLoading);
   };
 
-  function callingAfterAweekAutomatically(apiCall) {
-    apiCall();
+  // function callingAfterAweekAutomatically(apiCall) {
+  //   apiCall();
 
-    // Set timeout for one week (604800 seconds)
-    setTimeout(() => {
-      callingAfterAweekAutomatically(apiCall); // Recursively call the function
-    }, 604800 * 1000); // Convert seconds to milliseconds
-  }
+  //   // Set timeout for one week (604800 seconds)
+  //   setTimeout(() => {
+  //     callingAfterAweekAutomatically(apiCall); // Recursively call the function
+  //   }, 604800 * 1000); // Convert seconds to milliseconds
+  // }
 
   // async function fetchAllFileUrls(bucketName) {
   //   try {
@@ -87,35 +87,35 @@ export default function Home() {
 
   const [files, setFiles] = useState([]);
 
-  async function loadFiles() {
-    const fileUrls = await fetchAllFileUrls("buypfizergenotropinhgh.com");
-    setFiles(fileUrls);
-  }
+  // async function loadFiles() {
+  //   const fileUrls = await fetchAllFileUrls("buypfizergenotropinhgh.com");
+  //   setFiles(fileUrls);
+  // }
 
   // useEffect(() => {
   //   callingAfterAweekAutomatically(loadFiles);
   // }, []);
 
-  const separateFiles = files.reduce(
-    (acc, file) => {
-      const extension = file.key.split(".").pop().toLowerCase();
-      if (["jpg", "jpeg", "png"].includes(extension)) {
-        acc.images.push(file);
-      } else if (["mp4"].includes(extension)) {
-        acc.videos.push(file);
-      }
-      return acc;
-    },
-    { images: [], videos: [] }
-  );
+  // const separateFiles = files.reduce(
+  //   (acc, file) => {
+  //     const extension = file.key.split(".").pop().toLowerCase();
+  //     if (["jpg", "jpeg", "png"].includes(extension)) {
+  //       acc.images.push(file);
+  //     } else if (["mp4"].includes(extension)) {
+  //       acc.videos.push(file);
+  //     }
+  //     return acc;
+  //   },
+  //   { images: [], videos: [] }
+  // );
 
   // You now have separate arrays for images and videos
-  const { images, videos } = separateFiles;
-  let middleIndex = Math.floor(videos.length / 2);
-  const videoOne = [videos[middleIndex]];
-  const restVideos = videos
-    .slice(0, middleIndex)
-    .concat(videos.slice(middleIndex + 1));
+  // const { images, videos } = separateFiles;
+  // let middleIndex = Math.floor(videos.length / 2);
+  // const videoOne = [videos[middleIndex]];
+  // const restVideos = videos
+  //   .slice(0, middleIndex)
+  //   .concat(videos.slice(middleIndex + 1));
 
   const gridItems = [
     {
@@ -166,8 +166,8 @@ export default function Home() {
             mg to mg it is much stronger than the other brands . So we have
             decided to only stock this in the pharmacy.
           </p>
-          <p>Each Pack contains 36iu as pictured below.</p>
-          <div className="py-6 lg:pt-48">
+          {/* <p>Each Pack contains 36iu as pictured below.</p> */}
+          {/* <div className="py-6 lg:pt-48">
             <Swiper
               modules={[Navigation, Pagination, Scrollbar, A11y]}
               spaceBetween={0}
@@ -194,7 +194,7 @@ export default function Home() {
                   </SwiperSlide>
                 ))}
             </Swiper>
-          </div>
+          </div> */}
           <p>
             Each order is handled by me personally purchased through the
             pharmacy with a valid prescription via doctors supervision.
