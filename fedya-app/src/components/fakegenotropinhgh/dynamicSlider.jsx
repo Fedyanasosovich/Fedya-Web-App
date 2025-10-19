@@ -5,61 +5,75 @@ import { A11y, Navigation, Pagination, Scrollbar } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 const DynamicSlider = () => {
-  function callingAfterAweekAutomatically(apiCall) {
-    apiCall();
+  // function callingAfterAweekAutomatically(apiCall) {
+  //   apiCall();
 
-    // Set timeout for one week (604800 seconds)
-    setTimeout(() => {
-      callingAfterAweekAutomatically(apiCall); // Recursively call the function
-    }, 604800 * 1000); // Convert seconds to milliseconds
-  }
+  //   // Set timeout for one week (604800 seconds)
+  //   setTimeout(() => {
+  //     callingAfterAweekAutomatically(apiCall); // Recursively call the function
+  //   }, 604800 * 1000); // Convert seconds to milliseconds
+  // }
 
-  async function fetchAllFileUrls(bucketName) {
-    try {
-      const response = await fetch("/api/getPresignedUrl", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ bucketName }),
-      });
+  // async function fetchAllFileUrls(bucketName) {
+  //   try {
+  //     const response = await fetch("/api/getPresignedUrl", {
+  //       method: "POST",
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //       },
+  //       body: JSON.stringify({ bucketName }),
+  //     });
 
-      const data = await response.json();
+  //     const data = await response.json();
 
-      return data.urls; // Array of objects with { key, url }
-    } catch (error) {
-      console.error("Error fetching file URLs:", error);
-      return [];
-    }
-  }
+  //     return data.urls; // Array of objects with { key, url }
+  //   } catch (error) {
+  //     console.error("Error fetching file URLs:", error);
+  //     return [];
+  //   }
+  // }
 
-  const [files, setFiles] = useState([]);
+  // const [files, setFiles] = useState([]);
 
-  async function loadFiles() {
-    const fileUrls = await fetchAllFileUrls("fakegenotropinhgh.com");
-    setFiles(fileUrls);
-  }
+  // async function loadFiles() {
+  //   const fileUrls = await fetchAllFileUrls("fakegenotropinhgh.com");
+  //   setFiles(fileUrls);
+  // }
 
-  useEffect(() => {
-    callingAfterAweekAutomatically(loadFiles);
-  }, []);
+  // useEffect(() => {
+  //   callingAfterAweekAutomatically(loadFiles);
+  // }, []);
 
-  const separateFiles = files.reduce(
-    (acc, file) => {
-      const extension = file.key.split(".").pop().toLowerCase();
-      if (["jpg", "jpeg", "png", "webp"].includes(extension)) {
-        acc.images.push(file);
-      } else if (["mp4"].includes(extension)) {
-        acc.videos.push(file);
-      }
-      return acc;
+  // const separateFiles = files.reduce(
+  //   (acc, file) => {
+  //     const extension = file.key.split(".").pop().toLowerCase();
+  //     if (["jpg", "jpeg", "png", "webp"].includes(extension)) {
+  //       acc.images.push(file);
+  //     } else if (["mp4"].includes(extension)) {
+  //       acc.videos.push(file);
+  //     }
+  //     return acc;
+  //   },
+  //   { images: [], videos: [] }
+  // );
+
+  // // You now have separate arrays for images and videos
+  // const { images, videos } = separateFiles;
+
+  const images = [
+    {
+      url: "/images/Genotropin contents.JPG",
     },
-    { images: [], videos: [] }
-  );
-
-  // You now have separate arrays for images and videos
-  const { images, videos } = separateFiles;
-
+    {
+      url: "/images/matching serial numbers.JPG",
+    },
+    {
+      url: "/images/new pfizer logo.JPG",
+    },
+    {
+      url: "/images/Yellow price tag.JPG",
+    },
+  ];
   return (
     <Swiper
       modules={[Navigation, Pagination, Scrollbar, A11y]}

@@ -50,36 +50,36 @@ export default function Home() {
   //     }
   //   });
   // }, []);
-  // const [openModalIndex, setOpenModalIndex] = useState(null);
-  // const [videoLoading, setVideoLoading] = useState(true);
+  const [openModalIndex, setOpenModalIndex] = useState(null);
+  const [videoLoading, setVideoLoading] = useState(true);
 
-  // const openModal = (index) => {
-  //   // Toggle modal visibility: If the same modal is clicked again, close it.
-  //   setOpenModalIndex(openModalIndex === index ? null : index);
-  // };
+  const openModal = (index) => {
+    // Toggle modal visibility: If the same modal is clicked again, close it.
+    setOpenModalIndex(openModalIndex === index ? null : index);
+  };
 
-  // const spinner = () => {
-  //   setVideoLoading(!videoLoading);
-  // };
+  const spinner = () => {
+    setVideoLoading(!videoLoading);
+  };
 
-  // let middleIndex = Math.floor(videos.length / 2);
-  // const videoOne = [videos[middleIndex]];
-  // const restVideos = videos
-  //   .slice(0, middleIndex)
-  //   .concat(videos.slice(middleIndex + 1));
+  let middleIndex = Math.floor(videos.length / 2);
+  const videoOne = [videos[middleIndex]];
+  const restVideos = videos
+    .slice(0, middleIndex)
+    .concat(videos.slice(middleIndex + 1));
 
-  // const gridItems = [
-  //   {
-  //     imageSrc: "/images/thumbnail-1.png",
-  //     title: "Buying hgh in a pharmacy hidden camera",
-  //     videoSrc: files.length > 0 && restVideos[0].url,
-  //   },
-  //   {
-  //     imageSrc: "/images/thumbnail-2.png",
-  //     title: "Why You Should Trust Me",
-  //     videoSrc: files.length > 0 && restVideos[1].url,
-  //   },
-  // ];
+  const gridItems = [
+    {
+      imageSrc: "/images/thumbnail-1.png",
+      title: "Buying hgh in a pharmacy hidden camera",
+      videoSrc: files.length > 0 && restVideos[0].url,
+    },
+    {
+      imageSrc: "/images/thumbnail-2.png",
+      title: "Why You Should Trust Me",
+      videoSrc: files.length > 0 && restVideos[1].url,
+    },
+  ];
 
   // useEffect(() => {
   //   // console.log(images);
