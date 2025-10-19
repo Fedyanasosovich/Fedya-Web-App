@@ -67,23 +67,23 @@ export default function Home() {
     }, 604800 * 1000); // Convert seconds to milliseconds
   }
 
-  async function fetchAllFileUrls(bucketName) {
-    try {
-      const response = await fetch("/api/getPresignedUrl", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ bucketName }),
-      });
+  // async function fetchAllFileUrls(bucketName) {
+  //   try {
+  //     const response = await fetch("/api/getPresignedUrl", {
+  //       method: "POST",
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //       },
+  //       body: JSON.stringify({ bucketName }),
+  //     });
 
-      const data = await response.json();
-      return data.urls; // Array of objects with { key, url }
-    } catch (error) {
-      console.error("Error fetching file URLs:", error);
-      return [];
-    }
-  }
+  //     const data = await response.json();
+  //     return data.urls; // Array of objects with { key, url }
+  //   } catch (error) {
+  //     console.error("Error fetching file URLs:", error);
+  //     return [];
+  //   }
+  // }
 
   const [files, setFiles] = useState([]);
 
@@ -92,9 +92,9 @@ export default function Home() {
     setFiles(fileUrls);
   }
 
-  useEffect(() => {
-    callingAfterAweekAutomatically(loadFiles);
-  }, []);
+  // useEffect(() => {
+  //   callingAfterAweekAutomatically(loadFiles);
+  // }, []);
 
   const separateFiles = files.reduce(
     (acc, file) => {
@@ -130,10 +130,10 @@ export default function Home() {
     },
   ];
 
-  useEffect(() => {
-    // console.log(images);
-    console.log(videos);
-  }, [files]);
+  // useEffect(() => {
+  //   // console.log(images);
+  //   console.log(videos);
+  // }, [files]);
 
   return (
     <>
