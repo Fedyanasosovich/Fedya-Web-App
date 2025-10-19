@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import React, { useEffect, useState } from "react";
+// import React, { useEffect, useState } from "react";
 import { A11y, Navigation, Pagination, Scrollbar } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -96,7 +96,7 @@ const DynamicSlider = () => {
               width={300}
               height={300}
               className="h-64 w-full object-cover rounded"
-              alt={items.key}
+              // alt={items.key}
             />
           </SwiperSlide>
         ))}
