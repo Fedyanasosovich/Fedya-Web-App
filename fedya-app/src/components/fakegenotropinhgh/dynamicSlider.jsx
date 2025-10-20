@@ -65,13 +65,13 @@ const DynamicSlider = () => {
       url: "/images/Fake-Yellow-Humatrope-Hgh-1.webp",
     },
     {
-      url: "/images/Fake-Yellow-Humatrope-Hgh-2.webp",
+      url: "/images/Fake-Yellow-Humatrope-HGH-2.webp",
     },
     {
-      url: "/images/Fake-Yellow-Humatrope-Hgh-3.webp",
+      url: "/images/Fake-Yellow-Humatrope-HGH-3.webp",
     },
     {
-      url: "/images/Fake-Yellow-Humatrope-Hgh-4.webp",
+      url: "/images/Fake-Yellow-Humatrope-HGH-4.webp",
     },
   ];
 
