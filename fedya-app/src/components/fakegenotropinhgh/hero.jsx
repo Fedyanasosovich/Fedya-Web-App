@@ -3,6 +3,7 @@ import Image from "next/image";
 import Button from "../global/button";
 import { IoLogoInstagram } from "react-icons/io5";
 import Link from "next/link";
+// this is jjjjjjjjjjjjjjjj
 const Hero = ({ title ,  text}) => {
   return (
     <div className=" bg-grid-lines  relative z-20 overflow-hidden  ">
@@ -23,7 +24,7 @@ const Hero = ({ title ,  text}) => {
               </Link>
             </div>
         </div>
-          <div className="max-w-2xl lg:text-start text-center flex flex-col gap-3 lg:mt-16">
+          <div className="max-w-2xl lg:text-start text-center flex flex-col gap-3 lg:mt-17">
             <h1 className="text-4xl lg:text-center  lg:text-6xl font-taviraj ">{title}</h1>
             <span className="h-1 round block w-full bg-darkPurple"></span>
           </div>
