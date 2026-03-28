@@ -17,6 +17,8 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '20'
+          cache: 'npm'
+          cache-dependency-path: './fedya-app/package-lock.json'
 
       - name: Install and Build
         run: |
@@ -30,8 +32,7 @@ jobs:
           host: ${{ secrets.VPS_HOST }}
           username: ${{ secrets.VPS_USER }}
           password: ${{ secrets.VPS_PASSWORD }}
-          # FIX: Added dot: true to ensure the hidden .next folder is included
-          # Removed the trailing slash from .next/ to ensure the whole directory syncs
+          # 'dot: true' ensures the hidden .next folder is actually moved
           dot: true
           source: "fedya-app/.next,fedya-app/public,fedya-app/package.json,fedya-app/next.config.mjs"
           target: "/var/www/site-buypfizergenotropinhgh/"
@@ -44,6 +45,11 @@ jobs:
           username: ${{ secrets.VPS_USER }}
           password: ${{ secrets.VPS_PASSWORD }}
           script: |
+            cd /var/www/site-buypfizergenotropinhgh/
+            npm install --production
+            # This ensures PM2 starts the app correctly from the target folder
+            pm2 delete buy-pharm || true
+            pm2 start npm --name "buy-pharm" -- start
             cd /var/www/site-buypfizergenotropinhgh/
             # Ensure dependencies are installed on the server for the start command to work
             npm install --production
