@@ -1,0 +1,46 @@
+name: Build and Deploy to VPS
+
+on:
+  push:
+    branches:
+      - buypfizergenotropinhgh
+
+jobs:
+  build_and_deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install and Build
+        run: |
+          cd fedya-app
+          npm install
+          npm run build
+
+      - name: Sync Files to VPS
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USER }}
+          password: ${{ secrets.VPS_PASSWORD }}
+          # Notice we added fedya-app/ before the folder names
+          source: "fedya-app/.next/,fedya-app/public/,fedya-app/package.json,fedya-app/next.config.mjs"
+          target: "/var/www/site-buypfizergenotropinhgh/"
+          strip_components: 1 # This removes the 'fedya-app' prefix when saving to the VPS
+
+      - name: Restart PM2
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USER }}
+          password: ${{ secrets.VPS_PASSWORD }}
+          script: |
+            cd /var/www/site-buypfizergenotropinhgh/
+            pm2 restart buy-pharm || pm2 start npm --name "buy-pharm" -- start
