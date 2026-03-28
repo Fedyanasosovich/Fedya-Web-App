@@ -1,0 +1,44 @@
+name: Build and Deploy to VPS
+
+on:
+  push:
+    branches:
+      - buypfizergenotropinhgh  # Or 'master', whichever your branch is called
+
+jobs:
+  build_and_deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Build Project (GitHub does the work here)
+        run: npm run build
+
+      - name: Sync Files to VPS via SSH
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USER }}
+          password: ${{ secrets.VPS_PASSWORD }}
+          source: ".next/,public/,package.json,next.config.mjs" # Only send what's needed
+          target: "/var/www/site-buypfizergenotropinhgh/"
+
+      - name: Restart PM2 on VPS
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USER }}
+          password: ${{ secrets.VPS_PASSWORD }}
+          script: |
+            cd /var/www/site-buypfizergenotropinhgh/
+            pm2 restart buy-pharm || pm2 start npm --name "buy-pharm" -- start
