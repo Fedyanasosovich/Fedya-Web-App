@@ -3,7 +3,7 @@ name: Build and Deploy to VPS
 on:
   push:
     branches:
-      - buypfizergenotropinhgh
+      - main
 
 jobs:
   build_and_deploy:
