@@ -30,10 +30,12 @@ jobs:
           host: ${{ secrets.VPS_HOST }}
           username: ${{ secrets.VPS_USER }}
           password: ${{ secrets.VPS_PASSWORD }}
-          # Notice we added fedya-app/ before the folder names
-          source: "fedya-app/.next/,fedya-app/public/,fedya-app/package.json,fedya-app/next.config.mjs"
+          # FIX: Added dot: true to ensure the hidden .next folder is included
+          # Removed the trailing slash from .next/ to ensure the whole directory syncs
+          dot: true
+          source: "fedya-app/.next,fedya-app/public,fedya-app/package.json,fedya-app/next.config.mjs"
           target: "/var/www/site-buypfizergenotropinhgh/"
-          strip_components: 1 # This removes the 'fedya-app' prefix when saving to the VPS
+          strip_components: 1 
 
       - name: Restart PM2
         uses: appleboy/ssh-action@v1.0.3
@@ -43,4 +45,6 @@ jobs:
           password: ${{ secrets.VPS_PASSWORD }}
           script: |
             cd /var/www/site-buypfizergenotropinhgh/
+            # Ensure dependencies are installed on the server for the start command to work
+            npm install --production
             pm2 restart buy-pharm || pm2 start npm --name "buy-pharm" -- start
