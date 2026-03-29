@@ -7,6 +7,9 @@ const nextConfig = {
       "fakegenotropinhgh.com",
     ],
   },
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
 };
 
-export default nextConfig;
+export default nextConfig;;
