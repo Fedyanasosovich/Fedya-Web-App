@@ -20,7 +20,7 @@ const navItems = [
     url: "https://fakegenotropinhgh.com",
   },
 
-  { name: "Buy hgh from the pharmacy ", url: "https://sandozomnitrope.com" },
+  { name: "Buy hgh from the pharmacy ", url: "https://buypharmaceuticalhgh.com" },
 ];
 
 const NavBar = () => {
