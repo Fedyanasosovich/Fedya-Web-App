@@ -12,7 +12,7 @@ const navItems = [
   },
   {
     name: "Buy hgh from the pharmacy ",
-    url: "https://www.sandozomnitrope.com/",
+    url: "https://www.buypharmaceuticalhgh.com/",
   },
 ];
 
