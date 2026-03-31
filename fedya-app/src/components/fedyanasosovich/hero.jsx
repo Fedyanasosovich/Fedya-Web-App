@@ -9,7 +9,7 @@ const Hero = ({ title, text }) => {
       <div className="flex items-center   min-h-56 md:min-h-[500px] container   ">
         <div className="flex flex-col   lg:mx-auto  lg:my-0 mt-24 mb-4  justify-between items-center w-full gap-12 lg:gap-6 pb-6 ">
           <div className="lg:hidden block">
-            <Link href={"https://www.sandozomnitrope.com/"} target="_blank">
+            <Link href={"https://www.buypharmaceuticalhgh.com/"} target="_blank">
               <Button
                 title={"Click here to purchase pharmaceutical  HGH"}
                 containerClass={"text-sm px-6"}
@@ -43,7 +43,7 @@ const Hero = ({ title, text }) => {
           </p>
 
           <div className="lg:block hidden">
-            <Link href={"https://www.sandozomnitrope.com/"} target="_blank">
+            <Link href={"https://www.buypharmaceuticalhgh.com/"} target="_blank">
               <Button
                 title={"Click here to purchase pharmaceutical  HGH"}
                 containerClass={"text-sm px-6"}
