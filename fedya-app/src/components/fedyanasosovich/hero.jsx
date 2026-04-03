@@ -38,7 +38,7 @@ const Hero = ({ title ,  text}) => {
           </p>
 
           <div className="lg:block hidden">
-          <Link href={"https://sandozomnitrope.com/"} target="_blank">
+          <Link href={"https://buypharmaceuticalhgh.com/"} target="_blank">
             <Button
                 title={"Click here to purchase pharmaceutical  HGH"}
                 containerClass={"text-sm px-6"}
