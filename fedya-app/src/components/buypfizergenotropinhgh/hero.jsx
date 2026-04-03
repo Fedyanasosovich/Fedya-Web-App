@@ -20,7 +20,7 @@ const Hero = ({ title, vidUrl }) => {
               loop
               muted
               playsInline
-              alt="Sandozomnitrope"
+              alt="buypharmaceuticalhgh"
             />
           )}
         </div>
